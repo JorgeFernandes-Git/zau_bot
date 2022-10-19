@@ -1,1 +1,1 @@
-# Repository for Zau Bot.
+Zau Bot Repository
