@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="limited" default="true" doc="If true, limits joint range [-PI, PI] on all joints." />
+    <arg name="sim" default="true" />
+    <arg name="config" default="true" />
+    <arg name="gui" default="false" doc="Starts gazebo gui" />
+
+    <include file="$(find ur_e_gazebo)/launch/ur5e.launch">
+        <arg name="limited" value="$(arg limited)" />
+        <arg name="gui" value="$(arg gui)" />
+    </include>
+
+    <include file="$(find ur5_e_moveit_config)/launch/ur5_e_moveit_planning_execution.launch">
+        <arg name="sim" value="$(arg sim)" />
+        <arg name="limited" value="$(arg limited)" />
+    </include>
+
+    <include file="$(find ur5_e_moveit_config)/launch/moveit_rviz.launch">
+        <arg name="config" value="$(arg config)" />
+    </include>
+
+</launch>
