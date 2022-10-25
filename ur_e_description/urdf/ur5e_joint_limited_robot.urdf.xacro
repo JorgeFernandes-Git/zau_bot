@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+  name="ur5e">
+
+  <!-- common stuff -->
+  <xacro:include filename="$(find ur_e_description)/urdf/common.gazebo.xacro" />
+
+  <!-- ur5e -->
+  <xacro:include filename="$(find ur_e_description)/urdf/ur5e.urdf.xacro" />
+
+  <!-- arm -->
+  <xacro:ur5e_robot prefix="" joint_limited="true"
+    shoulder_pan_lower_limit="${-pi}" shoulder_pan_upper_limit="${pi}"
+    shoulder_lift_lower_limit="${-pi}" shoulder_lift_upper_limit="${pi}"
+    elbow_joint_lower_limit="${-pi}" elbow_joint_upper_limit="${pi}"
+    wrist_1_lower_limit="${-pi}" wrist_1_upper_limit="${pi}"
+    wrist_2_lower_limit="${-pi}" wrist_2_upper_limit="${pi}"
+    wrist_3_lower_limit="${-pi}" wrist_3_upper_limit="${pi}"
+  />
+
+  <!-- place robot on moving base -->
+  <xacro:include filename="$(find ur_e_description)/urdf/moving_base.urdf.xacro" />
+
+  <joint name="moving_base_to_ur5e" type="fixed">
+    <parent link="base_link_mb" />
+    <child link="base_link" />
+    <origin xyz="0.0 0.0 0.771" rpy="0.0 0.0 0.0" />
+  </joint>
+
+
+  <!-- sensor -->
+  <!-- <xacro:include filename="$(find ur_e_description)/urdf/astra.urdf.xacro" />
+  <xacro:sensor_astra parent="ee_link" prefix="camera">
+    <origin xyz="0.041311319304504816 -0.06402544453787727 0.044527571211305426"
+      rpy="3.13766148064 -0.00787797070144 0.000110993634886" />
+  </xacro:sensor_astra> -->
+
+  <!-- <link name="base_footprint" /> -->
+
+  <!-- initial robot pose on world - FROM ORIGINAL FILE -->
+  <!-- <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint> -->
+
+  <!-- put robot on table -->
+  <!-- <xacro:property name="M_PI" value="3.1415926535897931" /> -->
+
+  <!-- Tables properties-->
+  <!-- <xacro:property name="table_height" value="0.795" />
+  <xacro:property name="table_width" value=".9" />
+  <xacro:property name="table_lenght" value="0.9" />
+  <xacro:property name="table_tabletop_thickness" value="0.015" />
+  <xacro:property name="table_leg_radius" value="0.02" /> -->
+
+  <!-- Scene objets-->
+  <!-- <xacro:include filename="$(find ur_e_description)/urdf/properties.xacro" />
+  <xacro:include filename="$(find ur_e_description)/urdf/table.macro.xacro" /> -->
+
+  <!-- Place table 1 in the scene-->
+  <!-- <xacro:table_macro name="table" parent="world" width="${table_width}"
+    lenght="${table_lenght}" height="${table_height}"
+    tabletop_thickness="${table_tabletop_thickness}" leg_radius="${table_leg_radius}">
+    <origin xyz="-1 0 0" rpy="0 0 ${M_PI/2}" />
+  </xacro:table_macro> -->
+
+  <!--  Place robot on top of the table -->
+  <!-- <joint name="tabletop_table_to_ur5e" type="fixed">
+    <parent link="tabletop_table" />
+    <child link="base_link" />
+    <origin xyz="0.0 0.0 0.001" rpy="0.0 0.0 0.0" />
+  </joint> -->
+
+
+</robot>
