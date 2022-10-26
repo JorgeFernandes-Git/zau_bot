@@ -31,6 +31,6 @@
 
     <group if="$(eval arg('rviz') == true)">
         <node name="rviz" pkg="rviz" type="rviz"
-            args="--display-config $(find zau_bot_bringup)/config/moving_base.rviz" required="false"></node>
+            args="--display-config $(find my_ur5)/config/moving_base.rviz" required="false"></node>
     </group>
 </launch>
