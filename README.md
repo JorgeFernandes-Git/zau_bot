@@ -4,7 +4,7 @@ Rviz:
 
     roslaunch zau_bot_bringup zau_bot_bringup.launch
 
-Gazebo:
+Rviz with Gazebo:
 
     roslaunch zau_bot_bringup zau_bot_bringup.launch gui:=true
 
