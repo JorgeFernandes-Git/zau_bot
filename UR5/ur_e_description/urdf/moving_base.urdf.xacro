@@ -4,6 +4,8 @@
     <xacro:include filename="$(find ur_e_description)/urdf/properties.xacro" />
     <xacro:include filename="$(find ur_e_description)/urdf/moving_base.gazebo.xacro" />
 
+     <xacro:property name="M_PI" value="3.1415926535897931" />
+
     <!-- testing adding a velodyne laser  -->
     <!-- VLP-16 -->
     <!-- velodyne -->
@@ -35,10 +37,11 @@
 
     <link name="base_link_mb">
         <visual>
-            <origin xyz="0 0 0.410" rpy="0 0 0" />
+            <origin xyz="-0.43 -0.33 0.03" rpy="${M_PI/2} 0 ${M_PI/2}" />
             <geometry>
-                <box size="0.900 0.600 0.770" />
+                <!-- <box size="0.900 0.600 0.770" /> -->
                 <!-- <box size="0.900 0.650 0.770" /> -->
+                <mesh filename="package://ur_e_description/meshes/moving_base/moving_base.STL" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="light_black" />
         </visual>
@@ -46,7 +49,7 @@
         <collision>
             <origin xyz="0 0 0.459" rpy="0 0 0" />
             <geometry>
-                <box size="0.900 0.650 0.770" />
+                <box size="0.900 0.600 0.770" />
             </geometry>
         </collision>
 
@@ -68,7 +71,7 @@
 
     <link name="wheel_left_link">
         <visual>
-            <origin xyz="0 0 0" rpy="-1.57 0 0" />
+            <origin xyz="0 0 -0.055" rpy="-1.57 0 0" />
             <geometry>
                 <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0025 0.0025 0.0025" />
             </geometry>
@@ -100,7 +103,7 @@
 
     <link name="wheel_right_link">
         <visual>
-            <origin xyz="0 0 0" rpy="1.57 0 0" />
+            <origin xyz="0 0 0.055" rpy="1.57 0 0" />
             <geometry>
                 <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0025 0.0025 0.0025" />
             </geometry>
@@ -132,9 +135,9 @@
 
     <link name="caster_back_right_link">
         <visual>
-            <origin xyz="0 -0.084 0" rpy="1.57 0 0" />
+            <origin xyz="0.027 -0.084 0" rpy="1.57 0 0" />
             <geometry>
-                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0025 0.0025 0.0025" />
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0020 0.0020 0.0020" />
                 <!-- <cylinder length="0.024" radius="0.084" /> -->
             </geometry>
             <material name="dark" />
@@ -164,9 +167,9 @@
 
     <link name="caster_back_left_link">
         <visual>
-            <origin xyz="0 -0.084 0" rpy="-1.57 0 0" />
+            <origin xyz="0.027 -0.084 0" rpy="-1.57 0 0" />
             <geometry>
-                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0025 0.0025 0.0025" />
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0020 0.0020 0.0020" />
                 <!-- <cylinder length="0.024" radius="0.084" /> -->
             </geometry>
             <material name="dark" />
@@ -200,7 +203,7 @@
         <visual>
             <origin xyz="0 -0.084 0" rpy="1.57 0 0" />
             <geometry>
-                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0025 0.0025 0.0025" />
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0020 0.0020 0.0020" />
                 <!-- <cylinder length="0.024" radius="0.084" /> -->
             </geometry>
             <material name="dark" />
@@ -232,7 +235,7 @@
         <visual>
             <origin xyz="0 -0.084 0" rpy="-1.57 0 0" />
             <geometry>
-                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0025 0.0025 0.0025" />
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0020 0.0020 0.0020" />
                 <!-- <cylinder length="0.024" radius="0.084" /> -->
             </geometry>
             <material name="dark" />
