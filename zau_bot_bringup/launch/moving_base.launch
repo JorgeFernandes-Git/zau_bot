@@ -10,7 +10,7 @@
 
     <arg name="gui" default="true" doc="Starts gazebo gui" />
     <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
-    <arg name="rviz" default="false" doc="Starts rviz gui" />
+    <arg name="rviz" default="true" doc="Starts rviz gui" />
 
     <!-- startup simulated world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
