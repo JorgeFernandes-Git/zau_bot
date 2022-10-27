@@ -4,7 +4,7 @@
     <xacro:include filename="$(find ur_e_description)/urdf/properties.xacro" />
     <xacro:include filename="$(find ur_e_description)/urdf/moving_base.gazebo.xacro" />
 
-     <xacro:property name="M_PI" value="3.1415926535897931" />
+    <xacro:property name="M_PI" value="3.1415926535897931" />
 
     <!-- testing adding a velodyne laser  -->
     <!-- VLP-16 -->
@@ -265,5 +265,36 @@
     </joint>
 
     <link name="imu_link" />
+    
+    <!-- lidar sensor -->
+    <!-- <joint name="scan_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="base_scan" />
+        <origin xyz="-0.064 0 0.122" rpy="0 0 0" />
+    </joint> -->
+
+    <!-- <link name="base_scan">
+        <visual>
+            <origin xyz="0 0 0.0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://turtlebot3_description/meshes/sensors/lds.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="dark" />
+        </visual>
+
+        <collision>
+            <origin xyz="0.015 0 -0.0065" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="0.0315" radius="0.055" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.114" />
+            <origin xyz="0 0 0" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+    </link> -->
+    <!-- lidar sensor -->
 
 </robot>
