@@ -32,8 +32,4 @@
   <!-- start a fake weiss gripper -->
   <!-- <node name="fake_gripper" pkg="ur_e_gazebo" type="fake_wr-cr200-85.py" respawn="true" output="log" /> -->
 
-  <!-- fix pid error - didn't work properlly, robot lose movements -->
-  <!-- <rosparam command="load" file="$(find ur_e_gazebo)/config/gazebo_ros_control_params.yaml" /> -->
-  <!-- fix pid error -->
-
 </launch>

@@ -114,12 +114,12 @@ if __name__ == "__main__":
             key = getKey()
             if key == 'w':
                 target_linear_vel = checkLinearLimitVelocity(
-                    target_linear_vel + LIN_VEL_STEP_SIZE)
+                    target_linear_vel - LIN_VEL_STEP_SIZE)
                 status = status + 1
                 print(vels(target_linear_vel, target_angular_vel))
             elif key == 'x':
                 target_linear_vel = checkLinearLimitVelocity(
-                    target_linear_vel - LIN_VEL_STEP_SIZE)
+                    target_linear_vel + LIN_VEL_STEP_SIZE)
                 status = status + 1
                 print(vels(target_linear_vel, target_angular_vel))
             elif key == 'a':

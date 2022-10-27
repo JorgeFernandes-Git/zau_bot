@@ -55,10 +55,11 @@
 
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0" />
-            <mass value="25" />
-            <inertia ixx="8.7002718e-03" ixy="-4.7576583e-05" ixz="1.1160499e-04"
+            <mass value="46" />
+            <!-- <inertia ixx="8.7002718e-03" ixy="-4.7576583e-05" ixz="1.1160499e-04"
                 iyy="8.6195418e-03" iyz="-3.5422299e-06"
-                izz="1.4612727e-02" />
+                izz="1.4612727e-02" /> -->
+            <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296" />
         </inertial>
     </link>
 
@@ -135,7 +136,7 @@
 
     <link name="caster_back_right_link">
         <visual>
-            <origin xyz="0.027 -0.084 0" rpy="1.57 0 0" />
+            <origin xyz="0.027 -0.06 0" rpy="1.57 0 0" />
             <geometry>
                 <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0020 0.0020 0.0020" />
                 <!-- <cylinder length="0.024" radius="0.084" /> -->
@@ -167,7 +168,7 @@
 
     <link name="caster_back_left_link">
         <visual>
-            <origin xyz="0.027 -0.084 0" rpy="-1.57 0 0" />
+            <origin xyz="0.027 -0.06 0" rpy="-1.57 0 0" />
             <geometry>
                 <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0020 0.0020 0.0020" />
                 <!-- <cylinder length="0.024" radius="0.084" /> -->
@@ -201,7 +202,7 @@
 
     <link name="caster_front_right_link">
         <visual>
-            <origin xyz="0 -0.084 0" rpy="1.57 0 0" />
+            <origin xyz="0 -0.06 0" rpy="1.57 0 0" />
             <geometry>
                 <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0020 0.0020 0.0020" />
                 <!-- <cylinder length="0.024" radius="0.084" /> -->
@@ -233,7 +234,7 @@
 
     <link name="caster_front_left_link">
         <visual>
-            <origin xyz="0 -0.084 0" rpy="-1.57 0 0" />
+            <origin xyz="0 -0.06 0" rpy="-1.57 0 0" />
             <geometry>
                 <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl" scale="0.0020 0.0020 0.0020" />
                 <!-- <cylinder length="0.024" radius="0.084" /> -->
