@@ -1,6 +1,6 @@
 # Zau_bot 
 
-# Launching zau_bot
+## Launching zau_bot
 
 Rviz:
 
@@ -16,7 +16,7 @@ Teleop:
 
 ![Screenshot](https://github.com/JorgeFernandes-Git/zau_bot/blob/main/zau.png?raw=true)
 
-# Simulation:
+## Simulation:
 
 Teleop movement:
 
