@@ -13,3 +13,12 @@ Teleop:
     roslaunch zau_bot_bringup my_teleop.launch 
 
 ![Screenshot](https://github.com/JorgeFernandes-Git/zau_bot/blob/main/zau.png?raw=true)
+
+Simulation with teleop:
+
+https://user-images.githubusercontent.com/93128909/198751405-d87c7601-d116-4c14-8328-ffaed76ca632.mp4
+
+Motion planninh (MoveIt):
+
+https://user-images.githubusercontent.com/93128909/198751449-e8f088d5-c962-43c5-984a-b119a0b9828a.mp4
+
