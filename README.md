@@ -22,7 +22,7 @@ Teleop movement:
 
 https://user-images.githubusercontent.com/93128909/198751405-d87c7601-d116-4c14-8328-ffaed76ca632.mp4
 
-Motion planninh (MoveIt):
+Motion planning (MoveIt):
 
 https://user-images.githubusercontent.com/93128909/198751449-e8f088d5-c962-43c5-984a-b119a0b9828a.mp4
 
