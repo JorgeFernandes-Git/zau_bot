@@ -195,7 +195,7 @@
         <material>Gazebo/DarkGrey</material>
         <sensor type="ray" name="lds_lfcd_sensor_front">
             <pose>0 0 0 0 0 0</pose>
-            <visualize>$(arg laser_visual)</visualize>
+            <visualize>true</visualize>
             <update_rate>5</update_rate>
             <ray>
                 <scan>
@@ -230,7 +230,7 @@
         <material>Gazebo/DarkGrey</material>
         <sensor type="ray" name="lds_lfcd_sensor_back">
             <pose>0 0 0 0 0 0</pose>
-            <visualize>$(arg laser_visual)</visualize>
+            <visualize>true</visualize>
             <update_rate>5</update_rate>
             <ray>
                 <scan>
