@@ -4,12 +4,28 @@
   <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
   <arg name="gui" default="true" doc="Starts gazebo gui" />
 
+  <arg name="robot_name" default="robot_UR5_MB" />
+  <arg name="x_pos" default="0.0" />
+  <arg name="y_pos" default="-2.0" />
+  <arg name="z_pos" default="0.0" />
+  <arg name="roll" default="0" />
+  <arg name="pitch" default="0" />
+  <arg name="yaw" default="0.0" />
 
   <!-- startup simulated world -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" default="worlds/empty.world" />
     <arg name="paused" value="$(arg paused)" />
     <arg name="gui" value="$(arg gui)" />
+  </include> -->
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find ur_e_gazebo)/worlds/turtlebot3_house.world" />
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="use_sim_time" value="true" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="headless" value="false" />
+    <arg name="debug" value="false" />
   </include>
 
   <!-- send robot urdf to param server -->
@@ -18,7 +34,9 @@
   </include>
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen" />
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model $(arg robot_name) 
+  -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)
+  -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" respawn="false" output="screen" />
 
   <include file="$(find ur_e_gazebo)/launch/controller_utils.launch" />
 
