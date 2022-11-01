@@ -28,4 +28,4 @@ https://user-images.githubusercontent.com/93128909/198751449-e8f088d5-c962-43c5-
 
 Front and back lasers:
 
-[![Zau_Bot - front and back lasers](https://img.youtube.com/vi/fg23Tl_Sg0k/1.jpg)](https://youtu.be/fg23Tl_Sg0k "Zau_Bot - front and back lasers")
+[![Zau_Bot - front and back lasers](https://img.youtube.com/vi/fg23Tl_Sg0k/1.jpg)](https://www.youtube.com/watch?v=fg23Tl_Sg0k "Zau_Bot - front and back lasers")
