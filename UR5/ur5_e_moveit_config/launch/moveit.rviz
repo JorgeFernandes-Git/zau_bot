@@ -4,8 +4,8 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /LaserScan_front1
-        - /LaserScan_back1
+        - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 344
   - Class: rviz/Selection
@@ -337,10 +337,54 @@ Visualization Manager:
       Value: true
       Velocity_Scaling_Factor: 0.1
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
+        base:
+          Value: false
+        base_footprint:
+          Value: false
+        base_link:
+          Value: false
+        base_link_mb:
+          Value: false
+        base_scan_back:
+          Value: true
+        base_scan_front:
+          Value: true
+        caster_back_left_link:
+          Value: false
+        caster_back_right_link:
+          Value: false
+        caster_front_left_link:
+          Value: false
+        caster_front_right_link:
+          Value: false
+        ee_link:
+          Value: false
+        forearm_link:
+          Value: false
+        imu_link:
+          Value: false
+        odom:
+          Value: false
+        shoulder_link:
+          Value: false
+        tool0:
+          Value: false
+        upper_arm_link:
+          Value: false
+        wheel_left_link:
+          Value: false
+        wheel_right_link:
+          Value: false
+        wrist_1_link:
+          Value: false
+        wrist_2_link:
+          Value: false
+        wrist_3_link:
+          Value: false
       Marker Alpha: 1
       Marker Scale: 1
       Name: TF
@@ -348,9 +392,42 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        odom:
+          base_footprint:
+            base_link_mb:
+              base_link:
+                base:
+                  {}
+                shoulder_link:
+                  upper_arm_link:
+                    forearm_link:
+                      wrist_1_link:
+                        wrist_2_link:
+                          wrist_3_link:
+                            ee_link:
+                              {}
+                            tool0:
+                              {}
+              base_scan_back:
+                {}
+              base_scan_front:
+                {}
+              caster_back_left_link:
+                {}
+              caster_back_right_link:
+                {}
+              caster_front_left_link:
+                {}
+              caster_front_right_link:
+                {}
+              imu_link:
+                {}
+              wheel_left_link:
+                {}
+              wheel_right_link:
+                {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
@@ -451,7 +528,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 10.584000587463379
+      Distance: 6.422491550445557
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -467,9 +544,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6603976488113403
+      Pitch: 0.43039780855178833
       Target Frame: <Fixed Frame>
-      Yaw: 4.960430145263672
+      Yaw: 4.645419597625732
     Saved: ~
 Window Geometry:
   Displays:

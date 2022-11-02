@@ -271,7 +271,7 @@
     <joint name="scan_joint_front" type="fixed">
         <parent link="base_link_mb" />
         <child link="base_scan_front" />
-        <origin xyz="-0.450 0 0.180" rpy="0 0 ${M_PI/2}" />
+        <origin xyz="-0.700 0 0.180" rpy="0 0 ${M_PI/4}" />
     </joint>
 
     <link name="base_scan_front">
@@ -294,7 +294,7 @@
     <joint name="scan_joint_back" type="fixed">
         <parent link="base_link_mb" />
         <child link="base_scan_back" />
-        <origin xyz="0.450 0 0.180" rpy="0 0 -${M_PI/2}" />
+        <origin xyz="0.700 0 0.180" rpy="0 0 -${3*M_PI/4}" />
     </joint>
 
     <link name="base_scan_back">
