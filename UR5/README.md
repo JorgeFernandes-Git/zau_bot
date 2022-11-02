@@ -25,7 +25,3 @@ https://user-images.githubusercontent.com/93128909/198751405-d87c7601-d116-4c14-
 Motion planning (MoveIt):
 
 https://user-images.githubusercontent.com/93128909/198751449-e8f088d5-c962-43c5-984a-b119a0b9828a.mp4
-
-Front and back lasers:
-
-[![Zau_Bot - front and back lasers](https://img.youtube.com/vi/fg23Tl_Sg0k/0.jpg)](https://www.youtube.com/watch?v=fg23Tl_Sg0k "Zau_Bot - front and back lasers")
