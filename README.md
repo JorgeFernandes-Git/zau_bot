@@ -18,7 +18,7 @@ Teleop:
 
 ## Tf Tree
 
-![Screenshot](https://github.com/JorgeFernandes-Git/zau_bot/blob/main/zau_bot_tf_tree.png?raw=true)
+![Screenshot](https://raw.githubusercontent.com/JorgeFernandes-Git/zau_bot/main/imgs/tf_tree/zau_bot_tf_tree.png?token=GHSAT0AAAAAABZ4ZRJ2URCXWURREGXRAYHWY3XZC5A))
 
 ## Simulation:
 
