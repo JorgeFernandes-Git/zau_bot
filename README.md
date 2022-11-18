@@ -16,6 +16,10 @@ Teleop:
 
 ![Screenshot](https://github.com/JorgeFernandes-Git/zau_bot/blob/main/zau.png?raw=true)
 
+## Tf Tree
+
+![Screenshot](https://github.com/JorgeFernandes-Git/zau_bot/blob/main/zau_bot_tf_tree.png?raw=true)
+
 ## Simulation:
 
 Teleop movement:
