@@ -7,6 +7,7 @@
   <!-- place robot on moving base -->
   <xacro:include filename="$(find ur_e_description)/urdf/moving_base.urdf.xacro" />
 
+  <!-- *************THIS IS THE TRANSFORMATION TO BE CALIBRATED************* -->
   <joint name="moving_base_to_ur5e" type="fixed">
     <parent link="base_link_mb" />
     <child link="base_link" />
@@ -19,11 +20,14 @@
     <inertial>
       <mass value="${mass}" />
       <xacro:insert_block name="origin" />
-      <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0" ixz="0.0" iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0" izz="${0.5 * mass * radius * radius}" />
+      <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0"
+        ixz="0.0" iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0"
+        izz="${0.5 * mass * radius * radius}" />
     </inertial>
   </xacro:macro>
 
-  <xacro:macro name="ur5e_robot" params="prefix joint_limited
+  <xacro:macro name="ur5e_robot"
+    params="prefix joint_limited
     shoulder_pan_lower_limit:=${-pi}    shoulder_pan_upper_limit:=${pi}
     shoulder_lift_lower_limit:=${-pi}    shoulder_lift_upper_limit:=${pi}
     elbow_joint_lower_limit:=${-pi}    elbow_joint_upper_limit:=${pi}
@@ -60,7 +64,8 @@
       q_home_offset = [0, -1.570796327, 0, -1.570796327, 0, 0]
       joint_direction = [-1, -1, 1, 1, 1, 1]
       mass = [3.7000, 8.3930, 2.2750, 1.2190, 1.2190, 0.1879]
-      center_of_mass = [ [0, -0.02561, 0.00193], [0.2125, 0, 0.11336], [0.11993, 0.0, 0.0265], [0, -0.0018, 0.01634], [0, 0.0018,0.01634], [0, 0, -0.001159] ]
+      center_of_mass = [ [0, -0.02561, 0.00193], [0.2125, 0, 0.11336], [0.11993, 0.0, 0.0265], [0,
+    -0.0018, 0.01634], [0, 0.0018,0.01634], [0, 0, -0.001159] ]
     -->
     <xacro:property name="d1" value="0.163" />
     <xacro:property name="a2" value="-0.425" />
@@ -80,18 +85,26 @@
     <xacro:property name="wrist_1_length" value="${d4}" />
     <xacro:property name="wrist_2_length" value="${d5}" />
     <xacro:property name="wrist_3_length" value="${d6}" />
-    <!--property name="shoulder_height" value="0.089159" /-->
-    <!--property name="shoulder_offset" value="0.13585" /-->
+    <!--property
+    name="shoulder_height" value="0.089159" /-->
+    <!--property
+    name="shoulder_offset" value="0.13585" /-->
     <!-- shoulder_offset - elbow_offset + wrist_1_length = 0.10915 -->
-    <!--property name="upper_arm_length" value="0.42500" /-->
-    <!--property name="elbow_offset" value="0.1197" /-->
+    <!--property
+    name="upper_arm_length" value="0.42500" /-->
+    <!--property
+    name="elbow_offset" value="0.1197" /-->
     <!-- CAD measured -->
-    <!--property name="forearm_length" value="0.39225" /-->
-    <!--property name="wrist_1_length" value="0.093" /-->
+    <!--property
+    name="forearm_length" value="0.39225" /-->
+    <!--property
+    name="wrist_1_length" value="0.093" /-->
     <!-- CAD measured -->
-    <!--property name="wrist_2_length" value="0.09465" /-->
+    <!--property
+    name="wrist_2_length" value="0.09465" /-->
     <!-- In CAD this distance is 0.930, but in the spec it is 0.09465 -->
-    <!--property name="wrist_3_length" value="0.0823" /-->
+    <!--property
+    name="wrist_3_length" value="0.0823" /-->
 
     <xacro:property name="shoulder_radius" value="0.060" /> <!-- manually measured -->
     <xacro:property name="upper_arm_radius" value="0.054" /> <!-- manually measured -->
@@ -127,13 +140,18 @@
       <xacro:unless value="${joint_limited}">
         <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="150.0" velocity="3.14" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}" soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}"
+            soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}"
+            k_velocity="0.0" />
         </xacro:if>
       </xacro:unless>
       <xacro:if value="${joint_limited}">
-        <limit lower="${shoulder_pan_lower_limit}" upper="${shoulder_pan_upper_limit}" effort="150.0" velocity="3.14" />
+        <limit lower="${shoulder_pan_lower_limit}" upper="${shoulder_pan_upper_limit}"
+          effort="150.0" velocity="3.14" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${shoulder_pan_lower_limit + safety_pos_margin}" soft_upper_limit="${shoulder_pan_upper_limit - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${shoulder_pan_lower_limit + safety_pos_margin}"
+            soft_upper_limit="${shoulder_pan_upper_limit - safety_pos_margin}"
+            k_position="${safety_k_position}" k_velocity="0.0" />
         </xacro:if>
       </xacro:if>
       <dynamics damping="0.0" friction="0.0" />
@@ -166,13 +184,18 @@
       <xacro:unless value="${joint_limited}">
         <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="150.0" velocity="3.14" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}" soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}"
+            soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}"
+            k_velocity="0.0" />
         </xacro:if>
       </xacro:unless>
       <xacro:if value="${joint_limited}">
-        <limit lower="${shoulder_lift_lower_limit}" upper="${shoulder_lift_upper_limit}" effort="150.0" velocity="3.14" />
+        <limit lower="${shoulder_lift_lower_limit}" upper="${shoulder_lift_upper_limit}"
+          effort="150.0" velocity="3.14" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${shoulder_lift_lower_limit + safety_pos_margin}" soft_upper_limit="${shoulder_lift_upper_limit - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${shoulder_lift_lower_limit + safety_pos_margin}"
+            soft_upper_limit="${shoulder_lift_upper_limit - safety_pos_margin}"
+            k_position="${safety_k_position}" k_velocity="0.0" />
         </xacro:if>
       </xacro:if>
       <dynamics damping="0.0" friction="0.0" />
@@ -205,13 +228,18 @@
       <xacro:unless value="${joint_limited}">
         <limit lower="${-pi}" upper="${pi}" effort="150.0" velocity="3.14" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}" soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}"
+            soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}"
+            k_velocity="0.0" />
         </xacro:if>
       </xacro:unless>
       <xacro:if value="${joint_limited}">
-        <limit lower="${elbow_joint_lower_limit}" upper="${elbow_joint_upper_limit}" effort="150.0" velocity="3.14" />
+        <limit lower="${elbow_joint_lower_limit}" upper="${elbow_joint_upper_limit}" effort="150.0"
+          velocity="3.14" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${elbow_joint_lower_limit + safety_pos_margin}" soft_upper_limit="${elbow_joint_upper_limit - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${elbow_joint_lower_limit + safety_pos_margin}"
+            soft_upper_limit="${elbow_joint_upper_limit - safety_pos_margin}"
+            k_position="${safety_k_position}" k_velocity="0.0" />
         </xacro:if>
       </xacro:if>
       <dynamics damping="0.0" friction="0.0" />
@@ -244,13 +272,18 @@
       <xacro:unless value="${joint_limited}">
         <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="28.0" velocity="6.28" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}" soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}"
+            soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}"
+            k_velocity="0.0" />
         </xacro:if>
       </xacro:unless>
       <xacro:if value="${joint_limited}">
-        <limit lower="${wrist_1_lower_limit}" upper="${wrist_1_upper_limit}" effort="28.0" velocity="6.28" />
+        <limit lower="${wrist_1_lower_limit}" upper="${wrist_1_upper_limit}" effort="28.0"
+          velocity="6.28" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${wrist_1_lower_limit + safety_pos_margin}" soft_upper_limit="${wrist_1_upper_limit - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${wrist_1_lower_limit + safety_pos_margin}"
+            soft_upper_limit="${wrist_1_upper_limit - safety_pos_margin}"
+            k_position="${safety_k_position}" k_velocity="0.0" />
         </xacro:if>
       </xacro:if>
       <dynamics damping="0.0" friction="0.0" />
@@ -283,13 +316,18 @@
       <xacro:unless value="${joint_limited}">
         <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="28.0" velocity="6.28" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}" soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}"
+            soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}"
+            k_velocity="0.0" />
         </xacro:if>
       </xacro:unless>
       <xacro:if value="${joint_limited}">
-        <limit lower="${wrist_2_lower_limit}" upper="${wrist_2_upper_limit}" effort="28.0" velocity="6.28" />
+        <limit lower="${wrist_2_lower_limit}" upper="${wrist_2_upper_limit}" effort="28.0"
+          velocity="6.28" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${wrist_2_lower_limit + safety_pos_margin}" soft_upper_limit="${wrist_2_upper_limit - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${wrist_2_lower_limit + safety_pos_margin}"
+            soft_upper_limit="${wrist_2_upper_limit - safety_pos_margin}"
+            k_position="${safety_k_position}" k_velocity="0.0" />
         </xacro:if>
       </xacro:if>
       <dynamics damping="0.0" friction="0.0" />
@@ -322,13 +360,18 @@
       <xacro:unless value="${joint_limited}">
         <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="28.0" velocity="6.28" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}" soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}"
+            soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}"
+            k_velocity="0.0" />
         </xacro:if>
       </xacro:unless>
       <xacro:if value="${joint_limited}">
-        <limit lower="${wrist_3_lower_limit}" upper="${wrist_3_upper_limit}" effort="28.0" velocity="6.28" />
+        <limit lower="${wrist_3_lower_limit}" upper="${wrist_3_upper_limit}" effort="28.0"
+          velocity="6.28" />
         <xacro:if value="${safety_limits}">
-          <safety_controller soft_lower_limit="${wrist_3_lower_limit + safety_pos_margin}" soft_upper_limit="${wrist_3_upper_limit - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0" />
+          <safety_controller soft_lower_limit="${wrist_3_lower_limit + safety_pos_margin}"
+            soft_upper_limit="${wrist_3_upper_limit - safety_pos_margin}"
+            k_position="${safety_k_position}" k_velocity="0.0" />
         </xacro:if>
       </xacro:if>
       <dynamics damping="0.0" friction="0.0" />
@@ -368,8 +411,16 @@
       </collision>
     </link>
 
-    <!-- add gripper part -->
-    <!-- <link name="${prefix}gripper_link">
+    <!-- add gripper part start
+    ###################################################################-->
+
+    <!-- FOR THE GRIPPER (toogle gripper parts in):
+    ur_e_description/urdf/ur.transmission.xacro
+    ur_e_description/urdf/ur5e.urdf.xacro
+    ur_e_gazebo/launch/ur5.launch
+    ur5_e_moveit_config/config/ur5e.srdf -->
+
+    <link name="${prefix}gripper_link">
       <visual>
         <geometry>
           <mesh filename="package://ur_e_description/meshes/ur5e/visual/weiss-mount.dae" />
@@ -462,8 +513,22 @@
       <limit lower="0" upper="0.03078" effort="100" velocity="0.05" />
       <parent link="${prefix}gripper_link" />
       <child link="${prefix}right_finger_link" />
-    </joint> -->
-    <!-- add gripper part -->
+    </joint>
+    <!-- add gripper part end ###################################################################-->
+
+    <!-- SENSOR CAMERA ON END EFFECTOR -->
+
+    <!-- Files to add sensor camera on end-effector:
+    ur.gazebo.xacro
+    ur5e.urdf.xacro -->
+
+    <xacro:include filename="$(find ur_e_description)/urdf/astra.urdf.xacro" />
+    <xacro:sensor_astra parent="ee_link" prefix="camera">
+      <origin xyz="0.06 -0.05 0.05"
+        rpy="${-pi} -0.0 0.0" />
+    </xacro:sensor_astra>
+    <!-- SENSOR CAMERA ON END EFFECTOR -->
+
 
     <xacro:ur_arm_transmission prefix="${prefix}" />
     <xacro:ur_arm_gazebo prefix="${prefix}" />

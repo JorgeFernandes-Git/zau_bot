@@ -14,7 +14,11 @@
             </contact>
             <plugin name="base_link_contact_sensor_plugin" filename="libgazebo_ros_bumper.so">
                 <bumperTopicName>contact</bumperTopicName>
+
+                <!-- toogle this part to move the AGV in odom -->
+                <!-- <frameName>base_footprint</frameName> -->
                 <frameName>world</frameName>
+
             </plugin>
         </sensor>
     </gazebo>
@@ -102,9 +106,17 @@
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <odometryFrame>odom</odometryFrame>
+
+            <!-- toogle this part to move the AGV in odom -->
+            <!-- <odometrySource>base_footprint</odometrySource> -->
             <odometrySource>world</odometrySource>
+
             <publishOdomTF>true</publishOdomTF>
-            <robotBaseFrame>base_footprint</robotBaseFrame>
+
+            <!-- toogle this part to move the AGV in odom -->
+            <!-- <robotBaseFrame>base_footprint</robotBaseFrame> -->
+            <robotBaseFrame>world</robotBaseFrame>
+
             <publishWheelTF>false</publishWheelTF>
             <publishTf>true</publishTf>
             <publishWheelJointState>true</publishWheelJointState>
@@ -191,7 +203,7 @@
     <!-- add sensor camera part -->
 
     <!-- lidar sensor front -->
-    <gazebo reference="base_scan_front">
+    <!-- <gazebo reference="base_scan_front">
         <material>Gazebo/DarkGrey</material>
         <sensor type="ray" name="lds_lfcd_sensor_front">
             <pose>0 0 0 0 0 0</pose>
@@ -222,11 +234,11 @@
                 <frameName>base_scan_front</frameName>
             </plugin>
         </sensor>
-    </gazebo>
+    </gazebo> -->
     <!-- lidar sensor front -->
 
     <!-- lidar sensor back -->
-    <gazebo reference="base_scan_back">
+    <!-- <gazebo reference="base_scan_back">
         <material>Gazebo/DarkGrey</material>
         <sensor type="ray" name="lds_lfcd_sensor_back">
             <pose>0 0 0 0 0 0</pose>
@@ -257,7 +269,7 @@
                 <frameName>base_scan_back</frameName>
             </plugin>
         </sensor>
-    </gazebo>
+    </gazebo> -->
     <!-- lidar sensor back -->
 
 

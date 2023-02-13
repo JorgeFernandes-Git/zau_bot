@@ -3,68 +3,92 @@
   <xacro:include filename="$(find ur_e_description)/urdf/ur.gazebo.xacro" />
 
   <!-- Xacro properties -->
-  <xacro:property name="astra_cam_py" value="-0.0125"/>
+  <xacro:property name="astra_cam_py" value="-0.0125" />
   <xacro:property name="astra_depth_rel_rgb_py" value="0.0250" />
-  <xacro:property name="astra_cam_rel_rgb_py"   value="-0.0125" />
-  <xacro:property name="astra_dae_display_scale"   value="0.1" />
-  
+  <xacro:property name="astra_cam_rel_rgb_py" value="-0.0125" />
+  <xacro:property name="astra_dae_display_scale" value="0.1" />
+
   <!-- Parameterised in part by the values in turtlebot_properties.urdf.xacro -->
   <xacro:macro name="sensor_astra" params="parent prefix *origin">
     <joint name="${prefix}_joint" type="fixed">
       <xacro:insert_block name="origin" />
-      <parent link="${parent}"/>
-      <child link="${prefix}_link"/>
+      <parent link="${parent}" />
+      <child link="${prefix}_link" />
     </joint>
     <link name="${prefix}_link">
-      <visual>
+      <!-- <visual>
         <origin xyz="-0.03 -0.06 0" rpy="${pi} 0 ${pi/2}"/>
         <geometry>
           <mesh filename="package://ur_e_description/meshes/sensors/astra2.dae" scale="1 1 1"/>
         </geometry>
-      </visual>
+      </visual> -->
       <collision>
         <!-- <origin xyz="0.0 0.0 0.0" rpy="0 0 0" /> -->
-        <origin xyz="-0.01 -0.06 0" rpy="0 0 0"/>
+        <origin xyz="-0.01 -0.06 0" rpy="0 0 0" />
         <geometry>
-        <box size="0.0400 0.1650 0.0300"/>
-      </geometry>
+          <box size="0.0400 0.1650 0.0300" />
+        </geometry>
       </collision>
       <inertial>
         <mass value="0.564" />
         <origin xyz="0 0 0" />
         <inertia ixx="0.003881243" ixy="0.0" ixz="0.0"
-                 iyy="0.000498940" iyz="0.0"
-                 izz="0.003879257" />
+          iyy="0.000498940" iyz="0.0"
+          izz="0.003879257" />
       </inertial>
     </link>
 
+    <!-- add to improve set initial pose on atom -->
+    <gazebo reference="${prefix}_link">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
     <joint name="${prefix}_rgb_joint" type="fixed">
       <origin xyz="0 -0.045 0" rpy="0 0 0" />
-      <parent link="${prefix}_link"/>
+      <parent link="${prefix}_link" />
       <child link="${prefix}_rgb_frame" />
     </joint>
-    <link name="${prefix}_rgb_frame"/>
+    <link name="${prefix}_rgb_frame" />
 
     <joint name="${prefix}_rgb_optical_joint" type="fixed">
       <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}" />
       <parent link="${prefix}_rgb_frame" />
       <child link="${prefix}_rgb_optical_frame" />
     </joint>
-    <link name="${prefix}_rgb_optical_frame"/>
+
+    <!-- add to improve set initial pose on atom -->
+    <link name="${prefix}_rgb_optical_frame">
+      <visual>
+        <origin xyz="0.0 0.0 -0.03" rpy="${pi/2} 0 0" />
+        <geometry>
+          <mesh filename="package://t2rgb_description/meshes/sensors/astra2.dae" scale="1 1 1" />
+        </geometry>
+      </visual>
+    </link>
 
     <joint name="${prefix}_depth_joint" type="fixed">
-        <origin xyz="0 -0.02 0" rpy="0 0 0" />
-        <parent link="${prefix}_link" />
-        <child link="${prefix}_depth_frame" />
+      <origin xyz="0 -0.02 0" rpy="0 0 0" />
+      <parent link="${prefix}_link" />
+      <child link="${prefix}_depth_frame" />
     </joint>
-    <link name="${prefix}_depth_frame"/>
+    <link name="${prefix}_depth_frame" />
 
     <joint name="${prefix}_depth_optical_joint" type="fixed">
-        <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}" />
-        <parent link="${prefix}_depth_frame" />
-        <child link="${prefix}_depth_optical_frame" />
+      <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}" />
+      <parent link="${prefix}_depth_frame" />
+      <child link="${prefix}_depth_optical_frame" />
     </joint>
-    <link name="${prefix}_depth_optical_frame"/>
+
+       <!-- add to improve set initial pose on atom -->
+       <link name="${prefix}_depth_optical_frame">
+        <!-- <visual>
+          <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+          <geometry> -->
+            <!-- Use a slightly smaller scale than 1, so that when both models overlap its the rgb that appears.-->
+            <!-- <mesh filename="package://t2rgb_description/meshes/sensors/astra2.dae" scale="0.98 0.98 0.98" />
+          </geometry>
+        </visual> -->
+      </link>
 
     <xacro:sim_3dsensor prefix="${prefix}" />
 

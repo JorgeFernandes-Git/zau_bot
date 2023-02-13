@@ -6,27 +6,38 @@
 
   <arg name="robot_name" default="robot_UR5_MB" />
   <arg name="x_pos" default="0.0" />
-  <arg name="y_pos" default="-2.0" />
+  <arg name="y_pos" default="0.0" />
   <arg name="z_pos" default="0.0" />
   <arg name="roll" default="0" />
   <arg name="pitch" default="0" />
   <arg name="yaw" default="0.0" />
 
-  <!-- startup simulated world -->
+  <!-- startup simulated world ########################################### -->
   <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" default="worlds/empty.world" />
     <arg name="paused" value="$(arg paused)" />
     <arg name="gui" value="$(arg gui)" />
   </include> -->
 
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find ur_e_gazebo)/worlds/turtlebot3_house.world" />
     <arg name="paused" value="$(arg paused)" />
     <arg name="use_sim_time" value="true" />
     <arg name="gui" value="$(arg gui)" />
     <arg name="headless" value="false" />
     <arg name="debug" value="false" />
+  </include> -->
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find ur_e_gazebo)/worlds/larcc.world" />
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="use_sim_time" value="true" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="headless" value="false" />
+    <arg name="debug" value="false" />
   </include>
+  <!-- startup simulated world ########################################### -->
+
 
   <!-- send robot urdf to param server -->
   <include file="$(find ur_e_description)/launch/ur5e_upload.launch">
@@ -34,20 +45,33 @@
   </include>
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model $(arg robot_name) 
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model"
+    args="-urdf -param robot_description -model $(arg robot_name) 
   -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)
-  -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" respawn="false" output="screen" />
+  -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"
+    respawn="false" output="screen" />
 
   <include file="$(find ur_e_gazebo)/launch/controller_utils.launch" />
 
   <!-- start this controller -->
   <rosparam file="$(find ur_e_gazebo)/controller/arm_controller_ur5e.yaml" command="load" />
-  <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" respawn="false" output="screen" />
+  <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager"
+    args="spawn arm_controller" respawn="false" output="screen" />
 
   <!-- load other controllers -->
-  <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_position_controller" />
+  <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager"
+    respawn="false" output="screen" args="load joint_group_position_controller" />
 
-  <!-- start a fake weiss gripper -->
-  <!-- <node name="fake_gripper" pkg="ur_e_gazebo" type="fake_wr-cr200-85.py" respawn="true" output="log" /> -->
+  <!-- start a fake weiss gripper 
+    
+    FOR THE GRIPPER (toogle gripper parts in):
+    ur_e_description/urdf/ur.transmission.xacro
+    ur_e_description/urdf/ur5e.urdf.xacro
+    ur_e_gazebo/launch/ur5.launch
+    ur5_e_moveit_config/config/ur5e.srdf
+  
+  -->
+
+  <node name="fake_gripper" pkg="ur_e_gazebo" type="fake_wr-cr200-85.py" respawn="true" output="log" />
 
 </launch>

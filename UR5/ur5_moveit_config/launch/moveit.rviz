@@ -230,7 +230,11 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_footprint
+
+    # <!-- toogle this part to move the AGV in odom -->
+    # Fixed Frame: base_footprint
+    Fixed Frame: world
+    
     Frame Rate: 30
   Name: root
   Tools:

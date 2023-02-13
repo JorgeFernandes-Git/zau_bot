@@ -20,4 +20,7 @@
         <arg name="config" value="$(arg config)" />
     </include>
 
+      <!-- Start interactive positioning of pattern -->
+      <node name="interactive_pattern" pkg="zau_bot_bringup" type="interactive_pattern" output="screen"/>
+
 </launch>
