@@ -1,6 +1,6 @@
 Calibration of an RGB astra camera mounted on the end-effector of the manipulator. https://github.com/JorgeFernandes-Git/zau_bot/issues/3
 
-![T_rgb_ee_objs](https://user-images.githubusercontent.com/80167550/218584285-7e6b79a4-c56f-4318-88d3-bd7acb1c98fe.png)
+![T_rgb_ee_graph](https://user-images.githubusercontent.com/80167550/218584440-05ee7397-67bf-46c9-8830-006ab8abd658.png)
 ![T_rgb_ee](https://user-images.githubusercontent.com/80167550/218582316-1aafdbf4-8685-4c01-b51a-128b5d56c6fa.png)
 ![T_rgb_ee_objs](https://user-images.githubusercontent.com/80167550/218583118-9471e054-4b94-443e-b9b6-04141e8bef9c.png)
 
