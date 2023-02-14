@@ -1,6 +1,14 @@
 ## Calibration of an RGB astra camera mounted on the end-effector of the manipulator. https://github.com/JorgeFernandes-Git/zau_bot/issues/3
 _______________________________
 
+Summary: 
+* Using ATOM framework to perform eye-on-hand calibration. 
+* Eye-on-hand is a calibration problem that aims to determine the transformastion between a camera and a end-effetor.
+* The camera used was a depth astra. 
+* The calibration used a total of 15 collections.
+* The output is a URDF file with the optimized pose of the camera related to the end-effector. 
+
+_______________________________
 Launch optimized URDF mobile manipulator (AGV connected to world, it will not move):
 
     roslaunch e0_rgb2ee_optimized e0_rgb2ee_optimized.launch 
@@ -62,6 +70,10 @@ Evaluation procedure: https://youtu.be/7iKA81g-aNs
 _______________________________
 
 ## Commands:
+
+Record bag file:
+
+    roslaunch e0_rgb2ee_calibration record_sensor_data.launch
 
 Play dataset:
 
