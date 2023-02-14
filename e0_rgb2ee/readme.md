@@ -13,6 +13,8 @@ Evaluate two datasets:
 
 Evaluation procedure: https://youtu.be/7iKA81g-aNs
 
+Evaluation Resultas: https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e0_rgb2ee/results.md
+
 _______________________________
 
 Calibration Results per collection:
@@ -54,6 +56,8 @@ Record bag file: https://youtu.be/mwAtXrQm8c4
 Data collection: https://youtu.be/W_WFggovr9w
 
 Run calibration: https://youtu.be/PX7BX9yNxMc
+
+Evaluation procedure: https://youtu.be/7iKA81g-aNs
 
 _______________________________
 
