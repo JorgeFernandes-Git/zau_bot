@@ -1,3 +1,7 @@
+Launch optimized URDF mobile manipulator (AGV connected to world, it will note move):
+
+    roslaunch e0_rgb2ee_optimized e0_rgb2ee_optimized.launch 
+
 Calibration of an RGB astra camera mounted on the end-effector of the manipulator. https://github.com/JorgeFernandes-Git/zau_bot/issues/3
 
 ![T_rgb_ee_graph](https://user-images.githubusercontent.com/80167550/218584440-05ee7397-67bf-46c9-8830-006ab8abd658.png)
