@@ -10,8 +10,8 @@ Evaluate two datasets:
 
 Evaluation procedure: https://youtu.be/7iKA81g-aNs
 
-| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm) | Rot (deg) |
-|:---:||:---:||:---:||:---:||:---:||:---:|
+| Collection | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm) | Rot (deg) |
+| :-------------: | :---: | :---: | :---: | :---: | :---: |
 |   000-001    |   0.4073  |    0.1678   |    0.1205   |   0.2871   |   0.1352  |
 |   000-002    |   0.4707  |    0.2488   |    0.2651   |   0.9067   |   0.1800  |
 |   000-003    |   1.0025  |    0.1987   |    0.9375   |   3.4385   |   0.3109  |
