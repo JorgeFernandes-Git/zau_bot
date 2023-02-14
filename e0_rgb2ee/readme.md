@@ -13,7 +13,7 @@ Evaluate two datasets:
 
 Evaluation procedure: https://youtu.be/7iKA81g-aNs
 
-Evaluation Resultas: https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e0_rgb2ee/results.md
+Evaluation Results: https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e0_rgb2ee/results.md
 
 _______________________________
 
