@@ -1,4 +1,4 @@
-Launch optimized URDF mobile manipulator (AGV connected to world, it will note move):
+Launch optimized URDF mobile manipulator (AGV connected to world, it will not move):
 
     roslaunch e0_rgb2ee_optimized e0_rgb2ee_optimized.launch 
 
