@@ -10,7 +10,7 @@
   <arg name="z_pos" default="0.0" />
   <arg name="roll" default="0" />
   <arg name="pitch" default="0" />
-  <arg name="yaw" default="0.0" />
+  <arg name="yaw" default="3.14" />
 
   <!-- startup simulated world ########################################### -->
   <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
