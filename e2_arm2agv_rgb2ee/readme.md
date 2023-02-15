@@ -6,3 +6,7 @@ _______________________________
 Record bag file:
 
     roslaunch e0_rgb2ee_calibration record_sensor_data.launch
+
+Run script for move the manipulator:
+
+    rosrun zau_bot_bringup execute_trajectories 
