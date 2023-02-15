@@ -168,13 +168,15 @@ def save_poses():
     # print(poses)
 
     if poses.size > 0:
-        poses = np.concatenate((poses, [group_variable_values]), axis=0)
+        if group_variable_values[0] != 0:
+            poses = np.concatenate((poses, [group_variable_values]), axis=0)
+            print(poses)
+        else:
+            print("Fail to get joints poses")
     else:
         poses = np.array([group_variable_values])
 
     np.savetxt("/home/jorge/catkin_ws/src/zau_bot/zau_bot_bringup/scripts/execute_trajectories/poses_np.csv", poses, delimiter=",")
-    
-    print(poses)
 
 
 def run_poses():
