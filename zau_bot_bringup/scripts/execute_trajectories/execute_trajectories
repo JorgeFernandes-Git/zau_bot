@@ -48,7 +48,7 @@ def assign_joint_value(joint_0, joint_1, joint_2, joint_3, joint_4, joint_5):
 
     plan1 = group.plan()  # call plan function to plan the path (visualize on rviz)
     group.go(wait=True)  # execute plan on real/simulation (gazebo) robot
-    rospy.sleep(5)  # sleep 2 seconds
+    rospy.sleep(5)  # sleep 5 seconds
 
 
 ##___POSE TARGET MANIPULATION___###
@@ -191,9 +191,9 @@ if __name__ == '__main__':
     try:
         # examples
         # assign_joint_value(2,-1,-1,-2,3,1.5)
-        # relative_joint_value(0,0,0,0,0,3.14)
         # assign_pose_target(-0.52, 0.1166, 0.22434, 0.0, 0.707, -0.707, 0.0)
         # relative_joint_value(0.1,0.1,-0.5,0,0.5,0.5)
+        # relative_pose_target()
         # manipulator_status()
 
         # save_poses() # save poses from rviz
