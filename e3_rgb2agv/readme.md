@@ -2,7 +2,6 @@
 _______________________________
 
 ## Commands:
-
 Launch AGV for calibration:
 
     roslaunch zau_bot_bringup moving_base_odom.launch calibration_pattern:=true
@@ -19,4 +18,7 @@ Record bag file:
 
     rosrun atom_calibration configure_calibration_pkg -n e3_rgb2agv_calibration -utf
 
- 
+_______________________________
+## Videos:
+
+Recording bag file:
