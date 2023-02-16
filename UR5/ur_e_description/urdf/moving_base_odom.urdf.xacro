@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<robot name="moving_base" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find ur_e_description)/urdf/properties.xacro" />
+    <xacro:include filename="$(find ur_e_description)/urdf/moving_base_odom.gazebo.xacro" />
+
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+
+    <!-- testing adding a velodyne laser  -->
+    <!-- VLP-16 -->
+    <!-- velodyne -->
+    <!-- <xacro:arg name="gpu" default="false" />
+    <xacro:property name="gpu" value="$(arg gpu)" />
+    <xacro:arg name="organize_cloud" default="false" />
+    <xacro:property name="organize_cloud" value="$(arg organize_cloud)" />
+
+    <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro" />
+    <xacro:VLP-16 parent="base_link_mb" name="velodyne" topic="/velodyne_points"
+    organize_cloud="${organize_cloud}" hz="10" samples="440" gpu="${gpu}">
+        <origin xyz="-0.350 -0.250 0.850" rpy="0 0 0" />
+    </xacro:VLP-16> -->
+    <!-- velodyne -->
+
+    <!-- testing adding a sensor camera -->
+    <xacro:include filename="$(find ur_e_description)/urdf/astra.urdf.xacro" />
+    <xacro:sensor_astra parent="base_link_mb" prefix="camera_mb">
+        <origin xyz="-0.350 0.180 0.870"
+            rpy="0 0 3.14" />
+    </xacro:sensor_astra>
+
+    <link name="base_footprint" />
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link_mb" />
+        <origin xyz="0 0 0.010" rpy="0 0 0" />
+    </joint>
+
+    <link name="base_link_mb">
+        <visual>
+            <origin xyz="-0.43 -0.33 0.03" rpy="${M_PI/2} 0 ${M_PI/2}" />
+            <geometry>
+                <!-- <box size="0.900 0.600 0.770" /> -->
+                <!-- <box size="0.900 0.650 0.770" /> -->
+                <mesh filename="package://ur_e_description/meshes/moving_base/moving_base.STL"
+                    scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="light_black" />
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0.459" rpy="0 0 0" />
+            <geometry>
+                <box size="0.900 0.600 0.770" />
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- Inertial link stores the robot's inertial information -->
+    <link name="inertial_link">
+        <inertial>
+            <mass value="100" />
+            <origin xyz="-0.00065 -0.085 0.062" />
+            <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544"
+                izz="2.0296" />
+        </inertial>
+    </link>
+
+    <joint name="inertial_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="base_link_mb" />
+        <child link="inertial_link" />
+    </joint>
+
+    <!-- #################### wheels #################### -->
+    <joint name="wheel_left_joint" type="continuous">
+        <parent link="base_link_mb" />
+        <child link="wheel_left_link" />
+        <origin xyz="0.0 0.325 0.074" rpy="-1.57 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="wheel_left_link">
+        <visual>
+            <origin xyz="0 0 -0.055" rpy="-1.57 0 0" />
+            <geometry>
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl"
+                    scale="0.0025 0.0025 0.0025" />
+            </geometry>
+            <material name="dark" />
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="0.044" radius="0.084" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="2.637" />
+            <inertia  ixx="0.02467" ixy="0" ixz="0" iyy="0.04411" iyz="0" izz="0.02467" />
+        </inertial>
+    </link>
+
+    <joint name="wheel_right_joint" type="continuous">
+        <parent link="base_link_mb" />
+        <child link="wheel_right_link" />
+        <origin xyz="0.0 -0.325 0.074" rpy="-1.57 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="wheel_right_link">
+        <visual>
+            <origin xyz="0 0 0.055" rpy="1.57 0 0" />
+            <geometry>
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl"
+                    scale="0.0025 0.0025 0.0025" />
+            </geometry>
+            <material name="dark" />
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="0.044" radius="0.084" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="2.637" />
+            <inertia  ixx="0.02467" ixy="0" ixz="0" iyy="0.04411" iyz="0" izz="0.02467" />
+        </inertial>
+    </link>
+
+    <!-- back caster -->
+    <joint name="caster_back_right_joint" type="fixed">
+        <parent link="base_link_mb" />
+        <child link="caster_back_right_link" />
+        <origin xyz="-0.345 -0.190 -0.004" rpy="-1.57 0 0" />
+    </joint>
+
+    <link name="caster_back_right_link">
+        <visual>
+            <origin xyz="0.027 -0.06 0" rpy="1.57 0 0" />
+            <geometry>
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl"
+                    scale="0.0020 0.0020 0.0020" />
+                <!-- <cylinder length="0.024" radius="0.084" /> -->
+            </geometry>
+            <material name="dark" />
+        </visual>
+
+        <collision>
+            <origin xyz="0 0.001 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.030 0.009 0.078" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="0.005" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                iyy="0.001" iyz="0.0"
+                izz="0.001" />
+        </inertial>
+    </link>
+
+    <joint name="caster_back_left_joint" type="fixed">
+        <parent link="base_link_mb" />
+        <child link="caster_back_left_link" />
+        <origin xyz="-0.345 0.190 -0.004" rpy="-1.57 0 0" />
+    </joint>
+
+    <link name="caster_back_left_link">
+        <visual>
+            <origin xyz="0.027 -0.06 0" rpy="-1.57 0 0" />
+            <geometry>
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl"
+                    scale="0.0020 0.0020 0.0020" />
+                <!-- <cylinder length="0.024" radius="0.084" /> -->
+            </geometry>
+            <material name="dark" />
+        </visual>
+
+        <collision>
+            <origin xyz="0 0.001 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.030 0.009 0.078" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="0.005" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                iyy="0.001" iyz="0.0"
+                izz="0.001" />
+        </inertial>
+    </link>
+    <!-- back caster -->
+
+    <!-- front caster -->
+    <joint name="caster_front_right_joint" type="fixed">
+        <parent link="base_link_mb" />
+        <child link="caster_front_right_link" />
+        <origin xyz="0.345 -0.190 -0.004" rpy="-1.57 0 0" />
+    </joint>
+
+    <link name="caster_front_right_link">
+        <visual>
+            <origin xyz="0 -0.06 0" rpy="1.57 0 0" />
+            <geometry>
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl"
+                    scale="0.0020 0.0020 0.0020" />
+                <!-- <cylinder length="0.024" radius="0.084" /> -->
+            </geometry>
+            <material name="dark" />
+        </visual>
+
+        <collision>
+            <origin xyz="0 0.001 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.030 0.009 0.078" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="0.005" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                iyy="0.001" iyz="0.0"
+                izz="0.001" />
+        </inertial>
+    </link>
+
+    <joint name="caster_front_left_joint" type="fixed">
+        <parent link="base_link_mb" />
+        <child link="caster_front_left_link" />
+        <origin xyz="0.345 0.190 -0.004" rpy="-1.57 0 0" />
+    </joint>
+
+    <link name="caster_front_left_link">
+        <visual>
+            <origin xyz="0 -0.06 0" rpy="-1.57 0 0" />
+            <geometry>
+                <mesh filename="package://ur_e_description/meshes/wheels/left_tire.stl"
+                    scale="0.0020 0.0020 0.0020" />
+                <!-- <cylinder length="0.024" radius="0.084" /> -->
+            </geometry>
+            <material name="dark" />
+        </visual>
+
+        <collision>
+            <origin xyz="0 0.001 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.030 0.009 0.078" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="0.005" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                iyy="0.001" iyz="0.0"
+                izz="0.001" />
+        </inertial>
+    </link>
+    <!-- front caster -->
+
+    <joint name="imu_joint" type="fixed">
+        <parent link="base_link_mb" />
+        <child link="imu_link" />
+        <origin xyz="0.0 0 0.068" rpy="0 0 0" />
+    </joint>
+
+    <link name="imu_link" />
+
+<!-- ROMEVED FOR NOW - JORGE FEB 2023 -->
+    <!-- lidar sensor front -->
+    <!-- <joint name="scan_joint_front" type="fixed">
+        <parent link="base_link_mb" />
+        <child link="base_scan_front" />
+        <origin xyz="-0.700 0 0.180" rpy="0 0 ${M_PI/4}" />
+    </joint>
+
+    <link name="base_scan_front">
+        <collision>
+            <origin xyz="0.015 0 -0.0065" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="0.0315" radius="0.055" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.114" />
+            <origin xyz="0 0 0" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+    </link> -->
+    <!-- lidar sensor front -->
+
+    <!-- lidar sensor back -->
+    <!-- <joint name="scan_joint_back" type="fixed">
+        <parent link="base_link_mb" />
+        <child link="base_scan_back" />
+        <origin xyz="0.700 0 0.180" rpy="0 0 -${3*M_PI/4}" />
+    </joint>
+
+    <link name="base_scan_back">
+        <collision>
+            <origin xyz="0.015 0 -0.0065" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="0.0315" radius="0.055" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.114" />
+            <origin xyz="0 0 0" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+    </link> -->
+    <!-- lidar sensor back -->
+    <!-- ROMEVED FOR NOW - JORGE FEB 2023 -->
+</robot>
