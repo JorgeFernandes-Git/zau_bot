@@ -73,7 +73,7 @@ _______________________________
 
 Record bag file:
 
-    roslaunch e0_rgb2ee_calibration record_sensor_data.launch
+    roslaunch e0_rgb2ee_record_bag record_sensor_data.launch
 
 Run script for move the manipulator:
 
