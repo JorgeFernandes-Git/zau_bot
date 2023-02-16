@@ -3,8 +3,8 @@ Transformation from camera to end-effector was previously calculated in e0_rgb2e
 _______________________________
 
 Summary: 
-* Using ATOM framework to manipulator to AGV calibration. 
-* Aims to find the transformation of the base's manipulator w.r.t the AGV.
+* Using ATOM framework to perform manipulator to AGV calibration. 
+* Aims to determine the transformation of the base's manipulator w.r.t the AGV.
 * The camera used was a depth astra. 
 * The calibration used a total of 50 collections.
 * The optimization didn't converge (see videos).

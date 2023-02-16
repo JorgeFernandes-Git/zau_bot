@@ -1,4 +1,12 @@
-## Calibration of an RGB astra camera mounted on the AGV (sensor in motion calibration).
+## Calibration of an RGB astra camera mounted on the AGV (sensor in motion calibration). https://github.com/JorgeFernandes-Git/zau_bot/issues/6
+_______________________________
+
+Summary: 
+* Using ATOM framework to perform RGB camera to AGV calibration. 
+* Aims to determine the transformation of the camera w.r.t. the AGV.
+* The camera used was a depth astra. 
+* The calibration used a total of 35 collections.
+* The output is a URDF file with the optimized pose of the camera related to the AGV. 
 _______________________________
 
 ![summary tree](https://user-images.githubusercontent.com/80167550/219402639-d1685718-bc4e-4581-922e-daabb3d56d81.png)
