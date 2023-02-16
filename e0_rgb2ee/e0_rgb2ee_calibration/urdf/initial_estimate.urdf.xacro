@@ -63,7 +63,7 @@
   <!-- <xacro:table_macro name="table" parent="world" width="${table_width}"
     lenght="${table_lenght}" height="${table_height}"
     tabletop_thickness="${table_tabletop_thickness}" leg_radius="${table_leg_radius}">
-    <origin xyz="-1 0 0" rpy="0 0 ${M_PI/2}" />
+    <origin xyz="-1 0 0" rpy="0 0 1.57" />
   </xacro:table_macro> -->
 
   <!--  Place robot on top of the table -->
