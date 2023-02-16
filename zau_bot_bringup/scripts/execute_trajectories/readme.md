@@ -5,6 +5,8 @@ This script was developed to help record a bag file:
 The script reads a csv file with a list of number, where each line is composed by 6 numbers, each number corresponding to a joint in the manipulator.
 In other words, each line is a manipulator pose.
 
+______________________________________________
+
 **How to use:**
 
 _1._ The csv file already contains several poses, but to add new poses just uncomment this line and comment the line underneath:
