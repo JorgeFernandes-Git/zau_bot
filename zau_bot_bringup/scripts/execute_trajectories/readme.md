@@ -1,4 +1,4 @@
-This script was developed to help record a bag file:
+This script was developed to help record a bag file: https://github.com/JorgeFernandes-Git/zau_bot/issues/5
 
     rosrun zau_bot_bringup execute_trajectories
 
