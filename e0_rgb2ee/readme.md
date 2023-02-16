@@ -3,7 +3,7 @@ _______________________________
 
 Summary: 
 * Using ATOM framework to perform eye-on-hand calibration. 
-* Eye-on-hand is a calibration problem that aims to determine the transformastion between a camera and a end-effetor.
+* Eye-on-hand is a calibration problem that aims to determine the transformation between a camera and a end-effector.
 * The camera used was a depth astra. 
 * The calibration used a total of 15 collections.
 * The output is a URDF file with the optimized pose of the camera related to the end-effector. 
