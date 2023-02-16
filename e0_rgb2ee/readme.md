@@ -9,6 +9,7 @@ Summary:
 * The output is a URDF file with the optimized pose of the camera related to the end-effector. 
 
 _______________________________
+
 Launch optimized URDF mobile manipulator (AGV connected to world, it will not move):
 
     roslaunch e0_rgb2ee_optimized e0_rgb2ee_optimized.launch 
@@ -25,7 +26,7 @@ Evaluation Results: https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e0_r
 
 _______________________________
 
-Calibration Results per collection:
+## Calibration Results per collection:
 
 | Collection | Camera (px) |
 | :-------------: | :-------------: |
@@ -50,27 +51,19 @@ Calibration Results per collection:
 _______________________________
 
 ## Calibration tree and Transformation RGB to End-Effector:
-
 ![T_rgb_ee_graph](https://user-images.githubusercontent.com/80167550/218584440-05ee7397-67bf-46c9-8830-006ab8abd658.png)
 ![T_rgb_ee](https://user-images.githubusercontent.com/80167550/218582316-1aafdbf4-8685-4c01-b51a-128b5d56c6fa.png)
 ![T_rgb_ee_objs](https://user-images.githubusercontent.com/80167550/218583118-9471e054-4b94-443e-b9b6-04141e8bef9c.png)
-
 _______________________________
 
 ## Videos:
-
 Record bag file: https://youtu.be/mwAtXrQm8c4
-
 Data collection: https://youtu.be/W_WFggovr9w
-
 Run calibration: https://youtu.be/PX7BX9yNxMc
-
 Evaluation procedure: https://youtu.be/7iKA81g-aNs
-
 _______________________________
 
 ## Commands:
-
 Record bag file:
 
     roslaunch e0_rgb2ee_record_bag record_sensor_data.launch
