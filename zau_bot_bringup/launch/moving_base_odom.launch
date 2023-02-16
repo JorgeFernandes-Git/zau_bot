@@ -29,7 +29,7 @@
     <arg name="debug" value="false" />
   </include> -->
 
-  <include
+    <include
         file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(find ur_e_gazebo)/worlds/larcc.world" />
         <arg name="paused" value="$(arg paused)" />
@@ -64,4 +64,6 @@
     <group if="$(arg calibration_pattern)">
         <node name="interactive_pattern" pkg="zau_bot_bringup" type="interactive_pattern"
             output="screen" />
-    </group>($ arg calibration_pattern)" </launch>
+    </group>
+
+</launch>
