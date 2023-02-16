@@ -1,4 +1,4 @@
-## Calibration of an RGB astra camera mounted on the AGV (sensor in motion calibration). https://github.com/JorgeFernandes-Git/zau_bot/issues/6
+## Calibration of an RGB astra camera mounted on the AGV (sensor in motion calibration). (Successful) https://github.com/JorgeFernandes-Git/zau_bot/issues/6
 _______________________________
 
 Summary: 
@@ -9,7 +9,9 @@ Summary:
 * The output is a URDF file with the optimized pose of the camera related to the AGV. 
 _______________________________
 
-Launch optimized ...
+Launch optimized URDF:
+
+    roslaunch e3_rgb2agv_optimized e3_rgb2agv_optimized.launch
 
 _______________________________
 
@@ -59,6 +61,8 @@ _______________________________
 ## Videos:
 Recording bag file: https://youtu.be/q7h5tL1suVE
 Playback dataset: https://youtu.be/sh7AZn0dUgA
+Run calibration: https://youtu.be/tBw2jvTYlb4
+Evaluation procedure:
 _______________________________
 
 ## Configure the calibration using the transformations in the bagfile instead of the ones produced by the xacro description:
