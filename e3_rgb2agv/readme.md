@@ -1,6 +1,7 @@
 ## Calibration of an RGB astra camera mounted on the AGV (sensor in motion calibration).
 _______________________________
 
+![summary tree](https://user-images.githubusercontent.com/80167550/219402639-d1685718-bc4e-4581-922e-daabb3d56d81.png)
 ![e3_rgb2agv](https://user-images.githubusercontent.com/80167550/219379619-d4686598-b031-4169-87ab-eb876562a648.png)
 ![e3_rgb2agv_2](https://user-images.githubusercontent.com/80167550/219379671-8de664b2-4733-48cf-a07e-b18378186642.png)
 _______________________________

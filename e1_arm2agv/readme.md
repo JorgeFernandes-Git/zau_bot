@@ -1,5 +1,5 @@
-## Single Calibrate a Manipulator with RGB astra camera on the end-effector, mounted on top of an AGV. (Unsuccessful)
-Transformation from camera to end-effector was was previously calculated in e0_rgb2ee.
+## Single Calibrate a Manipulator with RGB astra camera on the end-effector, mounted on top of an AGV. (Unsuccessful) https://github.com/JorgeFernandes-Git/zau_bot/issues/4
+Transformation from camera to end-effector was previously calculated in e0_rgb2ee.
 _______________________________
 
 Summary: 
