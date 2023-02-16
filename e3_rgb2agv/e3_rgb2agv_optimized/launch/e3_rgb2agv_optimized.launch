@@ -21,7 +21,7 @@
     </include>
 
     <param name="robot_description"
-        command="$(find xacro)/xacro --inorder $(find e3_rgb2agv_optimized)/urdf/e3_rgb2agv_optimized.urdf.xacro" />
+        command="$(find xacro)/xacro --inorder $(find e3_rgb2agv_optimized)/optimized/optimized_rgb2agv.urdf.xacro" />
 
     <!-- Send robot states to tf -->
     <node
