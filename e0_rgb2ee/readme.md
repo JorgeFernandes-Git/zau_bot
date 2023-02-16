@@ -1,4 +1,4 @@
-## Calibration of an RGB astra camera mounted on the end-effector of the manipulator. https://github.com/JorgeFernandes-Git/zau_bot/issues/3
+## Calibration of an RGB astra camera mounted on the end-effector of the manipulator. (Successful) https://github.com/JorgeFernandes-Git/zau_bot/issues/3
 _______________________________
 
 Summary: 
