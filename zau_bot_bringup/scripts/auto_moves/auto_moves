@@ -1,0 +1,289 @@
+#!/usr/bin/python3
+
+"""
+Script to move the manipulator and the AGV to automatic calibration
+Move the robot base on the pattern didn't work
+Sending different joint positions give the best result
+"""
+
+import rospy
+import cv2
+import numpy as np
+import sys
+import random
+
+from cv_bridge import CvBridge, CvBridgeError
+from geometry_msgs.msg import Twist
+from sensor_msgs.msg import Image
+
+import moveit_commander
+import moveit_msgs.msg
+from moveit_msgs.msg import MoveGroupActionFeedback
+import tf
+
+from std_msgs.msg import String
+
+
+# publisher
+cmd_vel_node = rospy.remap_name("cmd_vel")
+cmd_vel_pub = rospy.Publisher(cmd_vel_node, Twist, queue_size=10)
+
+# camera node
+camera_arm_node = rospy.remap_name("camera/rgb/image_raw")
+camera_AGV_node = rospy.remap_name("camera_mb/rgb/image_raw")
+
+##___INITIALIZATION___###
+rospy.init_node('auto_moves', anonymous=True)  # init node
+moveit_commander.roscpp_initialize(sys.argv)  # initialize the moveit commander
+robot = moveit_commander.RobotCommander()  # define the robot
+scene = moveit_commander.PlanningSceneInterface()  # define the scene
+# define the planning group (from the moveit packet 'manipulator' planning group)
+group = moveit_commander.MoveGroupCommander("manipulator")
+display_trajectory_publisher = rospy.Publisher(
+    '/move_group/display_planned_path', moveit_msgs.msg.DisplayTrajectory, queue_size=10)  # publisher that publishes a plan to the topic: '/move_group/display_planned_path'
+tf_listener = tf.TransformListener()
+tf_broadcaster = tf.TransformBroadcaster()
+
+# global variables
+poses = np.loadtxt(open(
+    "/home/jorge/catkin_ws/src/zau_bot/zau_bot_bringup/scripts/execute_trajectories/poses_np.csv"), ndmin=2, delimiter=",")
+n = 0
+pattern_first_flag = False
+detected_points_last = -1
+pose_dir = ["x", "y", "z"]
+dist_dir = 0.1
+robot_state = 'state: "IDLE"'
+
+
+class AutoMoves():
+
+    def __init__(self, show_camera_img=True):
+        self.image_data = None
+
+        self.speed = 0
+
+        self.turn = 0
+
+        self.twist = Twist()
+        self.bridge = CvBridge()
+        self.show_camera_img = show_camera_img
+
+    def image_callback(self, msg):
+        self.image_data = msg
+        self.overlap()
+
+    def camera_navigation(self):
+
+        global n, poses, pattern_first_flag, detected_points_last, pose_dir, dist_dir, robot_state
+
+        img = self.bridge.imgmsg_to_cv2(
+            self.image_data, desired_encoding='bgr8')
+
+        result = self.detect_pattern(img, equalize_histogram=False)
+        detected_points = self.draw_keypoints(img, result)
+
+        # trying to move the manipulator based on the number of detections didn't work
+        # print(detected_points)
+        # print(detected_points_last)
+        # if detected_points < detected_points_last:
+        #     dist_dir = -dist_dir
+        # self.relative_pose_target(pose_dir[random.randint(0, 2)], dist_dir)
+        # detected_points_last = detected_points
+        # # rospy.sleep(5)
+        # if detected_points_last == 88:
+        #     detected_points_last == 0
+
+        # print(robot_state)
+
+        # sending new poses pre recorded
+        # if detected_points > 80:
+        #     pattern_first_flag = True
+        # else:
+        #     n = n+1
+        #     if n > len(poses):
+        #         n = 0
+        # if detected_points < 40 and pattern_first_flag == False:
+        #     pattern_first_flag = False
+        # #     # number of points detected in the pattern
+        # #     print(detected_points)
+        #     self.assign_joint_value(
+        #         poses[n][0], poses[n][1], poses[n][2], poses[n][3], poses[n][4], poses[n][5])
+        # #     # moveit_commander.roscpp_shutdown()
+
+        # print(robot_state)
+
+        # using msg from move_group/feedback
+        if str(robot_state) == 'state: "IDLE"':
+            
+            if detected_points > 50:
+                rospy.sleep(5)
+
+            n = n+1
+            if n > len(poses):
+                n = 0
+            self.assign_joint_value(
+                poses[n][0], poses[n][1], poses[n][2], poses[n][3], poses[n][4], poses[n][5])
+            
+            # random mode is hard to land on the pattern
+            # self.assign_joint_value(random.uniform(-1.5,1.5),random.uniform(-1.5,1.5),random.uniform(-1.5,1.5),random.uniform(-1.5,1.5),random.uniform(-1.5,1.5),random.uniform(-1.5,1.5))
+
+            
+
+        if self.show_camera_img:
+            # show images
+            cv2.imshow("image", img)
+
+        k = cv2.waitKey(1) & 0xFF
+
+        return self.speed, self.turn
+
+    def publisher(self, speed, turn):
+        self.twist.linear.x = speed
+        self.twist.angular.z = -float(turn) / 500
+        cmd_vel_pub.publish(self.twist)
+
+    def overlap(self):
+        if self.image_data is not None:
+            try:
+                # ***************** camera code *************
+                self.speed, self.turn = self.camera_navigation()
+
+                # print(self.speed, self.turn)
+                self.publisher(speed=self.speed, turn=self.turn)
+
+            except CvBridgeError as e:
+                print(e)
+
+    def detect_pattern(self, img, equalize_histogram=False):
+        if len(img.shape) == 3:  # convert to gray if it is an rgb image
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        else:
+            gray = img
+
+        if equalize_histogram:
+            gray = cv2.equalizeHist(gray)
+
+        charuco_dict = {'DICT_5X5_100': cv2.aruco.DICT_5X5_100}
+        cdictionary = charuco_dict['DICT_5X5_100']
+        size = (11, 8)
+        number_of_corners = size[0]*size[1]
+        dictionary = cv2.aruco.getPredefinedDictionary(cdictionary)
+        board = cv2.aruco.CharucoBoard_create(
+            size[0] + 1, size[1] + 1, 0.06, 0.045, dictionary)
+
+        # more information here https://docs.opencv.org/4.x/d1/dcd/structcv_1_1aruco_1_1DetectorParameters.html:w
+        params = cv2.aruco.DetectorParameters_create()
+
+        # setup initial data
+        params.adaptiveThreshConstant = 2
+        # params.adaptiveThreshWinSizeMin = 3
+        # params.adaptiveThreshWinSizeMax = 10
+        # params.adaptiveThreshWinSizeStep = 5
+        params.minMarkerPerimeterRate = 0.003
+        params.maxMarkerPerimeterRate = 4
+        params.minCornerDistanceRate = 0.1
+        params.markerBorderBits = 1
+        params.minOtsuStdDev = 15
+        params.perspectiveRemoveIgnoredMarginPerCell = .1
+        params.maxErroneousBitsInBorderRate = .15
+        params.errorCorrectionRate = .6
+
+        # param.doCornerRefinement = False
+        corners, ids, rejected = cv2.aruco.detectMarkers(
+            gray, dictionary, parameters=params)
+        # print('corners = ' + str(corners))
+        # print(len(ids)) # this value is greater with more detections on the pattern
+        corners, ids, rejected, _ = cv2.aruco.refineDetectedMarkers(
+            gray, board, corners, ids, rejected)
+
+        if len(corners) > 4:
+            ret, ccorners, cids = cv2.aruco.interpolateCornersCharuco(
+                corners, ids, gray, board)
+            criteria = (cv2.TERM_CRITERIA_EPS +
+                        cv2.TERM_CRITERIA_MAX_ITER, 500, 0.0001)
+
+            # A valid detection must have at least 25% of the total number of corners.
+            detected = ccorners is not None and len(
+                ccorners) > number_of_corners / 4
+            if detected:
+                return {'detected': detected, 'keypoints': ccorners, 'ids': cids.ravel().tolist()}
+
+        return {"detected": False, "keypoints": np.array([]), "ids": []}
+
+    def draw_keypoints(self, img, result):
+        if result['keypoints'] is None or len(result['keypoints']) == 0:
+            detected_points = 0
+            # print(points)
+            return detected_points
+        points = result['keypoints'].astype(np.int32)
+        # print(len(points))
+        detected_points = (len(points))
+        for point in points:
+            cv2.drawMarker(img, tuple(point[0]),
+                           (0, 0, 255), cv2.MARKER_CROSS, 14)
+            cv2.circle(img, tuple(point[0]), 7,
+                       (0, 255, 0), lineType=cv2.LINE_AA)
+        return detected_points
+
+    def assign_joint_value(self, joint_0, joint_1, joint_2, joint_3, joint_4, joint_5):
+        # Assign values to joints
+
+        # print(joint_0)
+
+        group.set_max_velocity_scaling_factor(0.1)
+        # create variable that stores joint values
+        group_variable_values = group.get_current_joint_values()
+        group_variable_values[0] = joint_0
+        group_variable_values[1] = joint_1
+        group_variable_values[2] = joint_2
+        group_variable_values[3] = joint_3
+        group_variable_values[4] = joint_4
+        group_variable_values[5] = joint_5
+
+        # set target joint values for 'manipulator' group
+        group.set_joint_value_target(group_variable_values)
+
+        plan1 = group.plan()  # call plan function to plan the path (visualize on rviz)
+        group.go(wait=False)  # execute plan on real/simulation (gazebo) robot
+        group.stop()
+        group.clear_pose_targets()
+        # rospy.sleep(5)  # sleep 5 seconds
+
+    # Manipulate by moving gripper linearly with respect to world frame
+    def relative_pose_target(self, axis_world, distance):
+        group.set_max_velocity_scaling_factor(0.1)
+        # create a pose variable. The parameters can be seen from "$ rosmsg show Pose"
+        pose_target = group.get_current_pose()
+        if axis_world == 'x':
+            pose_target.pose.position.x += distance
+        if axis_world == 'y':
+            pose_target.pose.position.y += distance
+        if axis_world == 'z':
+            pose_target.pose.position.z += distance
+        # set pose_target as the goal pose of 'manipulator' group
+        group.set_pose_target(pose_target)
+
+        plan2 = group.plan()  # call plan function to plan the path
+        group.go(wait=True)  # execute plan on real/simulation robot
+        group.stop()
+        group.clear_pose_targets()
+        # rospy.sleep(2)  # sleep 5 seconds
+
+
+def callback(data):
+    global robot_state
+    # rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.feedback)
+    robot_state = data.feedback
+
+
+def main():
+
+    auto_moves = AutoMoves()
+
+    rospy.Subscriber(camera_arm_node, Image, auto_moves.image_callback)
+    rospy.Subscriber("move_group/feedback", MoveGroupActionFeedback, callback)
+    rospy.spin()
+
+
+if __name__ == '__main__':
+    main()
