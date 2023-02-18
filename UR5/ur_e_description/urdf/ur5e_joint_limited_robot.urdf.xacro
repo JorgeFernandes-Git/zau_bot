@@ -35,13 +35,13 @@
   <!-- initial robot pose on world - FROM ORIGINAL FILE -->
   <!-- toogle this part to move the AGV in odom -->
 
-  <link name="world" />
+  <!-- <link name="world" />
 
   <joint name="world_joint" type="fixed">
     <parent link="world" />
     <child link="base_link_mb" />
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-  </joint>
+  </joint> -->
   <!-- initial robot pose on world - FROM ORIGINAL FILE -->
 
   <!-- THIS PART WAS FOR TEST ONLY - JORGE -->
