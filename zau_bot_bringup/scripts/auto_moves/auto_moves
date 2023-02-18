@@ -108,14 +108,13 @@ class AutoMoves():
         #         poses[n][0], poses[n][1], poses[n][2], poses[n][3], poses[n][4], poses[n][5])
         # #     # moveit_commander.roscpp_shutdown()
 
-        # print(robot_state)
-
         # using msg from move_group/feedback
         if str(robot_state) == 'state: "IDLE"':
             
-            if detected_points > 40:
+            if detected_points > 40: # less than half the pattern (pattern = 88 points)
                 rospy.sleep(5)
 
+            # best method so far
             # euler to quaternion 
             roll = random.uniform(-0.3,0.3)
             pitch = random.uniform(-0.3,0.3)
@@ -123,8 +122,7 @@ class AutoMoves():
             qx = np.sin(roll/2) * np.cos(pitch/2) * np.cos(yaw/2) - np.cos(roll/2) * np.sin(pitch/2) * np.sin(yaw/2)
             qy = np.cos(roll/2) * np.sin(pitch/2) * np.cos(yaw/2) + np.sin(roll/2) * np.cos(pitch/2) * np.sin(yaw/2)
             qz = np.cos(roll/2) * np.cos(pitch/2) * np.sin(yaw/2) - np.sin(roll/2) * np.sin(pitch/2) * np.cos(yaw/2)
-            qw = np.cos(roll/2) * np.cos(pitch/2) * np.cos(yaw/2) + np.sin(roll/2) * np.sin(pitch/2) * np.sin(yaw/2)
-            
+            qw = np.cos(roll/2) * np.cos(pitch/2) * np.cos(yaw/2) + np.sin(roll/2) * np.sin(pitch/2) * np.sin(yaw/2) 
             self.assign_pose_target(random.uniform(-0.1,0.3), random.uniform(-0.5,0.5), random.uniform(0.8,1.3), qx, qy, qz, qw)
 
             # works just fine
