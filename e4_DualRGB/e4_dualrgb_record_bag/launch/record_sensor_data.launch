@@ -26,18 +26,21 @@
 
             /camera/rgb/image_raw/compressed
             /camera/rgb/camera_info
-            /camera/depth/image_raw
-            /camera/depth/camera_info
 
             /camera_mb/rgb/image_raw/compressed
-            /camera_mb/rgb/camera_info
-            /camera_mb/depth/image_raw
-            /camera_mb/depth/camera_info            
+            /camera_mb/rgb/camera_info      
             /odom
             /cmd_vel
 
             -o $(arg bag)">
         </node>
+
+        <!-- To record depth camera topics add: -->
+        <!-- /camera/depth/image_raw
+        /camera/depth/camera_info -->
+
+        <!-- /camera_mb/depth/image_raw
+        /camera_mb/depth/camera_info       -->
 
 <!--        http://wiki.ros.org/openni_launch/Tutorials/BagRecordingPlayback-->
     </group>
