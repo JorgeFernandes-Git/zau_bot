@@ -30,6 +30,14 @@
             rpy="0 0 3.14" />
     </xacro:sensor_astra> -->
 
+    <link name="world" />
+
+    <joint name="world_joint" type="fixed">
+      <parent link="world" />
+      <child link="base_link_mb" />
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+    </joint>
+
     <link name="base_link_mb">
         <visual>
             <origin xyz="-0.43 -0.33 0.03" rpy="1.57 0 1.57" />
