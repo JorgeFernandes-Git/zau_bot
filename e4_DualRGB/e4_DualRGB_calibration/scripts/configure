@@ -19,7 +19,7 @@ done
 
 if test -z "$configfile"
 then
-rosrun atom_calibration configure_calibration_pkg -n e4_DualRGB_calibration
+rosrun atom_calibration configure_calibration_pkg -n e4_dualrgb_calibration
 else
-rosrun atom_calibration configure_calibration_pkg -n e4_DualRGB_calibration -cfg $configfile
+rosrun atom_calibration configure_calibration_pkg -n e4_dualrgb_calibration -cfg $configfile
 fi
