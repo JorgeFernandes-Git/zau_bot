@@ -97,12 +97,12 @@
         <material>Gazebo/Grey</material>
     </gazebo>
 
-    <gazebo>
+    <!-- <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>moving_base</robotNamespace>
             <legacyModeNS>true</legacyModeNS>
         </plugin>
-    </gazebo>
+    </gazebo> -->
 
     <gazebo>
         <plugin name="moving_base_controller" filename="libgazebo_ros_diff_drive.so">
