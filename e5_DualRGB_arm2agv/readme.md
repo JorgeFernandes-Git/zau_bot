@@ -38,7 +38,7 @@ _______________________________
 
 ## Configure the calibration using the transformations in the bagfile instead of the ones produced by the xacro description:
 
-    rosrun atom_calibration configure_calibration_pkg -n _calibration -utf
+    rosrun atom_calibration configure_calibration_pkg -n e5_dualrgb_arm2rgb_calibration -utf
 
 ## Commands:
 Launch AGV for calibration:
