@@ -1,8 +1,8 @@
-## Full calibration of Mobile Manipulator () https://github.com/JorgeFernandes-Git/zau_bot/issues/8
+## Full calibration of Mobile Manipulator - 3 transformations with 2 sensors ()
 _______________________________
 
 Summary: 
-* Using ATOM framework to perform full calibration of a mobile manipulator with two cameras. One on the AGV and other on the end-effector of the manipulator.
+* Using ATOM framework to perform full calibration of a mobile manipulator with two cameras, one on the AGV and other on the end-effector of the manipulator.
 * Aims to determine the transformations: 
     * Manipulator arm base w.r.t. the AGV.
     * RGB1 w.r.t. AGV. 
@@ -13,8 +13,6 @@ Summary:
 _______________________________
 
 Launch optimized URDF:
-
-    roslaunch e4_dualrgb_optimized e4_dualrgb_optimized.launch
 
 _______________________________
 
@@ -40,7 +38,7 @@ _______________________________
 
 ## Configure the calibration using the transformations in the bagfile instead of the ones produced by the xacro description:
 
-    rosrun atom_calibration configure_calibration_pkg -n e4_dualrgb_calibration -utf
+    rosrun atom_calibration configure_calibration_pkg -n _calibration -utf
 
 ## Commands:
 Launch AGV for calibration:
@@ -57,13 +55,13 @@ Record bag file:
 
 Playback dataset for calibration (2 terminals):
 
-    roslaunch e3_rgb2agv_calibration dataset_playback.launch
+    roslaunch _calibration dataset_playback.launch
 
-    rosrun atom_calibration dataset_playback -json /home/jorge/datasets/e4_dualrgb/dataset.json 
+    rosrun atom_calibration dataset_playback -json /home/jorge/datasets//dataset.json 
 
 Run calibration (2 terminals):
 
     roslaunch e0_rgb2ee_calibration calibrate.launch
 
-    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e4_dualrgb/dataset.json -v -rv -si -vo
+    rosrun atom_calibration calibrate -json $ATOM_DATASETS//dataset.json -v -rv -si -vo
 

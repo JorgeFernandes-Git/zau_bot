@@ -2,7 +2,7 @@
 _______________________________
 
 Summary: 
-* Using ATOM framework to perform simultaneous calibration of a mobile manipulator with two cameras. One on the AGV and other on the end-effector of the manipulator.
+* Using ATOM framework to perform simultaneous calibration of a mobile manipulator with two cameras, one on the AGV and other on the end-effector of the manipulator.
 * Aims to determine the transformations RGB1 w.r.t. AGV and RGB2 w.r.t. end-effector.
 * The cameras used was a depth astra. 
 * The calibration used a total of 76 collections.
@@ -133,13 +133,13 @@ Record bag file:
 
 Playback dataset for calibration (2 terminals):
 
-    roslaunch e3_rgb2agv_calibration dataset_playback.launch
+    roslaunch e4_dualrgb_calibration dataset_playback.launch
 
     rosrun atom_calibration dataset_playback -json /home/jorge/datasets/e4_dualrgb/dataset.json 
 
 Run calibration (2 terminals):
 
-    roslaunch e0_rgb2ee_calibration calibrate.launch
+    roslaunch e4_dualrgb_calibration calibrate.launch
 
     rosrun atom_calibration calibrate -json $ATOM_DATASETS/e4_dualrgb/dataset.json -v -rv -si -vo
 
