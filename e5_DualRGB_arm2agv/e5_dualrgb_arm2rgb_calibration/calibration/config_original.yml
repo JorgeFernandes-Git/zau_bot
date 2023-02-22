@@ -72,6 +72,14 @@ sensors:
   #   /world_camera/rgb/image_raw
   #
 
+  base_link:
+    link: "base_link"
+    parent_link: "base_link_mb"
+    child_link: "base_link"
+    topic_name: ""
+    # throttle: 10
+    # modality: "rgb"
+
   camera:
     link: "camera_rgb_optical_frame"
     parent_link: "camera_link"
@@ -87,14 +95,6 @@ sensors:
     topic_name: "/camera_mb/rgb/image_raw"
     throttle: 10
     modality: rgb
-
-# additional tfs to be calibrated
-additional_tfs:
-
-  base_link:
-    link: "base_link"
-    parent_link: "base_link_mb"
-    child_link: "base_link"
 
 # The calibration requires a detectable pattern.
 # This section describes the properties of the calibration pattern used in th calibration.
