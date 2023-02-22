@@ -20,6 +20,8 @@ Evaluate two datasets: ...
 _______________________________
 
 ## Calibration Results per collection:
+<details>
+<summary>Calibration Results</summary>
 | Collection | camera (px) | camera_mb (px) |
 | :-------------: | :-------------: | :-------------: |
 |    000     |    0.3955   |     0.2987     |
@@ -97,6 +99,7 @@ _______________________________
 |    075     |    0.5275   |     0.6671     |
 |    076     |    0.7180   |     0.6815     |
 |  **Averages**  |    **0.5313**   |     **0.3896**     |
+</details>
 
 _______________________________
 
