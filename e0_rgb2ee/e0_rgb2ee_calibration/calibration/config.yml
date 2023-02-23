@@ -30,7 +30,7 @@
 #   - ROS Package Reference
 #       Example: package://your_package/urdf/description.urdf.xacro
 #
-description_file: "package://ur_e_description/urdf/ur5e_joint_limited_robot.urdf.xacro"
+description_file: "package://e0_rgb2ee_optimized/optimized/optimized_rgb2ee.urdf.xacro"
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
 bag_file: "$ROS_BAGS/Zau/e0_rgb2ee/e0_rgb2ee.bag"
@@ -80,6 +80,28 @@ sensors:
     throttle: 5
     modality: "rgb"
 
+# ATOM will calibrate the extrinsic parameters of your links.
+# In this section you should discriminate the additional transformations that will be part of the calibrations.
+additional_tfs: ""
+  # Each key will define a transformations and its name, which will be use throughout the calibration.
+  # Each additional transformations definition must have the following properties:
+  #       link:
+  #           The frame of the sensor's data (i.e. the header.frame_id).
+  #
+  #       parent_link:
+  #           The parent link of the transformation (i.e. link) to be calibrated.
+  #
+  #       child_link:
+  #           This is the transformation (i.e. link) that we be optimized.
+  #
+  # EXAMPLE:
+  #
+  # base_link:
+  #   link: "base_link"
+  #   parent_link: "base_footprint"
+  #   child_link: "base_link"
+  #
+  # NOTE: Delete the "" after additional_tfs to prevent the error 'All mapping items must start at the same column YAML'
 
 # The calibration requires a detectable pattern.
 # This section describes the properties of the calibration pattern used in th calibration.
