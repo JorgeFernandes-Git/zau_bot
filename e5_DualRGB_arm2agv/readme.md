@@ -53,15 +53,19 @@ Record bag file:
 
     roslaunch e4_dualrgb_record_bag record_sensor_data.launch
 
+Collect dataset for calibration:
+
+    roslaunch e5_dualrgb_arm2rgb_calibration collect_data.launch output_folder:=$ATOM_DATASETS/e5_dualrgb_arm2rgb overwrite:=true
+
 Playback dataset for calibration (2 terminals):
 
-    roslaunch _calibration dataset_playback.launch
+    roslaunch e5_dualrgb_arm2rgb_calibration dataset_playback.launch
 
-    rosrun atom_calibration dataset_playback -json /home/jorge/datasets//dataset.json 
+    rosrun atom_calibration dataset_playback -json /home/jorge/datasets/e5_dualrgb_arm2rgb/dataset.json 
 
 Run calibration (2 terminals):
 
-    roslaunch e0_rgb2ee_calibration calibrate.launch
+    roslaunch e5_dualrgb_arm2rgb_calibration calibrate.launch
 
-    rosrun atom_calibration calibrate -json $ATOM_DATASETS//dataset.json -v -rv -si -vo
+    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2rgb/dataset.json -v -rv -si -vo
 
