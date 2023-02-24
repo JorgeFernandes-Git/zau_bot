@@ -88,9 +88,6 @@ sensors:
     throttle: 10
     modality: rgb
 
-# additional tfs to be calibrated
-additional_tfs: ""
-
 # The calibration requires a detectable pattern.
 # This section describes the properties of the calibration pattern used in th calibration.
 calibration_pattern:
