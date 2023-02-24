@@ -61,11 +61,11 @@ Playback dataset for calibration (2 terminals):
 
     roslaunch e5_dualrgb_arm2rgb_calibration dataset_playback.launch
 
-    rosrun atom_calibration dataset_playback -json /home/jorge/datasets/e5_dualrgb_arm2rgb/dataset.json 
+    rosrun atom_calibration dataset_playback -json /home/jorge/datasets/e5_dualrgb_arm2rgb_v2/dataset.json 
 
 Run calibration (2 terminals):
 
     roslaunch e5_dualrgb_arm2rgb_calibration calibrate.launch
 
-    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2rgb/dataset.json -v -rv -si -vo
+    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2rgb_v2/dataset.json -v -rv -si -vo
 
