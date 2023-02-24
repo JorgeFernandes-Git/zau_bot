@@ -91,8 +91,7 @@ sensors:
 # additional tfs to be calibrated
 additional_tfs:
 
-  base_link:
-    link: "base_link"
+  base_link_mb_to_base_link:
     parent_link: "base_link_mb"
     child_link: "base_link"
 
