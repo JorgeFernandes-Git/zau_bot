@@ -126,6 +126,8 @@ _______________________________
 
 ## Calibration tree and Transformations:
 
+![e5_summary](https://user-images.githubusercontent.com/80167550/222408819-f7866d71-9897-4df3-9d31-5875d86dd720.png)
+
 _______________________________
 
 ## Videos:
