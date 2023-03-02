@@ -152,3 +152,7 @@ Run calibration (2 terminals):
 
     rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv/dataset.json -v -rv -si -vo
 
+Run evaluation:
+
+    
+
