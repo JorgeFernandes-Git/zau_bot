@@ -32,9 +32,9 @@
 
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
     <!-- Parameters-->
-    <arg name="config_file" default="$(find e5_dualrgb_arm2rgb_calibration)/calibration/config.yml"/>
-    <arg name="output_file" default="$(find e5_dualrgb_arm2rgb_calibration)/urdf/initial_estimate.urdf.xacro"/>
-    <arg name="rviz_file" default="$(find e5_dualrgb_arm2rgb_calibration)/rviz/set_initial_estimate.rviz"/>
+    <arg name="config_file" default="$(find e5_dualrgb_arm2agv_calibration)/calibration/config.yml"/>
+    <arg name="output_file" default="$(find e5_dualrgb_arm2agv_calibration)/urdf/initial_estimate.urdf.xacro"/>
+    <arg name="rviz_file" default="$(find e5_dualrgb_arm2agv_calibration)/rviz/set_initial_estimate.rviz"/>
     <!-- arguments to be passed onto playbag.launch  -->
     <arg name="bag_file" default="$(env ROS_BAGS)/Zau/e4_dualrgb/e4_dualrgb.bag"/>
     <arg name="bag_start" default="0"/>
@@ -44,7 +44,7 @@
 
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
     <!-- Call play bag launch file -->
-    <include file="$(find e5_dualrgb_arm2rgb_calibration)/launch/playbag.launch">
+    <include file="$(find e5_dualrgb_arm2agv_calibration)/launch/playbag.launch">
         <arg name="rviz_file" value="$(arg rviz_file)"/>
         <arg name="bag_file" value="$(arg bag_file)"/>
         <arg name="bag_start" value="$(arg bag_start)"/>

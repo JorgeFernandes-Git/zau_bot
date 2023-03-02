@@ -21,7 +21,7 @@
 
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
     <!-- Parameters-->
-    <arg name="rviz_file" default="$(find e5_dualrgb_arm2rgb_calibration)/rviz/dataset_playback.rviz"/>
+    <arg name="rviz_file" default="$(find e5_dualrgb_arm2agv_calibration)/rviz/dataset_playback.rviz"/>
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

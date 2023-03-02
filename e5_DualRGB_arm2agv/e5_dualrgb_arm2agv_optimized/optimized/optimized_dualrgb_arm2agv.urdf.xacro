@@ -149,7 +149,7 @@
   </joint>
   <link name="camera_mb_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.564"/>
       <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257"/>
     </inertial>
@@ -164,7 +164,7 @@
     <selfCollide>false</selfCollide>
   </gazebo>
   <joint name="camera_mb_rgb_joint" type="fixed">
-    <origin xyz="-1.1175870895385742e-08 -0.16410882771015167 0.0929044783115387" rpy="0.0 -0.0 0.0"/>
+    <origin xyz="-0.0005468304863673578 -0.01978960480022218 -0.0016769780370784074" rpy="-0.00011729742680485002 0.00035540253112038145 -0.0014571668767702785"/>
     <parent link="camera_mb_link"/>
     <child link="camera_mb_rgb_frame"/>
   </joint>
@@ -253,7 +253,7 @@
   </link>
   <link name="inertial_link">
     <inertial>
-      <origin xyz="-0.00065 -0.085 0.062" rpy="0.0 0.0 0.0"/>
+      <origin xyz="-0.00065 -0.085 0.062" rpy="0 0 0"/>
       <mass value="500.0"/>
       <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296"/>
     </inertial>
@@ -271,7 +271,7 @@
   </joint>
   <link name="wheel_left_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="2.637"/>
       <inertia ixx="0.02467" ixy="0.0" ixz="0.0" iyy="0.04411" iyz="0.0" izz="0.02467"/>
     </inertial>
@@ -297,7 +297,7 @@
   </joint>
   <link name="wheel_right_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="2.637"/>
       <inertia ixx="0.02467" ixy="0.0" ixz="0.0" iyy="0.04411" iyz="0.0" izz="0.02467"/>
     </inertial>
@@ -322,7 +322,7 @@
   </joint>
   <link name="caster_back_right_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.005"/>
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
@@ -347,7 +347,7 @@
   </joint>
   <link name="caster_back_left_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.005"/>
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
@@ -372,7 +372,7 @@
   </joint>
   <link name="caster_front_right_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.005"/>
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
@@ -397,7 +397,7 @@
   </joint>
   <link name="caster_front_left_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.005"/>
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
@@ -422,7 +422,7 @@
   </joint>
   <link name="imu_link"/>
   <joint name="moving_base_to_ur5e" type="fixed">
-    <origin xyz="-0.29600000381469727 -0.24393683671951294 0.8259999752044678" rpy="0.0 -0.0 0.0"/>
+    <origin xyz="-0.29406503816446494 -0.16648855569170692 0.8262450094522876" rpy="0.0004507227081607748 -0.0015447953627994375 0.0016074847496047706"/>
     <parent link="base_link_mb"/>
     <child link="base_link"/>
   </joint>
@@ -722,7 +722,7 @@
   </joint>
   <link name="camera_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.564"/>
       <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257"/>
     </inertial>
@@ -737,7 +737,7 @@
     <selfCollide>false</selfCollide>
   </gazebo>
   <joint name="camera_rgb_joint" type="fixed">
-    <origin xyz="0.0 -0.045 0.0" rpy="0.0 -0.0 0.0"/>
+    <origin xyz="0.0008344938317361108 -0.021203213155327093 -5.080613760048783e-05" rpy="0.0003620045628476182 0.000745553208859285 0.00021687503586853156"/>
     <parent link="camera_link"/>
     <child link="camera_rgb_frame"/>
   </joint>
