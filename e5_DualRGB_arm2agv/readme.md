@@ -154,6 +154,6 @@ Run calibration (2 terminals):
 
 Run evaluation:
 
-    rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json -test_json ~/datasets/e5_dualrgb_arm2agv/dataset.json -ss camera -st camera_mb -si
+    rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json -test_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json -ss camera -st camera_mb -si
 
 
