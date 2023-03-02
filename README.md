@@ -16,7 +16,7 @@ Experiment (more information inside each folder and on issues):
 ___________________________
 Zau digital twin:
 
-![main_1](https://user-images.githubusercontent.com/80167550/222421512-7630ad23-9ee7-4366-8ae4-6e76ee4b4dad.png)
+![main_1_1](https://user-images.githubusercontent.com/80167550/222421938-7b4aa6b8-9f18-4553-bdb7-2e682504edb9.png)
 
 ___________________________
 WORK IN PROGRESS:
