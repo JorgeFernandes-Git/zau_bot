@@ -1,4 +1,4 @@
-## Full calibration of Mobile Manipulator - 3 transformations with 2 sensors ()
+## Full calibration of Mobile Manipulator - 3 transformations with 2 sensors (Successful) https://github.com/JorgeFernandes-Git/zau_bot/issues/9 https://github.com/lardemua/atom/issues/543
 _______________________________
 
 Summary: 
@@ -14,6 +14,7 @@ _______________________________
 
 Launch optimized URDF:
 
+    roslaunch e5_dualrgb_arm2agv_optimized e5_dualrgb_arm2agv_optimized.launch
 _______________________________
 
 Evaluate two datasets:
