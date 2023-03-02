@@ -16,7 +16,20 @@ Launch optimized URDF:
 
 _______________________________
 
-Evaluate two datasets: ...
+Evaluate two datasets:
+
+Summary:
+**Eye-on-hand camera to AGV camera evaluation**:
+| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm) | Rot (deg) |
+| :-------------: | :---: | :---: | :---: | :---: | :---: |
+|   **Averages**   |   **0.5237**  |    **0.3206**   |    **0.2796**   |   **1.5091**   |   **0.2103**  |
+
+**AGV camera to Eye-on-hand camera evaluation**:
+| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm) | Rot (deg) |
+| :-------------: | :---: | :---: | :---: | :---: | :---: |
+|   **Averages**   |   **0.4665**  |    **0.2470**   |    **0.2788**   |   **1.5091**   |   **0.2103**  |
+
+Full Results: https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/results.md
 
 _______________________________
 
