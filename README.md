@@ -1,11 +1,11 @@
 # Zau Mobile Manipulator
 
 Summary:
-* Zau is a mobile manipulator which consists of manipulator arm UR5 mounted on top a mobile platform (AGV) with multiple sensors (ATM one eye-on-hand camera and an AGV camera). The URDF file is digital twin of the real robotic system, that can be used for research and development.
-* This repository conduct multiple experiments (e0 to e5 ATM) to develop methodologies to calibrate the sensors and the base of the UR5 w.r.t. the AGV in order to improve accuracy and precision in tasks such as grasping and navigation.
-* This calibration process uses ATOM framework (https://github.com/lardemua/atom), a multi-sensor, multi-model calibration tool. Since this framework is open-source, a fork of this repository was created to adapt for changes in the source code (https://github.com/lardemua/atom/tree/JorgeFernandes-Git/issue543).
+* Zau is a mobile manipulator that comprises a UR5 manipulator arm installed on an AGV mobile platform. The system is equipped with multiple sensors (eye-on-hand camera and an AGV camera a.t.m.). The URDF file is a digital twin of the physical robotic system, which can be employed for both research and development purposes.
+* This repository conduct several experiments (e0 to e5 a.t.m.) to develop methodologies to calibrate the sensors and the base of the UR5 w.r.t. the AGV. The objective is to enhance the precision and accuracy of tasks like grasping and navigation.
+* This calibration process uses ATOM framework (https://github.com/lardemua/atom), a multi-sensor, multi-model calibration tool. As the framework is open-source, a fork of the repository was generated to accommodate alterations in the source code. (https://github.com/lardemua/atom/tree/JorgeFernandes-Git/issue543).
 
-Experiences (more information inside each folder and on issues):
+Experiment (more information inside each folder and on issues):
 * e0 -  Calibration of an RGB astra camera mounted on the end-effector of the manipulator (https://github.com/JorgeFernandes-Git/zau_bot/tree/main/e0_rgb2ee)
 * e1 - Single Calibrate a Manipulator with RGB astra camera on the end-effector, mounted on top of an AGV (https://github.com/JorgeFernandes-Git/zau_bot/tree/main/e1_arm2agv)
 * e2 - Simultaneously calibrate a Manipulator with RGB astra camera on the end-effector, mounted on top of an AGV (https://github.com/JorgeFernandes-Git/zau_bot/tree/main/e2_arm2agv_rgb2ee)
