@@ -14,6 +14,11 @@ Experiment (more information inside each folder and on issues):
 * e5 - Full calibration of Mobile Manipulator - 3 transformations with 2 sensors (https://github.com/JorgeFernandes-Git/zau_bot/tree/main/e5_DualRGB_arm2agv)
 
 ___________________________
+Zau digital twin:
+
+![main_1](https://user-images.githubusercontent.com/80167550/222421512-7630ad23-9ee7-4366-8ae4-6e76ee4b4dad.png)
+
+___________________________
 WORK IN PROGRESS:
 
 ## Launching zau_bot
