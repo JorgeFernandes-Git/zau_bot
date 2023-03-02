@@ -86,6 +86,10 @@ Run calibration:
 
     rosrun atom_calibration calibrate -json $ATOM_DATASETS/e0_rgb2ee_v2/dataset.json -v -rv -si -vo
 
+Run evaluation:
+
+    rosrun atom_evaluation cross_collection_rgb_to_rgb_evaluation -train_json ~/datasets/e0_rgb2ee_v2/atom_calibration.json -test_json ~/datasets/e0_rgb2ee/dataset.json -ss camera -st camera -si -wf world
+
 
 
 
