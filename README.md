@@ -17,6 +17,8 @@ ___________________________
 Zau digital twin (eye-on-hand camera and AGV camera):
 
 ![main_1_1](https://user-images.githubusercontent.com/80167550/222421938-7b4aa6b8-9f18-4553-bdb7-2e682504edb9.png)
+![main_2_1](https://user-images.githubusercontent.com/80167550/222424085-79951101-608f-498c-85dc-ee28ccb2d898.png)
+![main_3_1](https://user-images.githubusercontent.com/80167550/222424124-0a9370b2-8790-488b-8561-840a8dbe0ffb.png)
 
 ___________________________
 WORK IN PROGRESS:
