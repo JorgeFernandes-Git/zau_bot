@@ -47,7 +47,7 @@
     
     
     <node pkg="topic_tools" type="throttle" name="throttler_camera"
-          args="messages /camera/rgb/image_raw/compressed_to_throttle 5 /camera/rgb/image_raw/compressed"/>
+          args="messages /camera/rgb/image_raw/compressed_to_throttle 10 /camera/rgb/image_raw/compressed"/>
     
     
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

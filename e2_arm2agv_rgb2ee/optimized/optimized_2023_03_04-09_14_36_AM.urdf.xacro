@@ -328,7 +328,7 @@
   </joint>
   <link name="imu_link"/>
   <joint name="moving_base_to_ur5e" type="fixed">
-    <origin xyz="-0.296 -0.1688 0.826" rpy="0.0 -0.0 0.0"/>
+    <origin xyz="-0.1731355558989543 -0.31155040851299554 0.8247675114172166" rpy="-0.165897034960856 -0.21376191920587986 0.17225340918871368"/>
     <parent link="base_link_mb"/>
     <child link="base_link"/>
   </joint>
@@ -622,7 +622,7 @@
     <limit effort="100.0" lower="0.0" upper="0.03078" velocity="0.05"/>
   </joint>
   <joint name="camera_joint" type="fixed">
-    <origin xyz="0.0600758568472458 -0.07451415139078899 0.04999473796135022" rpy="-3.141483156142495 -0.0009436775284828712 0.000545084455893016"/>
+    <origin xyz="0.059374899777039615 -0.07534990687778702 0.05061996075516738" rpy="3.1415786050286174 -0.0003715034486972256 0.0012817209657054228"/>
     <parent link="ee_link"/>
     <child link="camera_link"/>
   </joint>
@@ -643,7 +643,7 @@
     <selfCollide>false</selfCollide>
   </gazebo>
   <joint name="camera_rgb_joint" type="fixed">
-    <origin xyz="0.0 -0.045 0.0" rpy="0.0 -0.0 0.0"/>
+    <origin xyz="0.0 -0.045 0.0" rpy="0.0 0.0 0.0"/>
     <parent link="camera_link"/>
     <child link="camera_rgb_frame"/>
   </joint>
