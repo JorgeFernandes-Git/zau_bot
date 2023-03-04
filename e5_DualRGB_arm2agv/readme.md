@@ -169,9 +169,9 @@ Run calibration (2 terminals):
 
     rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv/dataset.json -v -rv -si -vo -nig 0.1 0.1 -ap
 
-Test with anchor pattern:
+Test with anchor pattern (didn't work):
 
-    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv/dataset.json -v -rv -si -vo -nig 0.1 0.1 -ap
+    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv/dataset.json -v -rv -si -vo -nig 0.1 0.1 -ap -oj atom_calibration_ap.json
 
 Use output json to save different calibration json file:
 
