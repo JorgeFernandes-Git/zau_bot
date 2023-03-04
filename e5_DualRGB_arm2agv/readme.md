@@ -33,6 +33,22 @@ Summary:
 
 Full Results: https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/results.md
 
+**Output with noise initial guess `nig` 0.1 0.1:**
+
+|           Link #          | Xcal-Xgt (mm) | Ycal-Ygt (mm) | Zcal-Zgt (mm) | Roll_cal-Roll_gt (deg) | Pitch_call-Pitch_gt (deg) | Yaw_cal-Yaw_gt (deg) |
+|---------------------------|---------------|---------------|---------------|------------------------|---------------------------|----------------------|
+| base_link_mb_to_base_link |      1.82     |      1.40     |     **31.06**     |          0.00          |            0.00           |         0.00         |
+|           camera          |      0.95     |     25.38     |      0.06     |          0.00          |            0.00           |         0.00         |
+|         camera_mb         |      0.34     |     25.50     |     **28.04**     |          0.00          |            0.00           |         0.00         |
+
+**Output without noise initial guess `nig`:**
+
+|           Link #          | Xcal-Xgt (mm) | Ycal-Ygt (mm) | Zcal-Zgt (mm) | Roll_cal-Roll_gt (deg) | Pitch_call-Pitch_gt (deg) | Yaw_cal-Yaw_gt (deg) |
+|---------------------------|---------------|---------------|---------------|------------------------|---------------------------|----------------------|
+| base_link_mb_to_base_link |      1.94     |      2.32     |      **0.25**     |          0.00          |            0.00           |         0.00         |
+|           camera          |      0.84     |     23.79     |      0.04     |          0.00          |            0.00           |         0.00         |
+|         camera_mb         |      0.55     |     25.21     |      **1.67**     |          0.00          |            0.00           |         0.00         |
+
 _______________________________
 
 ## Calibration Results per collection:
@@ -169,11 +185,11 @@ Run calibration (2 terminals):
 
     rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv/dataset.json -v -rv -si -vo -nig 0.1 0.1 -ap
 
-Test with anchor pattern (didn't work):
+Test with anchor pattern (-ap) (didn't work):
 
     rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv/dataset.json -v -rv -si -vo -nig 0.1 0.1 -ap -oj atom_calibration_ap.json
 
-Use output json to save different calibration json file:
+Use output json (-oj) to save different calibration json file:
 
     rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv/dataset.json -v -rv -si -vo -oj atom_calibration_no_nig.json
 
