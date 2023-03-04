@@ -196,10 +196,15 @@ Use output json (-oj) to save different calibration json file:
 
 Run evaluations:
 
+**rgb to rgb**
     rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json -test_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json -ss camera -st camera_mb -si
 
     rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json -test_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json -ss camera_mb -st camera -si
 
+**sensor to frame**
     rosrun atom_evaluation sensor_to_frame_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json -test_json ~/datasets/e5_dualrgb_arm2agv/dataset.json -at base_link_mb_to_base_link -tf base_link_mb
+
+**link to ground truth**
+    rosrun atom_evaluation link_to_ground_truth_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json 
 
 
