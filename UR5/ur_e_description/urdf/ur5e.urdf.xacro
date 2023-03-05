@@ -16,7 +16,6 @@
   <joint name="moving_base_to_ur5e" type="fixed">
     <parent link="base_link_mb" />
     <child link="base_link" />
-    <!-- <origin xyz="0.0 0.0 0.771" rpy="0.0 0.0 0.0" /> -->
     <origin xyz="-0.296 -0.1688 0.826" rpy="0.0 0.0 0.0" />
   </joint>
   <!-- place robot on moving base -->
