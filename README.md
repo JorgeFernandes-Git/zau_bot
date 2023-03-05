@@ -21,27 +21,20 @@ Zau digital twin (eye-on-hand camera and AGV camera):
 ![main_3_1](https://user-images.githubusercontent.com/80167550/222424124-0a9370b2-8790-488b-8561-840a8dbe0ffb.png)
 
 ___________________________
-WORK IN PROGRESS:
 
-## Launching zau_bot
+Launch Zau on calibration studio to calibrate (default world):
 
-Rviz:
+    roslaunch zau_bot_bringup zau_bot_bringup.launch calibration_pattern:=true
 
-    roslaunch zau_bot_bringup zau_bot_bringup.launch
-
-Rviz with Gazebo:
-
-    roslaunch zau_bot_bringup zau_bot_bringup.launch gui:=true
-
-Teleop:
+Launch teleop:
 
     roslaunch zau_bot_bringup my_teleop.launch 
 
-![Screenshot](https://github.com/JorgeFernandes-Git/zau_bot/blob/main/zau.png?raw=true)
+___________________________
 
-## Tf Tree
+Launch only the calibration studio (to calibrate a different robot):
 
-![Screenshot](https://github.com/JorgeFernandes-Git/zau_bot/blob/main/imgs/tf_tree/zau_bot_tf_tree.png?raw=true)
+    roslaunch zau_bot_bringup calibration_studio.launch
 
 ## Simulation:
 
