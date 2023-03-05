@@ -136,16 +136,18 @@
       <real_time>214 175274448</real_time>
       <wall_time>1651740140 988331282</wall_time>
       <iterations>190110</iterations>
+
       <model name='charuco_800x600'>
-        <pose>0.434112 -1.25078 1.07721 1.54282 -0.008664 3.10867</pose>
+        <pose>0.04 -1.4 0.7 1.5 0.3 3.1</pose>
         <scale>1 1 1</scale>
         <link name='charuco'>
-          <pose>0.434112 -1.25078 1.07721 1.54282 -0.008664 3.10867</pose>
+          <pose>0.04 -1.4 0.7 1.5 0.3 3.1</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
+      
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
