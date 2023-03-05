@@ -198,7 +198,7 @@ Run evaluations:
 
 **rgb to rgb**
 
-    rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration_nig_0.1_0.1.json -test_json ~/datasets/e5_dualrgb_arm2agv/dataset.json -ss camera -st camera_mb -si
+    rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration_nig_0.1_0.1.json -test_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration_nig_0.1_0.1.json -ss camera -st camera_mb -si
 
 **sensor to frame**
 
@@ -206,6 +206,6 @@ Run evaluations:
 
 **link to ground truth**
 
-    rosrun atom_evaluation link_to_ground_truth_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json 
+    rosrun atom_evaluation link_to_ground_truth_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration_nig_0.1_0.1.json 
 
 
