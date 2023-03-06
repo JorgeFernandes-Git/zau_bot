@@ -73,11 +73,11 @@ Record bag file:
 
 Collect dataset for calibration:
 
-    roslaunch e6_mm__calibration collect_data.launch output_folder:=$ATOM_DATASETS/e6_mm overwrite:=true
+    roslaunch e6_mm_calibration collect_data.launch output_folder:=$ATOM_DATASETS/e6_mm overwrite:=true
 
 Playback dataset for calibration (2 terminals):
 
-    roslaunch e6_mm__calibration dataset_playback.launch
+    roslaunch e6_mm_calibration dataset_playback.launch 
 
     rosrun atom_calibration dataset_playback -json /home/jorge/datasets/e6_mm/dataset.json 
 
@@ -85,7 +85,7 @@ Run calibration (2 terminals):
 
     roslaunch e6_mm_calibration calibrate.launch
 
-    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e6_mm/dataset.json -v -rv -si -vo -nig 0.1 0.1 -oj atom_calibration_nig_0.1_0.1.json
+    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e6_mm/dataset_corrected.json -v -rv -si -vo -nig 0.1 0.1 -oj atom_calibration_nig_0.1_0.1.json
 
 _______________________________
 
