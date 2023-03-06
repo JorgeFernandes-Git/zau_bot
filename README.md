@@ -66,6 +66,8 @@ Launch only the calibration studio (to calibrate a different robot):
 
     roslaunch zau_bot_bringup calibration_studio.launch
 
+___________________________
+
 ## Simulation:
 
 Teleop movement:
