@@ -14,7 +14,7 @@ Experiments (more information inside each folder and on issues):
 * e5 - Full calibration of Mobile Manipulator - 3 transformations with 2 sensors (https://github.com/JorgeFernandes-Git/zau_bot/tree/main/e5_DualRGB_arm2agv)
 
 ___________________________ 
-Zau digital twin (eye-on-hand camera and AGV camera):
+## Zau digital twin (eye-on-hand camera and AGV camera):
 
 ![main_1_1](https://user-images.githubusercontent.com/80167550/222421938-7b4aa6b8-9f18-4553-bdb7-2e682504edb9.png)
 ![main_2_1](https://user-images.githubusercontent.com/80167550/222424085-79951101-608f-498c-85dc-ee28ccb2d898.png)
@@ -22,7 +22,6 @@ Zau digital twin (eye-on-hand camera and AGV camera):
 ![main_gazebo_1](https://user-images.githubusercontent.com/80167550/222975895-05caedc7-14b8-49a1-9ab3-52771f0c6194.png)
 
 ___________________________
-
 ## Installation:
 
 Clone repository:
