@@ -29,7 +29,15 @@ Launch Zau on calibration studio to calibrate (default world):
 
 Launch teleop:
 
-    roslaunch zau_bot_bringup my_teleop.launch 
+    roslaunch zau_bot_bringup my_teleop.launch
+
+Launch manipulator autonomous movements (default pattern position):
+
+    rosrun zau_bot_bringup auto_moves -yaw 3.1
+
+Launch record data for full calibration (two cameras and odometry):
+
+    roslaunch e4_dualrgb_record_bag record_sensor_data.launch 
 
 ___________________________
 
