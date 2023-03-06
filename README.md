@@ -25,7 +25,7 @@ ___________________________
 
 ## Installation:
 
-Clone dependencies:
+Clone repository:
 
     cd <path_to_catkin_ws>/src
     git clone https://github.com/JorgeFernandes-Git/zau_bot.git
