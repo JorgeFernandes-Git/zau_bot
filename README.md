@@ -22,6 +22,26 @@ Zau digital twin (eye-on-hand camera and AGV camera):
 ![main_gazebo_1](https://user-images.githubusercontent.com/80167550/222975895-05caedc7-14b8-49a1-9ab3-52771f0c6194.png)
 
 ___________________________
+
+## Installation:
+
+Clone dependencies:
+
+    cd <path_to_catkin_ws>/src
+    git clone https://github.com/JorgeFernandes-Git/zau_bot.git
+
+Install packages:
+
+    sudo apt install ros-<version>-moveit*
+    sudo apt install ros-<version>-warehouse-ros*
+    sudo apt install ros-<version>-joint-trajectory-controller
+
+Add to .bashrc:
+
+    export ROS_BAGS="/home/<username>/bagfiles"
+    export ATOM_DATASETS="/home/<username>/datasets"
+
+___________________________
 ## Commands:
 
 Launch Zau on calibration studio to calibrate (default world):
