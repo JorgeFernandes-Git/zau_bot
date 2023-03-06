@@ -1,5 +1,12 @@
 # Zau Mobile Manipulator
 
+In progress:
+
+Calibrate multi-modal Mobile Manipulator
+
+![e6_multi_modal](https://user-images.githubusercontent.com/80167550/223143282-6aba8fe6-3a37-46c6-9d52-dcbfe30af1a1.png)
+
+___________________________
 Summary:
 * Zau is a mobile manipulator that comprises a UR5 manipulator arm installed on an AGV mobile platform. The system is equipped with multiple sensors (eye-on-hand camera and an AGV camera a.t.m.). The URDF file is a digital twin of the physical robotic system, which can be employed for both research and development purposes.
 * This repository conduct several experiments (e0 to e5 a.t.m.) to develop methodologies to calibrate the sensors and the base of the UR5 w.r.t. the AGV. The objective is to enhance the precision and accuracy of tasks like grasping and navigation.
