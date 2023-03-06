@@ -3,7 +3,8 @@ Panels:
     Help Height: 0
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /Velodine1
       Splitter Ratio: 0.5
     Tree Height: 244
   - Class: rviz/Selection
@@ -210,6 +211,16 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          velodyne:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          velodyne_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           wheel_left_link:
             Alpha: 1
             Show Axes: false
@@ -410,6 +421,16 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          velodyne:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          velodyne_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           wheel_left_link:
             Alpha: 1
             Show Axes: false
@@ -568,6 +589,34 @@ Visualization Manager:
       Show Visual Aids: false
       Update Topic: /interactive_pattern/update
       Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 1.1906962394714355
+        Min Value: -0.005180537700653076
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: AxisColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: Velodine
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.029999999329447746
+      Style: Spheres
+      Topic: /velodyne_points
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -596,7 +645,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.580963373184204
+      Distance: 3.033066749572754
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -604,17 +653,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.055069051682949066
-        Y: 0.28605836629867554
-        Z: 1.564969778060913
+        X: -0.0527600534260273
+        Y: 0.34582221508026123
+        Z: 1.1882580518722534
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.37539732456207275
+      Pitch: 0.5203973650932312
       Target Frame: <Fixed Frame>
-      Yaw: 3.721729040145874
+      Yaw: 1.1167404651641846
     Saved: ~
 Window Geometry:
   AGV Cam:
