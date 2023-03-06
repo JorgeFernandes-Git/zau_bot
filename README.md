@@ -28,12 +28,14 @@ Clone repository:
 
     cd <path_to_catkin_ws>/src
     git clone https://github.com/JorgeFernandes-Git/zau_bot.git
+    git clone https://bitbucket.org/DataspeedInc/velodyne_simulator -b master
 
 Install packages:
 
     sudo apt install ros-<version>-moveit*
     sudo apt install ros-<version>-warehouse-ros*
     sudo apt install ros-<version>-joint-trajectory-controller
+    sudo apt install libignition-common3 libignition-common3-graphics
 
 Add to .bashrc:
 
