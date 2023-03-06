@@ -197,6 +197,8 @@ _______________________________
 
 Run evaluations:
 
+https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/results_bag_v3.md
+
 **rgb to rgb**
 
     rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -ss camera -st camera_mb -si
