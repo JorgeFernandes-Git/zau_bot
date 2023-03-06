@@ -171,7 +171,7 @@ Record bag file:
 
 Collect dataset for calibration:
 
-    roslaunch e5_dualrgb_arm2agv_calibration collect_data.launch output_folder:=$ATOM_DATASETS/e5_dualrgb_arm2agv overwrite:=true
+    roslaunch e5_dualrgb_arm2agv_calibration collect_data.launch output_folder:=$ATOM_DATASETS/e5_dualrgb_arm2agv_v3 overwrite:=true
 
 Playback dataset for calibration (2 terminals):
 
@@ -183,7 +183,7 @@ Run calibration (2 terminals):
 
     roslaunch e5_dualrgb_arm2agv_calibration calibrate.launch
 
-    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv/dataset.json -v -rv -si -vo -nig 0.1 0.1 -oj atom_calibration_nig_0.1_0.1.json
+    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv_v3/dataset.json -v -rv -si -vo -nig 0.1 0.1 -oj atom_calibration_nig_0.1_0.1.json
 
 Test with anchor pattern (-ap) (didn't work):
 
@@ -199,7 +199,7 @@ Run evaluations:
 
 **rgb to rgb**
 
-    rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration_nig_0.1_0.1.json -test_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration_nig_0.1_0.1.json -ss camera -st camera_mb -si
+    rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -ss camera -st camera_mb -si
 
 **sensor to frame**
 
@@ -207,6 +207,6 @@ Run evaluations:
 
 **link to ground truth**
 
-    rosrun atom_evaluation link_to_ground_truth_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration_nig_0.1_0.1.json 
+    rosrun atom_evaluation link_to_ground_truth_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json 
 
 
