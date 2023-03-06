@@ -1,6 +1,6 @@
 # Zau Mobile Manipulator
 
-In progress:
+In progress - e6 - multi-modal:
 
 Calibrate multi-modal Mobile Manipulator
 
