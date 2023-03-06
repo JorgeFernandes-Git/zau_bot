@@ -22,6 +22,7 @@ Zau digital twin (eye-on-hand camera and AGV camera):
 ![main_gazebo_1](https://user-images.githubusercontent.com/80167550/222975895-05caedc7-14b8-49a1-9ab3-52771f0c6194.png)
 
 ___________________________
+## Commands:
 
 Launch Zau on calibration studio to calibrate (default world):
 
