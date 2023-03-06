@@ -34,7 +34,6 @@
 
             /velodyne_points
 
-
             -o $(arg bag)">
         </node>
 
