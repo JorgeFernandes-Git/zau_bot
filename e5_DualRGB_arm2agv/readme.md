@@ -201,7 +201,7 @@ https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/resul
 
 **rgb to rgb**
 
-    rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -ss camera -st camera_mb -si
+    rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/dataset.json -test_json ~/datasets/e5_dualrgb_arm2agv/dataset.json -ss camera -st camera_mb -si
 
 **sensor to frame**
 
