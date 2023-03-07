@@ -130,11 +130,17 @@ _______________________________
 
 Run evaluations:
 
+Annotate images:
+
+    rosrun atom_evaluation annotate_pattern_borders_in_rgb -d ~/datasets/e6_mm/dataset_corrected.json -si -cs camera_mb
+
 **rgb to rgb**
 
+    rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e6_mm/atom_calibration_nig_0.1_0.1.json -test_json ~/datasets/e6_mm/dataset_corrected.json -ss camera -st camera_mb -si
 
 **lidar to rgb**
 
+    rosrun atom_evaluation lidar_to_rgb_evaluation -train_json /home/jorge/datasets/e6_mm/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e6_mm/dataset_corrected.json -cs camera_mb -rs velodyne -si
 
 **ground truth frame**
 

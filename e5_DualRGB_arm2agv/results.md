@@ -109,13 +109,15 @@ _________________________________________
 train_json: Atom_calibration_nig_0.1_0.1_v2
 test_json: Dataset_v2
 
-    rosrun atom_evaluation ground_truth_frame_evaluation -train_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/dataset.json 
+    rosrun atom_evaluation ground_truth_frame_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json ~/datasets/e5_dualrgb_arm2agv_v3/dataset.json 
 
 |          frame #          | Xcal-Xgt (mm) | Ycal-Ygt (mm) | Zcal-Zgt (mm) | Roll_cal-Roll_gt (deg) | Pitch_cal-Pitch_gt (deg) | Yaw_cal-Yaw_gt (deg) | Average - Trans | Average - Rot |
 |---------------------------|---------------|---------------|---------------|------------------------|--------------------------|----------------------|-----------------|---------------|
 | **base_link_mb_to_base_link** |     4.3803    |     3.3343    |     5.2759    |         0.0157         |          0.0895          |        0.0895        |      7.6250     |     0.1413    |
 |           **camera**          |     0.7227    |    26.6899    |     0.7237    |         0.0238         |          0.0910          |        0.0910        |     31.0360     |     0.0990    |
 |         **camera_mb**         |     2.8538    |    23.4396    |     0.9044    |         0.0528         |          0.1254          |        0.1254        |     23.6300     |     0.2852    |
+
+
 
 
 

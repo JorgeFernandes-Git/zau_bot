@@ -197,7 +197,7 @@ _______________________________
 
 Run evaluations:
 
-https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/results_bag_v3.md
+https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/results.md
 
 **rgb to rgb**
 
