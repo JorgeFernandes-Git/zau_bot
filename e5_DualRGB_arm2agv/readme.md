@@ -203,12 +203,8 @@ https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/resul
 
     rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/dataset.json -test_json ~/datasets/e5_dualrgb_arm2agv/dataset.json -ss camera -st camera_mb -si
 
-**sensor to frame**
+**ground truth frame**
 
-    rosrun atom_evaluation sensor_to_frame_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv/atom_calibration.json -test_json ~/datasets/e5_dualrgb_arm2agv/dataset.json -at base_link_mb_to_base_link -tf base_link_mb
-
-**link to ground truth**
-
-    rosrun atom_evaluation link_to_ground_truth_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json 
+    rosrun atom_evaluation ground_truth_frame_evaluation -train_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/dataset.json
 
 
