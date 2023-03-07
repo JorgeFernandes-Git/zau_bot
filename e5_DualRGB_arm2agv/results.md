@@ -12,6 +12,9 @@ _________________________________________
 
 ## Eye-on-hand camera to AGV camera evaluation using different datasets
 
+train_json: Dataset_v2
+test_json: Dataset_v1
+
     rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/dataset.json -test_json ~/datasets/e5_dualrgb_arm2agv/dataset.json -ss camera -st camera_mb -si
 
 
@@ -102,6 +105,9 @@ _________________________________________
 _________________________________________
 
 ## Ground truth frame evaluations using different datasets
+
+train_json: Atom_calibration_nig_0.1_0.1_v2
+test_json: Dataset_v2
 
     rosrun atom_evaluation ground_truth_frame_evaluation -train_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/dataset.json 
 
