@@ -1,5 +1,7 @@
 ## Ground truth frame evaluations using different datasets
 
+    rosrun atom_evaluation ground_truth_frame_evaluation -train_json  /home/jorge/datasets/e6_mm/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e6_mm/dataset_corrected.json
+
 |          frame #          | Xcal-Xgt (mm) | Ycal-Ygt (mm) | Zcal-Zgt (mm) | Roll_cal-Roll_gt (deg) | Pitch_cal-Pitch_gt (deg) | Yaw_cal-Yaw_gt (deg) | Average - Trans | Average - Rot |
 |---------------------------|---------------|---------------|---------------|------------------------|--------------------------|----------------------|-----------------|---------------|
 | base_link_mb_to_base_link |     9.2194    |     9.1957    |    17.4085    |         0.0491         |          0.0806          |        0.0806        |     21.7397     |     0.1924    |

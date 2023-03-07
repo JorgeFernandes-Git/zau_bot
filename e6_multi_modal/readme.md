@@ -137,3 +137,5 @@ Run evaluations:
 
 
 **ground truth frame**
+
+    rosrun atom_evaluation ground_truth_frame_evaluation -train_json  /home/jorge/datasets/e6_mm/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e6_mm/dataset_corrected.json
