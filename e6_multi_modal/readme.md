@@ -88,9 +88,9 @@ _______________________________
 _______________________________
 
 ## Videos:
-* Set initial estimate: 
-* Run calibration: 
-* Evaluation procedure: 
+* Run calibration: https://youtu.be/VhpOOK9JeKo
+* Evaluation procedure:
+    * Lidar to AGV camera: https://youtu.be/BIjOIW_AI8I
 _______________________________
 
 ## Configure the calibration using the transformations in the bagfile instead of the ones produced by the xacro description:
