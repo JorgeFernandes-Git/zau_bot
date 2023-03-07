@@ -130,15 +130,7 @@ Run evaluations:
 **rgb to rgb**
 
 
-
-**sensor to frame**
-
-
-
-**link to ground truth**
-
-
-
 **lidar to rgb**
 
 
+**ground truth frame**
