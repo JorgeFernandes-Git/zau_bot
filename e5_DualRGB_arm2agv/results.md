@@ -1,3 +1,15 @@
+## Datasets:
+
+Dataset_v1: https://drive.google.com/file/d/1wFW4SjAVjr3k-UN35T8Aa26naBnl1z0V/view?usp=share_link
+
+Dataset_v2: https://drive.google.com/file/d/1L0ArLBiDdpDo8fE0uD48FVTik2TehdPy/view?usp=share_link
+
+Atom_calibration_nig_0.1_0.1_v1: https://drive.google.com/file/d/1T8t0V8a5qLIYSbgZ6UvCwK61C4pCgubH/view?usp=share_link
+
+Atom_calibration_nig_0.1_0.1_v2: https://drive.google.com/file/d/19ABeM4Q5zKBi3TsVYLVyIN8_-WXw-ix6/view?usp=share_link
+
+_________________________________________
+
 ## Eye-on-hand camera to AGV camera evaluation using different datasets
 
     rosrun atom_evaluation rgb_to_rgb_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/dataset.json -test_json ~/datasets/e5_dualrgb_arm2agv/dataset.json -ss camera -st camera_mb -si
@@ -90,6 +102,8 @@
 _________________________________________
 
 ## Ground truth frame evaluations using different datasets
+
+    rosrun atom_evaluation ground_truth_frame_evaluation -train_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/dataset.json 
 
 |          frame #          | Xcal-Xgt (mm) | Ycal-Ygt (mm) | Zcal-Zgt (mm) | Roll_cal-Roll_gt (deg) | Pitch_cal-Pitch_gt (deg) | Yaw_cal-Yaw_gt (deg) | Average - Trans | Average - Rot |
 |---------------------------|---------------|---------------|---------------|------------------------|--------------------------|----------------------|-----------------|---------------|
