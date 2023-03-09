@@ -90,6 +90,7 @@ _______________________________
 ## Videos:
 * Run calibration: https://youtu.be/VhpOOK9JeKo
 * Correct Lidar data: https://youtu.be/OVAJ7TNBcyc
+* Annotate pattern borders: https://youtu.be/qSARjm1FXBg
 * Evaluation procedure:
     * Lidar to AGV camera: https://youtu.be/BIjOIW_AI8I
 _______________________________
