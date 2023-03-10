@@ -22,4 +22,4 @@ for i, row in enumerate(table[:-1]):
     output += f"| {row_str} |\n"
 
 
-print(output)
+print(output) 
