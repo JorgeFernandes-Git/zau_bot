@@ -14,22 +14,7 @@
 
   <arg name="world_name" default="worlds/empty.world" />
 
-  <!-- startup simulated world ########################################### -->
-  <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" default="worlds/empty.world" />
-    <arg name="paused" value="$(arg paused)" />
-    <arg name="gui" value="$(arg gui)" />
-  </include> -->
-
-  <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find ur_e_gazebo)/worlds/turtlebot3_house.world" />
-    <arg name="paused" value="$(arg paused)" />
-    <arg name="use_sim_time" value="true" />
-    <arg name="gui" value="$(arg gui)" />
-    <arg name="headless" value="false" />
-    <arg name="debug" value="false" />
-  </include> -->
-
+  <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(arg world_name)" />
     <arg name="paused" value="$(arg paused)" />
@@ -38,7 +23,6 @@
     <arg name="headless" value="false" />
     <arg name="debug" value="false" />
   </include>
-  <!-- startup simulated world ########################################### -->
 
   <!-- send robot urdf to param server -->
   <include file="$(find ur_e_description)/launch/ur5e_upload.launch">
