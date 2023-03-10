@@ -183,7 +183,7 @@ Run calibration (2 terminals):
 
     roslaunch e5_dualrgb_arm2agv_calibration calibrate.launch
 
-    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv_v3/dataset.json -v -rv -si -vo -nig 0.1 0.1 -oj atom_calibration_nig_0.1_0.1.json -csf "lambda name: int(name) not in [67, 74]"
+    rosrun atom_calibration calibrate -json $ATOM_DATASETS/e5_dualrgb_arm2agv_v3/dataset.json -v -rv -si -vo -nig 0.1 0.1 -oj atom_calibration_nig_0.1_0.1.json -csf "lambda name: int(name) not in [49, 49]"
 
 Test with anchor pattern (-ap) (didn't work):
 
