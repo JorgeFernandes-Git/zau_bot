@@ -1,0 +1,48 @@
+#!/usr/bin/python3
+
+import argparse
+import rospy
+from sensor_msgs.msg import Image
+from moveit_msgs.msg import MoveGroupActionFeedback
+from get_nodes import *
+from data_handler import DataHandler
+
+def initialize(args) -> dict:
+    camera_arm, camera_AGV = get_camera_nodes()
+    cmd_vel_node = get_cmd_vel_node()
+    cmd_vel_node, cmd_vel_pub = cmd_vel_publisher()
+    start_main_node()
+    robot, scene, group, display_trajectory_publisher = moveit_init('manipulator')
+    move_group_feedback_node = move_group_nodes()
+    tf_listener, tf_broadcaster = get_tfs()
+    data_handler = DataHandler(args, group)
+
+    return {'camera_arm': camera_arm,
+            'camera_AGV': camera_AGV,
+            'cmd_vel_node': cmd_vel_node,
+            'cmd_vel_pub': cmd_vel_pub,
+            'robot': robot,
+            'scene': scene,
+            'group': group,
+            'display_trajectory_publisher': display_trajectory_publisher,
+            'move_group_feedback_node':move_group_feedback_node,
+            'tf_listener': tf_listener,
+            'tf_broadcaster': tf_broadcaster, 
+            'data_handler': data_handler}
+
+def get_args() -> dict:
+    ap = argparse.ArgumentParser()
+    ap.add_argument('-y', '--yaw', help='Yaw angle to define manipulator orientation', type=float, default=3.1, required=False)
+    args = vars(ap.parse_args())
+    return args
+
+def main(init_param) -> None:  
+    rospy.Subscriber(init_param['camera_arm'], Image, init_param['data_handler'].camera_arm_feedback)
+    rospy.Subscriber(init_param['move_group_feedback_node'], MoveGroupActionFeedback, init_param['data_handler'].moveit_feedback)
+    rospy.spin()
+
+if __name__ == '__main__':
+    args = get_args()
+    init_param = initialize(args)
+    main(init_param)
+
