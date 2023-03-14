@@ -33,15 +33,21 @@ Summary:
 |    camera_link-camera_rgb_frame    | 1.5183 | 24.2693 | 6.4312 |   0.0168   |    0.0303   |   0.0482  |  25.1935   |   0.0595  |
 | camera_mb_link-camera_mb_rgb_frame | 0.4289 | 24.2033 | 7.9438 |   0.0048   |    0.0500   |   0.0564  |  25.4772   |   0.0755  |
 
-**Cross collection rgb to rgb evaluations Eye-on-hand camera to Eye-on-hand camera**
+**Cross collection rgb to rgb evaluations Eye-on-hand camera to Eye-on-hand camera (same sensor)**
 | Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm)	| Rot (deg) |
 |--------------|-----------|-------------|-------------|------------|-----------|
 |   Averages   |   0.9757  |    0.3604   |    0.7644   |   2.8479   |   0.1728  |
 
-**Cross collection rgb to rgb evaluations AGV camera to AGV camera**
+**Cross collection rgb to rgb evaluations AGV camera to AGV camera (same sensor)**
 | Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm)	| Rot (deg) |
 |--------------|-----------|-------------|-------------|------------|-----------|
 |   Averages   |   0.8567  |    0.7164   |    0.2279   |   2.0671   |   0.1048  |
+
+**Cross collection rgb to rgb evaluations Eye-on-hand camera to AGV camera (different sensor)**
+
+| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm)	| Rot (deg) |
+|--------------|-----------|-------------|-------------|------------|-----------|
+|   Averages   |   4.7238  |    1.0850   |    4.3112   |   8.8375   |   0.1463  |
 
 Full Results: https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/results.md
 _______________________________

@@ -107,7 +107,9 @@ test_json: Dataset_v2
 
 _________________________________________
 
-## Cross collection rgb to rgb evaluations **Eye-on-hand camera to Eye-on-hand camera**
+# Cross Collections
+
+## Cross collection rgb to rgb evaluations **Eye-on-hand camera to Eye-on-hand camera (same sensor)**
 
 Atom_calibration_nig_0.1_0.1_v2 and Dataset_test
 
@@ -119,7 +121,7 @@ Atom_calibration_nig_0.1_0.1_v2 and Dataset_test
 
 _________________________________________
 
-## Cross collection rgb to rgb evaluations **AGV camera to AGV camera**
+## Cross collection rgb to rgb evaluations **AGV camera to AGV camera (same sensor)**
 
 Atom_calibration_nig_0.1_0.1_v2 and Dataset_test
 
@@ -128,3 +130,17 @@ Atom_calibration_nig_0.1_0.1_v2 and Dataset_test
 | Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm)	| Rot (deg) |
 |--------------|-----------|-------------|-------------|------------|-----------|
 |   Averages   |   0.8567  |    0.7164   |    0.2279   |   2.0671   |   0.1048  |
+
+_________________________________________
+
+## Cross collection rgb to rgb evaluations **Eye-on-hand camera to AGV camera (different sensor)**
+
+Atom_calibration_nig_0.1_0.1_v2 and Dataset_test
+
+    rosrun atom_evaluation cross_collection_rgb_to_rgb_evaluation -train_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e5_dualrgb_arm2agv/dataset.json -ss camera -st camera_mb -wf odom
+
+| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm)	| Rot (deg) |
+|--------------|-----------|-------------|-------------|------------|-----------|
+|   Averages   |   4.7238  |    1.0850   |    4.3112   |   8.8375   |   0.1463  |
+
+_________________________________________
