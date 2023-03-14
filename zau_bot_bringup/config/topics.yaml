@@ -1,0 +1,2 @@
+camera_arm: camera/rgb/image_raw
+camera_AGV: camera_mb/rgb/image_raw

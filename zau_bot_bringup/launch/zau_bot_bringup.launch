@@ -3,6 +3,8 @@
     <!-- Start interactive positioning of pattern -->
     <arg name="calibration_pattern" default="false" doc="Start interactive pattern node" />
 
+    <rosparam file="$(find zau_bot_bringup)/config/topics.yaml" />
+
     <arg name="limited" default="true" doc="If true, limits joint range [-PI, PI] on all joints." />
     <arg name="sim" default="true" />
     <arg name="config" default="true" />
