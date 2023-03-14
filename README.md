@@ -2,6 +2,8 @@
 
 ![human_pattern](https://user-images.githubusercontent.com/80167550/225073033-5a9820a5-1339-4e35-af0d-f7f12f536ba6.png)
 
+___________________________
+
 In progress - e6 - multi-modal:
 
 Calibrate multi-modal Mobile Manipulator
