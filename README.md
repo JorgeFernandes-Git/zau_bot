@@ -1,11 +1,12 @@
 # Zau Mobile Manipulator
 
+![human_pattern](https://user-images.githubusercontent.com/80167550/225073033-5a9820a5-1339-4e35-af0d-f7f12f536ba6.png)
+
 In progress - e6 - multi-modal:
 
 Calibrate multi-modal Mobile Manipulator
 
 ![e6_multi_modal](https://user-images.githubusercontent.com/80167550/223143282-6aba8fe6-3a37-46c6-9d52-dcbfe30af1a1.png)
-![human_pattern](https://user-images.githubusercontent.com/80167550/225073033-5a9820a5-1339-4e35-af0d-f7f12f536ba6.png)
 
 ___________________________
 Summary:
