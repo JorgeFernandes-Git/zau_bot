@@ -24,31 +24,26 @@ Summary:
 **Eye-on-hand camera to AGV camera evaluation**:
 | Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm) | Rot (deg) |
 | :-------------: | :---: | :---: | :---: | :---: | :---: |
-|   **Averages**   |   **0.5604**  |    **0.3057**   |    **0.3381**   |   **1.8101**   |   **0.2464**  |
-
-**AGV camera to Eye-on-hand camera evaluation**:
-| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm) | Rot (deg) |
-| :-------------: | :---: | :---: | :---: | :---: | :---: |
-|   **Averages**   |   **0.5102**  |    **0.2796**   |    **0.3052**   |   **1.8101**   |   **0.2464**  |
-
-Full Results: https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/results.md
+|   Averages   |   7.4277  |    0.3737   |    7.3985   |  13.9072   |   0.1293  |
 
 **Output with noise initial guess `nig` 0.1 0.1:**
+|          Transformation #          | X (mm) |  Y (mm) | Z (mm) | Roll (deg) | Pitch (deg) | Yaw (deg) | Trans (mm) | Rot (deg) |
+|---------------------------|---------------|---------------|---------------|------------------------|--------------------------|----------------------|-----------------|---------------|
+|       base_link_mb-base_link       | 0.2551 |  1.0701 | 7.5430 |   0.0151   |    0.0013   |   0.0028  |   7.6228   |   0.0154  |
+|    camera_link-camera_rgb_frame    | 1.5183 | 24.2693 | 6.4312 |   0.0168   |    0.0303   |   0.0482  |  25.1935   |   0.0595  |
+| camera_mb_link-camera_mb_rgb_frame | 0.4289 | 24.2033 | 7.9438 |   0.0048   |    0.0500   |   0.0564  |  25.4772   |   0.0755  |
 
-|           Link #          | Xcal-Xgt (mm) | Ycal-Ygt (mm) | Zcal-Zgt (mm) | Roll_cal-Roll_gt (deg) | Pitch_call-Pitch_gt (deg) | Yaw_cal-Yaw_gt (deg) |
-|---------------------------|---------------|---------------|---------------|------------------------|---------------------------|----------------------|
-| base_link_mb_to_base_link |      1.82     |      1.40     |     **31.06**     |          0.00          |            0.00           |         0.00         |
-|           camera          |      0.95     |     25.38     |      0.06     |          0.00          |            0.00           |         0.00         |
-|         camera_mb         |      0.34     |     25.50     |     **28.04**     |          0.00          |            0.00           |         0.00         |
+**Cross collection rgb to rgb evaluations Eye-on-hand camera to Eye-on-hand camera**
+| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm)	| Rot (deg) |
+|--------------|-----------|-------------|-------------|------------|-----------|
+|   Averages   |   0.9757  |    0.3604   |    0.7644   |   2.8479   |   0.1728  |
 
-**Output without noise initial guess `nig`:**
+**Cross collection rgb to rgb evaluations AGV camera to AGV camera**
+| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm)	| Rot (deg) |
+|--------------|-----------|-------------|-------------|------------|-----------|
+|   Averages   |   0.8567  |    0.7164   |    0.2279   |   2.0671   |   0.1048  |
 
-|           Link #          | Xcal-Xgt (mm) | Ycal-Ygt (mm) | Zcal-Zgt (mm) | Roll_cal-Roll_gt (deg) | Pitch_call-Pitch_gt (deg) | Yaw_cal-Yaw_gt (deg) |
-|---------------------------|---------------|---------------|---------------|------------------------|---------------------------|----------------------|
-| base_link_mb_to_base_link |      1.94     |      2.32     |      **0.25**     |          0.00          |            0.00           |         0.00         |
-|           camera          |      0.84     |     23.79     |      0.04     |          0.00          |            0.00           |         0.00         |
-|         camera_mb         |      0.55     |     25.21     |      **1.67**     |          0.00          |            0.00           |         0.00         |
-
+Full Results: https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/results.md
 _______________________________
 
 ## Calibration Results per collection:

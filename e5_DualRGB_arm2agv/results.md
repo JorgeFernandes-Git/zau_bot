@@ -99,13 +99,32 @@ test_json: Dataset_v2
 
     rosrun atom_evaluation ground_truth_frame_evaluation -train_json ~/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json ~/datasets/e5_dualrgb_arm2agv_v3/dataset.json 
 
-|          frame #          | Xcal-Xgt (mm) | Ycal-Ygt (mm) | Zcal-Zgt (mm) | Roll_cal-Roll_gt (deg) | Pitch_cal-Pitch_gt (deg) | Yaw_cal-Yaw_gt (deg) | Average - Trans | Average - Rot |
+|          Transformation #          | X (mm) |  Y (mm) | Z (mm) | Roll (deg) | Pitch (deg) | Yaw (deg) | Trans (mm) | Rot (deg) |
 |---------------------------|---------------|---------------|---------------|------------------------|--------------------------|----------------------|-----------------|---------------|
-| **base_link_mb_to_base_link** |     4.3803    |     3.3343    |     5.2759    |         0.0157         |          0.0895          |        0.0895        |      7.6250     |     0.1413    |
-|           **camera**          |     0.7227    |    26.6899    |     0.7237    |         0.0238         |          0.0910          |        0.0910        |     31.0360     |     0.0990    |
-|         **camera_mb**         |     2.8538    |    23.4396    |     0.9044    |         0.0528         |          0.1254          |        0.1254        |     23.6300     |     0.2852    |
+|       base_link_mb-base_link       | 0.2551 |  1.0701 | 7.5430 |   0.0151   |    0.0013   |   0.0028  |   7.6228   |   0.0154  |
+|    camera_link-camera_rgb_frame    | 1.5183 | 24.2693 | 6.4312 |   0.0168   |    0.0303   |   0.0482  |  25.1935   |   0.0595  |
+| camera_mb_link-camera_mb_rgb_frame | 0.4289 | 24.2033 | 7.9438 |   0.0048   |    0.0500   |   0.0564  |  25.4772   |   0.0755  |
 
+_________________________________________
 
+## Cross collection rgb to rgb evaluations **Eye-on-hand camera to Eye-on-hand camera**
 
+Atom_calibration_nig_0.1_0.1_v2 and Dataset_test
 
+    rosrun atom_evaluation cross_collection_rgb_to_rgb_evaluation -train_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e5_dualrgb_arm2agv/dataset.json -ss camera -st camera -wf odom
 
+| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm)	| Rot (deg) |
+|--------------|-----------|-------------|-------------|------------|-----------|
+|   Averages   |   0.9757  |    0.3604   |    0.7644   |   2.8479   |   0.1728  |
+
+_________________________________________
+
+## Cross collection rgb to rgb evaluations **AGV camera to AGV camera**
+
+Atom_calibration_nig_0.1_0.1_v2 and Dataset_test
+
+    rosrun atom_evaluation cross_collection_rgb_to_rgb_evaluation -train_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e5_dualrgb_arm2agv/dataset.json -ss camera_mb -st camera_mb -wf odom
+
+| Collection # | RMS (pix) | X err (pix) | Y err (pix) | Trans (mm)	| Rot (deg) |
+|--------------|-----------|-------------|-------------|------------|-----------|
+|   Averages   |   0.8567  |    0.7164   |    0.2279   |   2.0671   |   0.1048  |
