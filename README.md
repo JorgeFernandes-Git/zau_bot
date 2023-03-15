@@ -1,6 +1,7 @@
 # Zau Mobile Manipulator
 
-![human_pattern](https://user-images.githubusercontent.com/80167550/225073033-5a9820a5-1339-4e35-af0d-f7f12f536ba6.png)
+![gazebo_full_sensors](https://user-images.githubusercontent.com/80167550/225308521-be88967d-92a5-482f-bc48-2bb5640aa3fe.png)
+![rviz_full_sensors](https://user-images.githubusercontent.com/80167550/225308547-578080a6-5bb9-47ad-9f43-7447e505f39d.png)
 
 ___________________________
 
