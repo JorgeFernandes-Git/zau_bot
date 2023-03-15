@@ -279,12 +279,11 @@
 
     <link name="imu_link" />
 
-<!-- ROMEVED FOR NOW - JORGE FEB 2023 -->
     <!-- lidar sensor front -->
-    <!-- <joint name="scan_joint_front" type="fixed">
+    <joint name="scan_joint_front" type="fixed">
         <parent link="base_link_mb" />
         <child link="base_scan_front" />
-        <origin xyz="-0.700 0 0.180" rpy="0 0 ${M_PI/4}" />
+        <origin xyz="-0.450 0.3 0.180" rpy="0 0 0" />
     </joint>
 
     <link name="base_scan_front">
@@ -300,14 +299,14 @@
             <origin xyz="0 0 0" />
             <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
         </inertial>
-    </link> -->
+    </link>
     <!-- lidar sensor front -->
 
     <!-- lidar sensor back -->
-    <!-- <joint name="scan_joint_back" type="fixed">
+    <joint name="scan_joint_back" type="fixed">
         <parent link="base_link_mb" />
         <child link="base_scan_back" />
-        <origin xyz="0.700 0 0.180" rpy="0 0 -${3*M_PI/4}" />
+        <origin xyz="0.500 -0.3 0.180" rpy="0 0 -3.14" />
     </joint>
 
     <link name="base_scan_back">
@@ -323,7 +322,6 @@
             <origin xyz="0 0 0" />
             <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
         </inertial>
-    </link> -->
+    </link>
     <!-- lidar sensor back -->
-    <!-- ROMEVED FOR NOW - JORGE FEB 2023 -->
 </robot>

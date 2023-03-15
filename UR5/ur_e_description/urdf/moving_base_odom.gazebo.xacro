@@ -198,7 +198,7 @@
     <!-- add sensor camera part -->
 
     <!-- lidar sensor front -->
-    <!-- <gazebo reference="base_scan_front">
+    <gazebo reference="base_scan_front">
         <material>Gazebo/DarkGrey</material>
         <sensor type="ray" name="lds_lfcd_sensor_front">
             <pose>0 0 0 0 0 0</pose>
@@ -229,11 +229,11 @@
                 <frameName>base_scan_front</frameName>
             </plugin>
         </sensor>
-    </gazebo> -->
+    </gazebo>
     <!-- lidar sensor front -->
 
     <!-- lidar sensor back -->
-    <!-- <gazebo reference="base_scan_back">
+    <gazebo reference="base_scan_back">
         <material>Gazebo/DarkGrey</material>
         <sensor type="ray" name="lds_lfcd_sensor_back">
             <pose>0 0 0 0 0 0</pose>
@@ -264,7 +264,7 @@
                 <frameName>base_scan_back</frameName>
             </plugin>
         </sensor>
-    </gazebo> -->
+    </gazebo>
     <!-- lidar sensor back -->
 
 
