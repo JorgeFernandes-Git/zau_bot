@@ -29,7 +29,7 @@
     </xacro:sensor_astra>
     <!-- testing adding a sensor camera -->
 
-    <!-- add intel realsense camera sensor -->
+    <!-- add intel realsense camera d415 sensor -->
     <xacro:arg name="realsense_enabled" default="$(optenv REALSENSE_ENABLED 1)" />
     <xacro:arg name="realsense_topic" default="$(optenv REALSENSE_TOPIC realsense)" />
     <xacro:arg name="realsense_prefix" default="$(optenv REALSENSE_PREFIX camera_realsense)" />
@@ -52,8 +52,18 @@
         <xacro:intel_realsense_mount prefix="$(arg realsense_prefix)" topic="$(arg realsense_topic)"
             parent_link="$(arg realsense_prefix)_realsense_mountpoint" />
     </xacro:if>
-    <!-- add intel realsense sensor -->
+    <!-- add intel realsense d415 sensor -->
 
+    <!-- add intel realsense l515 camera -->
+    <xacro:arg name="use_nominal_extrinsics" default="false"/>
+    <xacro:arg name="add_plug" default="false" />
+    <xacro:arg name="use_mesh" default="true" />
+    <xacro:include filename="$(find ur_e_description)/urdf/realsense/_l515.urdf.xacro" />
+    
+    <xacro:sensor_l515 parent="base_link_mb" use_nominal_extrinsics="$(arg use_nominal_extrinsics)" add_plug="$(arg add_plug)" use_mesh="$(arg use_mesh)">
+      <origin xyz="0.350 0.180 0.850" rpy="0 0 0"/>
+    </xacro:sensor_l515>
+    <!-- add intel realsense l515 camera -->
 
     <link name="base_footprint" />
 

@@ -41,6 +41,10 @@ Clone repository:
     cd <path_to_catkin_ws>/src
     git clone https://github.com/JorgeFernandes-Git/zau_bot.git
     git clone https://bitbucket.org/DataspeedInc/velodyne_simulator -b master
+    git clone https://github.com/ros-drivers/openni2_camera.git
+    git clone https://github.com/ros-perception/pointcloud_to_laserscan.git
+    git clone https://github.com/ros/geometry2.git
+    git clone https://github.com/ZohebAbai/gazebo_ros_l515
 
 Install packages:
 
@@ -48,6 +52,8 @@ Install packages:
     sudo apt install ros-<version>-warehouse-ros*
     sudo apt install ros-<version>-joint-trajectory-controller
     sudo apt install libignition-common3 libignition-common3-graphics
+    sudo apt-get install ros-<version>-realsense2-description
+
 
 Add to .bashrc:
 
