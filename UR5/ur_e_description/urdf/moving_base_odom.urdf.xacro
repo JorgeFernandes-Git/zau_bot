@@ -55,15 +55,25 @@
     <!-- add intel realsense d415 sensor -->
 
     <!-- add intel realsense l515 camera -->
-    <xacro:arg name="use_nominal_extrinsics" default="false"/>
+    <xacro:arg name="use_nominal_extrinsics" default="false" />
     <xacro:arg name="add_plug" default="false" />
     <xacro:arg name="use_mesh" default="true" />
     <xacro:include filename="$(find ur_e_description)/urdf/realsense/_l515.urdf.xacro" />
-    
-    <xacro:sensor_l515 parent="base_link_mb" use_nominal_extrinsics="$(arg use_nominal_extrinsics)" add_plug="$(arg add_plug)" use_mesh="$(arg use_mesh)">
-      <origin xyz="0.350 0.180 0.850" rpy="0 0 0"/>
+
+    <xacro:sensor_l515 parent="base_link_mb" use_nominal_extrinsics="$(arg use_nominal_extrinsics)"
+        add_plug="$(arg add_plug)" use_mesh="$(arg use_mesh)">
+        <origin xyz="0.350 0.180 0.850" rpy="0 0 0" />
     </xacro:sensor_l515>
     <!-- add intel realsense l515 camera -->
+
+    <!-- add intel realsense t265 -->
+    <xacro:include filename="$(find realsense_ros_gazebo)/xacro/tracker.xacro" />
+
+    <xacro:realsense_T265 sensor_name="camera_t265" parent_link="base_link_mb" rate="30.0">
+        <origin rpy="0 0 0" xyz="0.350 0.060 0.860" />
+    </xacro:realsense_T265>
+    <!-- add intel realsense t265 -->
+
 
     <link name="base_footprint" />
 
