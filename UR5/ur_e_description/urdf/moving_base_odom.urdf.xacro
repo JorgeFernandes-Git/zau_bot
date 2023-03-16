@@ -16,7 +16,7 @@
 
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro" />
     <xacro:VLP-16 parent="base_link_mb" name="velodyne" topic="/velodyne_points"
-    organize_cloud="${organize_cloud}" hz="10" samples="440" gpu="${gpu}">
+        organize_cloud="${organize_cloud}" hz="10" samples="440" gpu="${gpu}">
         <origin xyz="-0.350 0.050 0.850" rpy="0 0 0" />
     </xacro:VLP-16>
     <!-- velodyne -->
@@ -27,6 +27,33 @@
         <origin xyz="-0.350 0.180 0.870"
             rpy="0 0 3.14" />
     </xacro:sensor_astra>
+    <!-- testing adding a sensor camera -->
+
+    <!-- add intel realsense camera sensor -->
+    <xacro:arg name="realsense_enabled" default="$(optenv REALSENSE_ENABLED 1)" />
+    <xacro:arg name="realsense_topic" default="$(optenv REALSENSE_TOPIC realsense)" />
+    <xacro:arg name="realsense_prefix" default="$(optenv REALSENSE_PREFIX camera_realsense)" />
+    <xacro:arg name="realsense_parent" default="$(optenv REALSENSE_PARENT base_link_mb)" />
+    <xacro:arg name="realsense_xyz" default="$(optenv REALSENSE_XYZ 0.350 -0.180 0.850)" />
+    <xacro:arg name="realsense_rpy" default="$(optenv REALSENSE_RPY 0 0 0)" />
+
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0" />
+    </material>
+
+    <xacro:include filename="$(find ur_e_description)/urdf/realsense/intel_realsense.urdf.xacro" />
+    <xacro:if value="$(arg realsense_enabled)">
+        <link name="$(arg realsense_prefix)_realsense_mountpoint" />
+        <joint name="$(arg realsense_prefix)_realsense_mountpoint_joint" type="fixed">
+            <origin xyz="$(arg realsense_xyz)" rpy="$(arg realsense_rpy)" />
+            <parent link="$(arg realsense_parent)" />
+            <child link="$(arg realsense_prefix)_realsense_mountpoint" />
+        </joint>
+        <xacro:intel_realsense_mount prefix="$(arg realsense_prefix)" topic="$(arg realsense_topic)"
+            parent_link="$(arg realsense_prefix)_realsense_mountpoint" />
+    </xacro:if>
+    <!-- add intel realsense sensor -->
+
 
     <link name="base_footprint" />
 
@@ -100,7 +127,7 @@
         <inertial>
             <origin xyz="0 0 0" />
             <mass value="2.637" />
-            <inertia  ixx="0.02467" ixy="0" ixz="0" iyy="0.04411" iyz="0" izz="0.02467" />
+            <inertia ixx="0.02467" ixy="0" ixz="0" iyy="0.04411" iyz="0" izz="0.02467" />
         </inertial>
     </link>
 
@@ -131,7 +158,7 @@
         <inertial>
             <origin xyz="0 0 0" />
             <mass value="2.637" />
-            <inertia  ixx="0.02467" ixy="0" ixz="0" iyy="0.04411" iyz="0" izz="0.02467" />
+            <inertia ixx="0.02467" ixy="0" ixz="0" iyy="0.04411" iyz="0" izz="0.02467" />
         </inertial>
     </link>
 
