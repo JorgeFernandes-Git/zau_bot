@@ -3,6 +3,8 @@
   <arg name="limited" default="false" doc="If true, limits joint range [-PI, PI] on all joints." />
   <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
   <arg name="gui" default="true" doc="Starts gazebo gui" />
+  <arg name="use_sim_time" default="true" />
+
 
   <arg name="robot_name" default="robot_UR5_MB" />
   <arg name="x_pos" default="0.0" />
@@ -11,7 +13,6 @@
   <arg name="roll" default="0" />
   <arg name="pitch" default="0" />
   <arg name="yaw" default="3.14" />
-
   <arg name="world_name" default="worlds/empty.world" />
 
   <!-- startup simulated world -->

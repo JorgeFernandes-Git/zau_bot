@@ -9,6 +9,7 @@
     <arg name="sim" default="true" />
     <arg name="config" default="true" />
     <arg name="gui" default="false" doc="Starts gazebo gui" />
+    <arg name="use_sim_time" default="true" />
 
     <!-- Position to spawn the robot -->
     <arg name="robot_name" default="robot_UR5_MB" />
@@ -27,6 +28,7 @@
     <include file="$(find ur_e_gazebo)/launch/ur5e.launch">
         <arg name="limited" value="$(arg limited)" />
         <arg name="gui" value="$(arg gui)" />
+        <arg name="use_sim_time" value="true" />
         <arg name="robot_name" default="$(arg robot_name)" />
         <arg name="x_pos" default="$(arg x_pos)" />
         <arg name="y_pos" default="$(arg y_pos)" />
