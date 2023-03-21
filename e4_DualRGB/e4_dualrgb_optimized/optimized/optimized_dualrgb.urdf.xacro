@@ -164,7 +164,7 @@
     <selfCollide>false</selfCollide>
   </gazebo>
   <joint name="camera_mb_rgb_joint" type="fixed">
-    <origin xyz="-0.001372649243161926 -0.021720678990911742 -0.0007066071145194913" rpy="-0.0002725609358139178 7.098430861854677e-05 0.0005307750188221749"/>
+    <origin xyz="-0.00013610482580892868 -0.02309258921893751 6.600180070701852e-05" rpy="-0.0005409228461205445 0.0001260982373446729 0.0015973196152322662"/>
     <parent link="camera_mb_link"/>
     <child link="camera_mb_rgb_frame"/>
   </joint>
@@ -737,7 +737,7 @@
     <selfCollide>false</selfCollide>
   </gazebo>
   <joint name="camera_rgb_joint" type="fixed">
-    <origin xyz="-0.001597717267967227 -0.023512757789665394 0.0004697414549111796" rpy="-0.00021911186881909246 0.0014046561916799954 0.0021966870491419758"/>
+    <origin xyz="0.00038324530678533986 -0.02297487687353417 0.0015986729434806141" rpy="-0.0021799169101005 0.0020962050559752313 0.0018318504204757812"/>
     <parent link="camera_link"/>
     <child link="camera_rgb_frame"/>
   </joint>
@@ -896,16 +896,4 @@
   <gazebo reference="ee_link">
     <selfCollide>true</selfCollide>
   </gazebo>
-  <link name="base"/>
-  <joint name="base_link-base_fixed_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.141592653589793"/>
-    <parent link="base_link"/>
-    <child link="base"/>
-  </joint>
-  <link name="tool0"/>
-  <joint name="wrist_3_link-tool0_fixed_joint" type="fixed">
-    <origin xyz="0.0 0.1 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
-    <parent link="wrist_3_link"/>
-    <child link="tool0"/>
-  </joint>
 </robot>
