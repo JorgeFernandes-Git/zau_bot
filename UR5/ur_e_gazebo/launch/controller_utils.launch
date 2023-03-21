@@ -8,8 +8,8 @@
   </node>
 
   <!-- Fake Calibration -->
-  <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
-        args="pub /calibrated std_msgs/Bool true" />
+  <!-- <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
+        args="pub /calibrated std_msgs/Bool true" /> -->
   
   <!-- joint_state_controller -->
   <rosparam file="$(find ur_e_gazebo)/controller/joint_state_controller.yaml" command="load"/>
