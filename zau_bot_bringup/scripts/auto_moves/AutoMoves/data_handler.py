@@ -52,8 +52,8 @@ class DataHandler:
         assign_pose_target(poses, self.group)
 
     def arm_poses(self) -> dict:
-        x = random.uniform(-0.1,0.3)
-        y = random.uniform(-0.5,0.5)
+        x = random.uniform(-0.9,-0.1)
+        y = random.uniform(-0.4,0.5)
         z = random.uniform(0.8,1.3)
         roll = random.uniform(-0.3,0.3)
         pitch = random.uniform(-0.3,0.3)
