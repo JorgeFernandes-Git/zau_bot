@@ -20,7 +20,7 @@ ___________________________
 Clone repository:
 
     cd <path_to_catkin_ws>/src
-    git clone https://github.com/JorgeFernandes-Git/zau_bot.git
+    git clone https://github.com/JorgeFernandes-Git/zau_bot.git -b Zau_INESCTEC
     git clone https://bitbucket.org/DataspeedInc/velodyne_simulator -b master
 
 Install packages:
@@ -52,7 +52,7 @@ Launch manipulator autonomous movements (default pattern position):
 
 Launch record data for full calibration (two cameras and odometry):
 
-    roslaunch e4_dualrgb_record_bag record_sensor_data.launch 
+    roslaunch zau_inesctec_record_bag record_sensor_data.launch 
 
 ___________________________
 
@@ -61,13 +61,3 @@ Launch only the calibration studio (to calibrate a different robot):
     roslaunch zau_bot_bringup calibration_studio.launch
 
 ___________________________
-
-## Simulation:
-
-Teleop movement:
-
-https://user-images.githubusercontent.com/93128909/198751405-d87c7601-d116-4c14-8328-ffaed76ca632.mp4
-
-Motion planning (MoveIt):
-
-https://user-images.githubusercontent.com/93128909/198751449-e8f088d5-c962-43c5-984a-b119a0b9828a.mp4
