@@ -14,27 +14,27 @@
     </xacro:sensor_astra> -->
 
     <!-- add intel realsense camera d415 sensor -->
-    <xacro:arg name="realsense_enabled" default="$(optenv REALSENSE_ENABLED 1)" />
-    <xacro:arg name="realsense_topic" default="$(optenv REALSENSE_TOPIC realsense)" />
-    <xacro:arg name="realsense_prefix" default="$(optenv REALSENSE_PREFIX camera_realsense)" />
-    <xacro:arg name="realsense_parent" default="$(optenv REALSENSE_PARENT base_link_mb)" />
-    <xacro:arg name="realsense_xyz" default="$(optenv REALSENSE_XYZ -0.350 0.180 0.870)" />
-    <xacro:arg name="realsense_rpy" default="$(optenv REALSENSE_RPY 0 0 3.14)" />
+    <xacro:arg name="realsense_AGV_enabled" default="$(optenv REALSENSE_AGV_ENABLED 1)" />
+    <xacro:arg name="realsense_AGV_topic" default="$(optenv REALSENSE_AGV_TOPIC AGV_realsense)" />
+    <xacro:arg name="realsense_AGV_prefix" default="$(optenv REALSENSE_AGV_PREFIX AGV_camera_realsense)" />
+    <xacro:arg name="realsense_AGV_parent" default="$(optenv REALSENSE_AGV_PARENT base_link_mb)" />
+    <xacro:arg name="realsense_AGV_xyz" default="$(optenv REALSENSE_AGV_XYZ -0.380 0.250 0.80)" />
+    <xacro:arg name="realsense_AGV_rpy" default="$(optenv REALSENSE_AGV_RPY 0 0 3.14)" />
 
     <material name="white">
         <color rgba="1.0 1.0 1.0 1.0" />
     </material>
 
     <xacro:include filename="$(find ur_e_description)/urdf/realsense/intel_realsense.urdf.xacro" />
-    <xacro:if value="$(arg realsense_enabled)">
-        <link name="$(arg realsense_prefix)_realsense_mountpoint" />
-        <joint name="$(arg realsense_prefix)_realsense_mountpoint_joint" type="fixed">
-            <origin xyz="$(arg realsense_xyz)" rpy="$(arg realsense_rpy)" />
-            <parent link="$(arg realsense_parent)" />
-            <child link="$(arg realsense_prefix)_realsense_mountpoint" />
+    <xacro:if value="$(arg realsense_AGV_enabled)">
+        <link name="$(arg realsense_AGV_prefix)_realsense_mountpoint" />
+        <joint name="$(arg realsense_AGV_prefix)_realsense_mountpoint_joint" type="fixed">
+            <origin xyz="$(arg realsense_AGV_xyz)" rpy="$(arg realsense_AGV_rpy)" />
+            <parent link="$(arg realsense_AGV_parent)" />
+            <child link="$(arg realsense_AGV_prefix)_realsense_mountpoint" />
         </joint>
-        <xacro:intel_realsense_mount prefix="$(arg realsense_prefix)" topic="$(arg realsense_topic)"
-            parent_link="$(arg realsense_prefix)_realsense_mountpoint" />
+        <xacro:intel_realsense_mount prefix="$(arg realsense_AGV_prefix)" topic="$(arg realsense_AGV_topic)"
+            parent_link="$(arg realsense_AGV_prefix)_realsense_mountpoint" />
     </xacro:if>
     <!-- add intel realsense d415 sensor -->
 
@@ -48,20 +48,21 @@
 
     <link name="base_link_mb">
         <visual>
-            <origin xyz="-0.43 -0.33 0.03" rpy="1.57 0 1.57" />
+            <origin xyz="-0.0 -0.0 0.47" rpy="0 0 0" />
             <geometry>
                 <!-- <box size="0.900 0.600 0.770" /> -->
                 <!-- <box size="0.900 0.650 0.770" /> -->
-                <mesh filename="package://ur_e_description/meshes/moving_base/moving_base.STL"
-                    scale="0.001 0.001 0.001" />
+                <box size="0.920 0.670 0.630" />
+                <!-- <mesh filename="package://ur_e_description/meshes/moving_base/moving_base.STL"
+                    scale="0.001 0.001 0.001" /> -->
             </geometry>
             <material name="light_black" />
         </visual>
 
         <collision>
-            <origin xyz="0 0 0.459" rpy="0 0 0" />
+            <origin xyz="0 0 0.46" rpy="0 0 0" />
             <geometry>
-                <box size="0.900 0.600 0.770" />
+                <box size="0.920 0.670 0.780" />
             </geometry>
         </collision>
     </link>

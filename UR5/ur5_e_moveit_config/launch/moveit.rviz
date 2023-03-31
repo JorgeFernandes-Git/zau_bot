@@ -3,8 +3,10 @@ Panels:
     Help Height: 0
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
-      Splitter Ratio: 0.5
+      Expanded:
+        - /TF1/Frames1
+        - /Eye-on-Hand Cam1
+      Splitter Ratio: 0.6981891393661499
     Tree Height: 244
   - Class: rviz/Selection
     Name: Selection
@@ -75,7 +77,41 @@ Visualization Manager:
         Color Enabled: false
         Interrupt Display: false
         Links:
+          AGV_camera_realsense_realsense:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          AGV_camera_realsense_realsense_gazebo:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          AGV_camera_realsense_realsense_lens:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          AGV_camera_realsense_realsense_mountpoint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           All Links Enabled: true
+          EE_camera_realsense_realsense:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          EE_camera_realsense_realsense_gazebo:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          EE_camera_realsense_realsense_lens:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          EE_camera_realsense_realsense_mountpoint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           Expand Joint Details: false
           Expand Link Details: false
           Expand Tree: false
@@ -90,50 +126,6 @@ Visualization Manager:
             Show Trail: false
             Value: true
           base_link_mb:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_depth_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_depth_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_mb_depth_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_mb_depth_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_mb_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_mb_rgb_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_mb_rgb_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_rgb_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_rgb_optical_frame:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -267,7 +259,41 @@ Visualization Manager:
       Scene Robot:
         Attached Body Color: 150; 50; 150
         Links:
+          AGV_camera_realsense_realsense:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          AGV_camera_realsense_realsense_gazebo:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          AGV_camera_realsense_realsense_lens:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          AGV_camera_realsense_realsense_mountpoint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           All Links Enabled: true
+          EE_camera_realsense_realsense:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          EE_camera_realsense_realsense_gazebo:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          EE_camera_realsense_realsense_lens:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          EE_camera_realsense_realsense_mountpoint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           Expand Joint Details: false
           Expand Link Details: false
           Expand Tree: false
@@ -282,50 +308,6 @@ Visualization Manager:
             Show Trail: false
             Value: true
           base_link_mb:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_depth_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_depth_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_mb_depth_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_mb_depth_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_mb_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_mb_rgb_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_mb_rgb_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_rgb_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          camera_rgb_optical_frame:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -427,7 +409,7 @@ Visualization Manager:
       Enabled: false
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
       Marker Alpha: 1
       Marker Scale: 1
       Name: TF
@@ -512,7 +494,7 @@ Visualization Manager:
       Value: false
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /camera_mb/rgb/image_raw
+      Image Topic: /AGV_realsense/color/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
@@ -524,7 +506,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /camera/rgb/image_raw
+      Image Topic: /EE_realsense/color/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
@@ -579,7 +561,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.033066749572754
+      Distance: 4.438717842102051
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -595,9 +577,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5203973650932312
+      Pitch: 0.3403979241847992
       Target Frame: <Fixed Frame>
-      Yaw: 1.1167404651641846
+      Yaw: 2.9867489337921143
     Saved: ~
 Window Geometry:
   AGV Cam:
