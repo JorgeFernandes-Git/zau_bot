@@ -9,11 +9,6 @@ Summary:
 ___________________________ 
 ## Zau digital twin (eye-on-hand camera and AGV camera):
 
-![main_1_1](https://user-images.githubusercontent.com/80167550/222421938-7b4aa6b8-9f18-4553-bdb7-2e682504edb9.png)
-![main_2_1](https://user-images.githubusercontent.com/80167550/222424085-79951101-608f-498c-85dc-ee28ccb2d898.png)
-![main_3_1](https://user-images.githubusercontent.com/80167550/222424124-0a9370b2-8790-488b-8561-840a8dbe0ffb.png)
-![main_gazebo_1](https://user-images.githubusercontent.com/80167550/222975895-05caedc7-14b8-49a1-9ab3-52771f0c6194.png)
-
 ___________________________
 ## Installation:
 
@@ -29,6 +24,7 @@ Install packages:
     sudo apt install ros-<version>-warehouse-ros*
     sudo apt install ros-<version>-joint-trajectory-controller
     sudo apt install libignition-common3 libignition-common3-graphics
+    sudo apt-get install ros-<version>-realsense2-description
 
 Add to .bashrc:
 
@@ -40,7 +36,7 @@ ___________________________
 
 Launch Zau on calibration studio to calibrate (default world):
 
-    roslaunch zau_bot_bringup zau_bot_bringup.launch calibration_pattern:=true
+    roslaunch zau_bot_bringup zau_bot_bringup.launch
 
 Launch teleop:
 
