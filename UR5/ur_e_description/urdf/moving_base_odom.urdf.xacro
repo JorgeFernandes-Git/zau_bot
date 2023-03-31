@@ -6,13 +6,6 @@
 
     <xacro:property name="M_PI" value="3.1415926535897931" />
 
-    <!-- testing adding a sensor camera -->
-    <!-- <xacro:include filename="$(find ur_e_description)/urdf/astra.urdf.xacro" />
-    <xacro:sensor_astra parent="base_link_mb" prefix="camera_mb">
-        <origin xyz="-0.350 0.180 0.870"
-            rpy="0 0 3.14" />
-    </xacro:sensor_astra> -->
-
     <!-- add intel realsense camera d415 sensor -->
     <xacro:arg name="realsense_AGV_enabled" default="$(optenv REALSENSE_AGV_ENABLED 1)" />
     <xacro:arg name="realsense_AGV_topic" default="$(optenv REALSENSE_AGV_TOPIC AGV_realsense)" />

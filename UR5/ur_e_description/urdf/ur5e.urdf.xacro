@@ -520,18 +520,6 @@
     </joint>
     <!-- add gripper part end ###################################################################-->
 
-    <!-- SENSOR CAMERA ON END EFFECTOR -->
-
-    <!-- Files to add sensor camera on end-effector:
-    ur.gazebo.xacro
-    ur5e.urdf.xacro -->
-
-    <!-- <xacro:include filename="$(find ur_e_description)/urdf/astra.urdf.xacro" />
-    <xacro:sensor_astra parent="ee_link" prefix="camera">
-      <origin xyz="0.06 -0.05 0.05"
-        rpy="${-pi} -0.0 0.0" />
-    </xacro:sensor_astra> -->
-
     <!-- add intel realsense camera d415 sensor -->
     <xacro:arg name="realsense_EE_enabled" default="$(optenv REALSENSE_EE_ENABLED 1)" />
     <xacro:arg name="realsense_EE_topic" default="$(optenv REALSENSE_EE_TOPIC EE_realsense)" />
@@ -539,10 +527,6 @@
     <xacro:arg name="realsense_EE_parent" default="$(optenv REALSENSE_EE_PARENT ee_link)" />
     <xacro:arg name="realsense_EE_xyz" default="$(optenv REALSENSE_EE_XYZ 0.095 0.000 -0.075)" />
     <xacro:arg name="realsense_EE_rpy" default="$(optenv REALSENSE_EE_RPY -3.14 0.0 1.57)" />
-
-    <!-- <material name="white">
-      <color rgba="1.0 1.0 1.0 1.0" />
-    </material> -->
 
     <xacro:include filename="$(find ur_e_description)/urdf/realsense/intel_realsense.urdf.xacro" />
     <xacro:if value="$(arg realsense_EE_enabled)">
