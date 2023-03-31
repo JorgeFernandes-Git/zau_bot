@@ -33,7 +33,7 @@
   ur.gazebo.xacro
   ur5e.urdf.xacro -->
 
-  <xacro:macro name="sim_3dsensor" params="prefix">
+  <!-- <xacro:macro name="sim_3dsensor" params="prefix">
     <gazebo reference="${prefix}_depth_frame">
       <sensor type="depth" name="camera">
         <always_on>true</always_on>
@@ -70,7 +70,7 @@
         </plugin>
       </sensor>
     </gazebo>
-  </xacro:macro>
+  </xacro:macro> -->
   <!-- add sensor part -->
 
 
