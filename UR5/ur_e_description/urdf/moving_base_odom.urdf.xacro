@@ -11,7 +11,7 @@
     <xacro:arg name="realsense_AGV_topic" default="$(optenv REALSENSE_AGV_TOPIC AGV_realsense)" />
     <xacro:arg name="realsense_AGV_prefix" default="$(optenv REALSENSE_AGV_PREFIX AGV_camera_realsense)" />
     <xacro:arg name="realsense_AGV_parent" default="$(optenv REALSENSE_AGV_PARENT base_link_mb)" />
-    <xacro:arg name="realsense_AGV_xyz" default="$(optenv REALSENSE_AGV_XYZ -0.380 0.250 0.80)" />
+    <xacro:arg name="realsense_AGV_xyz" default="$(optenv REALSENSE_AGV_XYZ -0.380 0.250 0.79)" />
     <xacro:arg name="realsense_AGV_rpy" default="$(optenv REALSENSE_AGV_RPY 0 0 3.14)" />
 
     <material name="white">
@@ -41,21 +41,18 @@
 
     <link name="base_link_mb">
         <visual>
-            <origin xyz="-0.0 -0.0 0.47" rpy="0 0 0" />
+            <origin xyz="-0.46 0.335 0.06" rpy="1.57 0 0" />
             <geometry>
-                <!-- <box size="0.900 0.600 0.770" /> -->
-                <!-- <box size="0.900 0.650 0.770" /> -->
-                <box size="0.920 0.670 0.630" />
-                <!-- <mesh filename="package://ur_e_description/meshes/moving_base/moving_base.STL"
-                    scale="0.001 0.001 0.001" /> -->
+                <!-- <box size="0.920 0.670 0.630" /> -->
+                <mesh filename="package://ur_e_description/meshes/moving_base/AGV.STL" scale="0.01 0.01 0.01" />
             </geometry>
             <material name="light_black" />
         </visual>
 
         <collision>
-            <origin xyz="0 0 0.46" rpy="0 0 0" />
+            <origin xyz="0 0 0.47" rpy="0 0 0" />
             <geometry>
-                <box size="0.920 0.670 0.780" />
+                <box size="0.920 0.670 0.630" />
             </geometry>
         </collision>
     </link>
@@ -283,7 +280,7 @@
 
     <link name="imu_link" />
 
-    <!-- ROMEVED FOR NOW - JORGE FEB 2023 -->
+    <!-- ROMEVED FOR NOW - JORGE FEB 2023 need check real position in the robot -->
     <!-- lidar sensor front -->
     <!-- <joint name="scan_joint_front" type="fixed">
         <parent link="base_link_mb" />

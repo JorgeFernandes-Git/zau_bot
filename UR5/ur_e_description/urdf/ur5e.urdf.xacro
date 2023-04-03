@@ -424,7 +424,7 @@
     ur_e_gazebo/launch/ur5.launch
     ur5_e_moveit_config/config/ur5e.srdf -->
 
-    <link name="${prefix}gripper_link">
+    <!-- <link name="${prefix}gripper_link">
       <visual>
         <geometry>
           <mesh filename="package://ur_e_description/meshes/ur5e/visual/weiss-mount.dae" />
@@ -517,13 +517,50 @@
       <limit lower="0" upper="0.03078" effort="100" velocity="0.05" />
       <parent link="${prefix}gripper_link" />
       <child link="${prefix}right_finger_link" />
-    </joint>
+    </joint> -->
     <!-- add gripper part end ###################################################################-->
+
+
+    <!-- add camera support -->
+    <link name="${prefix}ee_camera_support_link">
+      <visual>
+        <geometry>
+          <box size="0.185 0.03 0.03" />
+        </geometry>
+        <material name="LightGrey">
+          <color rgba="0.7 0.7 0.7 1.0" />
+        </material>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+      </visual>
+    </link>
+    <joint name="${prefix}ee_camera_support_joint" type="fixed">
+      <origin xyz="0.095 0 0" rpy="0 0 0" />
+      <parent link="${prefix}ee_link" />
+      <child link="${prefix}ee_camera_support_link" />
+    </joint>
+    <link name="${prefix}ee_camera_support_small_link">
+      <visual>
+        <geometry>
+          <box size="0.02 0.02 0.065" />
+        </geometry>
+        <material name="LightGrey">
+          <color rgba="0.7 0.7 0.7 1.0" />
+        </material>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+      </visual>
+    </link>
+    <joint name="${prefix}ee_camera_support_small_joint" type="fixed">
+      <origin xyz="0 0 -0.04" rpy="0 0 0" />
+      <parent link="${prefix}ee_camera_support_link" />
+      <child link="${prefix}ee_camera_support_small_link" />
+    </joint>
+
 
     <!-- add intel realsense camera d415 sensor -->
     <xacro:arg name="realsense_EE_enabled" default="$(optenv REALSENSE_EE_ENABLED 1)" />
     <xacro:arg name="realsense_EE_topic" default="$(optenv REALSENSE_EE_TOPIC EE_realsense)" />
-    <xacro:arg name="realsense_EE_prefix" default="$(optenv REALSENSE_EE_PREFIX EE_camera_realsense)" />
+    <xacro:arg name="realsense_EE_prefix"
+      default="$(optenv REALSENSE_EE_PREFIX EE_camera_realsense)" />
     <xacro:arg name="realsense_EE_parent" default="$(optenv REALSENSE_EE_PARENT ee_link)" />
     <xacro:arg name="realsense_EE_xyz" default="$(optenv REALSENSE_EE_XYZ 0.095 0.000 -0.075)" />
     <xacro:arg name="realsense_EE_rpy" default="$(optenv REALSENSE_EE_RPY -3.14 0.0 1.57)" />
@@ -536,7 +573,8 @@
         <parent link="$(arg realsense_EE_parent)" />
         <child link="$(arg realsense_EE_prefix)_realsense_mountpoint" />
       </joint>
-      <xacro:intel_realsense_mount prefix="$(arg realsense_EE_prefix)" topic="$(arg realsense_EE_topic)"
+      <xacro:intel_realsense_mount prefix="$(arg realsense_EE_prefix)"
+        topic="$(arg realsense_EE_topic)"
         parent_link="$(arg realsense_EE_prefix)_realsense_mountpoint" />
     </xacro:if>
     <!-- add intel realsense d415 sensor -->

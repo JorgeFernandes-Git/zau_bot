@@ -56,6 +56,6 @@
     ur5_e_moveit_config/config/ur5e.srdf
   
   -->
-  <node name="fake_gripper" pkg="ur_e_gazebo" type="fake_wr-cr200-85.py" respawn="true" output="log" />
+  <!-- <node name="fake_gripper" pkg="ur_e_gazebo" type="fake_wr-cr200-85.py" respawn="true" output="log" /> -->
 
 </launch>
