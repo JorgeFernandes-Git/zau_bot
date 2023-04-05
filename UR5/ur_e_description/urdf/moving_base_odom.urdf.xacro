@@ -11,11 +11,11 @@
     <xacro:arg name="realsense_AGV_topic" default="$(optenv REALSENSE_AGV_TOPIC AGV_realsense)" />
     <xacro:arg name="realsense_AGV_prefix" default="$(optenv REALSENSE_AGV_PREFIX AGV_camera_realsense)" />
     <xacro:arg name="realsense_AGV_parent" default="$(optenv REALSENSE_AGV_PARENT base_link_mb)" />
-    <xacro:arg name="realsense_AGV_xyz" default="$(optenv REALSENSE_AGV_XYZ -0.380 0.250 0.79)" />
-    <xacro:arg name="realsense_AGV_rpy" default="$(optenv REALSENSE_AGV_RPY 0 0 3.14)" />
+    <xacro:arg name="realsense_AGV_xyz" default="$(optenv REALSENSE_AGV_XYZ 0.400 -0.250 0.79)" />
+    <xacro:arg name="realsense_AGV_rpy" default="$(optenv REALSENSE_AGV_RPY 0 -0.2 0)" />
 
-    <material name="white">
-        <color rgba="1.0 1.0 1.0 1.0" />
+    <material name="realsense_color">
+        <color rgba="0.1 0.1 1.0 1.0" />
     </material>
 
     <xacro:include filename="$(find ur_e_description)/urdf/realsense/intel_realsense.urdf.xacro" />

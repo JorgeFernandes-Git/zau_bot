@@ -85,7 +85,7 @@
           <!-- Origin of this mesh is the base of the bracket. -->
           <mesh filename="package://realsense2_description/meshes/d415.stl" />
         </geometry>
-        <material name="light_black" />
+        <material name="realsense_color" />
       </visual>
     </link>
 
