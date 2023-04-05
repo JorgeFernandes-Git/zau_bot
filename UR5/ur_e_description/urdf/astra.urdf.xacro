@@ -61,7 +61,7 @@
       <visual>
         <origin xyz="0.0 0.0 -0.03" rpy="${pi/2} 0 0" />
         <geometry>
-          <mesh filename="package://t2rgb_description/meshes/sensors/astra2.dae" scale="1 1 1" />
+          <mesh filename="package://ur_e_description/meshes/sensors/astra2.dae" scale="1 1 1" />
         </geometry>
       </visual>
     </link>
@@ -85,7 +85,7 @@
           <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
           <geometry> -->
             <!-- Use a slightly smaller scale than 1, so that when both models overlap its the rgb that appears.-->
-            <!-- <mesh filename="package://t2rgb_description/meshes/sensors/astra2.dae" scale="0.98 0.98 0.98" />
+            <!-- <mesh filename="package://ur_e_description/meshes/sensors/astra2.dae" scale="0.98 0.98 0.98" />
           </geometry>
         </visual> -->
       </link>
