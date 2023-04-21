@@ -159,7 +159,7 @@
   </link>
   <link name="inertial_link">
     <inertial>
-      <origin xyz="-0.00065 -0.085 0.062" rpy="0.0 0.0 0.0"/>
+      <origin xyz="-0.00065 -0.085 0.062" rpy="0 0 0"/>
       <mass value="46.034"/>
       <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296"/>
     </inertial>
@@ -177,7 +177,7 @@
   </joint>
   <link name="wheel_left_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.02849894"/>
       <inertia ixx="1.117558e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09" iyy="1.1192413e-05" iyz="-1.4400107e-11" izz="2.0712558e-05"/>
     </inertial>
@@ -203,7 +203,7 @@
   </joint>
   <link name="wheel_right_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.02849894"/>
       <inertia ixx="1.117558e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09" iyy="1.1192413e-05" iyz="-1.4400107e-11" izz="2.0712558e-05"/>
     </inertial>
@@ -228,7 +228,7 @@
   </joint>
   <link name="caster_back_right_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.005"/>
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
@@ -253,7 +253,7 @@
   </joint>
   <link name="caster_back_left_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.005"/>
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
@@ -278,7 +278,7 @@
   </joint>
   <link name="caster_front_right_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.005"/>
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
@@ -303,7 +303,7 @@
   </joint>
   <link name="caster_front_left_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.005"/>
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
@@ -622,13 +622,13 @@
     <limit effort="100.0" lower="0.0" upper="0.03078" velocity="0.05"/>
   </joint>
   <joint name="camera_joint" type="fixed">
-    <origin xyz="0.0600758568472458 -0.07451415139078899 0.04999473796135022" rpy="-3.141483156142495 -0.0009436775284828712 0.0005450844558930153"/>
+    <origin xyz="0.0600758568472458 -0.07451415139078899 0.04999473796135022" rpy="-3.141483156142495 -0.0009436775284828712 0.000545084455893016"/>
     <parent link="ee_link"/>
     <child link="camera_link"/>
   </joint>
   <link name="camera_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.564"/>
       <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257"/>
     </inertial>

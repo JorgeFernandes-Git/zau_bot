@@ -33,11 +33,12 @@
 description_file: "package://e0_rgb2ee_optimized/optimized/optimized_rgb2ee.urdf.xacro"
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
-bag_file: "$ROS_BAGS/Zau/e0_rgb2ee/e0_rgb2ee.bag"
+bag_file: "$ROS_BAGS/Zau/e0_rgb2ee/e0_rgb2ee_real.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
-world_link: "world"
+# world_link: "world"
+world_link: "base_link"
 
 # ATOM will calibrate the extrinsic parameters of your sensors.
 # In this section you should discriminate the sensors that will be part of the calibrations.
@@ -73,10 +74,10 @@ sensors:
   #
 
   camera:
-    link: "camera_rgb_optical_frame"
-    parent_link: "ee_link"
-    child_link: "camera_link"
-    topic_name: "/camera/rgb/image_raw"
+    link: "camera_color_optical_frame"
+    parent_link: "camera_link"
+    child_link: "camera_color_frame"
+    topic_name: "/camera/color/image_raw/compressed"
     throttle: 5
     modality: "rgb"
 
@@ -114,7 +115,8 @@ calibration_pattern:
   # The parent frame id (or link) of the pattern.
   # For example, in hand-eye calibration the parent link
   # of the pattern can be the end-effector or the base of the arm
-  parent_link: "world"
+  # parent_link: "world"
+  parent_link: "base_link"
 
   # Defines if the pattern link is the same in all collections (i.e. fixed=true),
   # or each collection will have its own estimate of the link transformation.
