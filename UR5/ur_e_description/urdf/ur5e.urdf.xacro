@@ -5,19 +5,21 @@
   <xacro:include filename="$(find ur_e_description)/urdf/ur.gazebo.xacro" />
 
   <!-- place robot on moving base -->
-
+  
   <!-- fixed AGV -->
   <!-- <xacro:include filename="$(find ur_e_description)/urdf/moving_base.urdf.xacro" /> -->
 
   <!-- moving AGV -->
-  <xacro:include filename="$(find ur_e_description)/urdf/moving_base_odom.urdf.xacro" />
+  <!-- <xacro:include filename="$(find ur_e_description)/urdf/moving_base_odom.urdf.xacro" />  -->
 
   <!-- *************THIS IS THE TRANSFORMATION TO BE CALIBRATED************* -->
-  <joint name="moving_base_to_ur5e" type="fixed">
-    <parent link="base_link_mb" />
+<!-- <link name="world"/> -->
+
+  <!-- <joint name="moving_base_to_ur5e" type="fixed">
+    <parent link="world" />
     <child link="base_link" />
-    <origin xyz="-0.295 0.0 0.780" rpy="0.0 0.0 0.0" />
-  </joint>
+    <origin xyz="-0.0 -0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint> -->
   <!-- place robot on moving base -->
 
   <xacro:macro name="cylinder_inertial" params="radius length mass *origin">
@@ -520,8 +522,12 @@
     </joint> -->
     <!-- add gripper part end ###################################################################-->
 
+    <!-- SENSOR CAMERA ON END EFFECTOR -->
 
-    <!-- add camera support -->
+    <!-- Files to add sensor camera on end-effector:
+    ur.gazebo.xacro
+    ur5e.urdf.xacro -->
+
     <link name="${prefix}ee_camera_support_link">
       <visual>
         <geometry>
@@ -555,29 +561,11 @@
       <child link="${prefix}ee_camera_support_small_link" />
     </joint>
 
-
-    <!-- add intel realsense camera d415 sensor -->
-    <xacro:arg name="realsense_EE_enabled" default="$(optenv REALSENSE_EE_ENABLED 1)" />
-    <xacro:arg name="realsense_EE_topic" default="$(optenv REALSENSE_EE_TOPIC EE_realsense)" />
-    <xacro:arg name="realsense_EE_prefix"
-      default="$(optenv REALSENSE_EE_PREFIX EE_camera_realsense)" />
-    <xacro:arg name="realsense_EE_parent" default="$(optenv REALSENSE_EE_PARENT ee_link)" />
-    <xacro:arg name="realsense_EE_xyz" default="$(optenv REALSENSE_EE_XYZ 0.095 0.000 -0.075)" />
-    <xacro:arg name="realsense_EE_rpy" default="$(optenv REALSENSE_EE_RPY -3.14 0.0 1.57)" />
-
     <xacro:include filename="$(find ur_e_description)/urdf/realsense/intel_realsense.urdf.xacro" />
-    <xacro:if value="$(arg realsense_EE_enabled)">
-      <link name="$(arg realsense_EE_prefix)_realsense_mountpoint" />
-      <joint name="$(arg realsense_EE_prefix)_realsense_mountpoint_joint" type="fixed">
-        <origin xyz="$(arg realsense_EE_xyz)" rpy="$(arg realsense_EE_rpy)" />
-        <parent link="$(arg realsense_EE_parent)" />
-        <child link="$(arg realsense_EE_prefix)_realsense_mountpoint" />
-      </joint>
-      <xacro:intel_realsense_mount prefix="$(arg realsense_EE_prefix)"
-        topic="$(arg realsense_EE_topic)"
-        parent_link="$(arg realsense_EE_prefix)_realsense_mountpoint" />
-    </xacro:if>
-    <!-- add intel realsense d415 sensor -->
+    <xacro:sensor_d415 parent="ee_link" use_nominal_extrinsics="true">
+      <origin xyz="0.095 0.000 -0.075"
+        rpy="-3.14 0.0 1.57" />
+    </xacro:sensor_d415>
     <!-- SENSOR CAMERA ON END EFFECTOR -->
 
 
@@ -587,11 +575,11 @@
     <!-- ROS base_link to UR 'Base' Coordinates transform -->
     <!-- <link name="${prefix}base" />
     <joint name="${prefix}base_link-base_fixed_joint" type="fixed"> -->
-    <!-- NOTE: this rotation is only needed as long as base_link itself is
+      <!-- NOTE: this rotation is only needed as long as base_link itself is
                  not corrected wrt the real robot (ie: rotated over 180
                  degrees)
       -->
-    <!-- <origin xyz="0 0 0" rpy="0 0 ${-pi}" />
+      <!-- <origin xyz="0 0 0" rpy="0 0 ${-pi}" />
       <parent link="${prefix}base_link" />
       <child link="${prefix}base" />
     </joint> -->

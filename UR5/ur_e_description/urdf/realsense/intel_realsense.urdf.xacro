@@ -1,105 +1,152 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:macro name="intel_realsense_mount" params="prefix topic parent_link">
+<!--
+License: Apache 2.0. See LICENSE file in root directory.
+Copyright(c) 2017 Intel Corporation. All Rights Reserved
 
-    <xacro:macro name="intel_realsense" params="
-               frame:=realsense          topic:=realsense
-               h_fov:=1.5184351666666667 v_fov:=1.0122901111111111
-               min_range:=0.105          max_range:=8.0
-               width:=640                height:=480
-               update_rate:=30
-               robot_namespace:=/">
+This is the URDF model for the Intel RealSense 415 camera, in its
+aluminum peripherial evaluation case.
+-->
 
-      <!-- this link is the origin for the camera's data -->
-      <link name="${frame}" />
+<robot name="sensor_d415" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Includes -->
+  <xacro:include filename="$(find realsense2_description)/urdf/_materials.urdf.xacro" />
+  <xacro:include filename="$(find realsense2_description)/urdf/_usb_plug.urdf.xacro" />
 
-      <!--
-        The gazebo plugin aligns the depth data with the Z axis, with X=left and Y=up
-        ROS expects the depth data along the X axis, with Y=left and Z=up
-        This link only exists to give the gazebo plugin the correctly-oriented frame
-      -->
-      <link name="${frame}_gazebo" />
-      <joint name="${frame}_gazebo_joint" type="fixed">
-        <parent link="${frame}"/>
-        <child link="${frame}_gazebo"/>
-        <origin xyz="0.0 0 0" rpy="-1.5707963267948966 0 -1.5707963267948966"/>
-      </joint>
+  <xacro:macro name="sensor_d415" params="parent *origin  name:=camera  use_nominal_extrinsics:=false add_plug:=false use_mesh:=true">
+    <xacro:property name="M_PI" value="3.1415926535897931" />
 
-      <gazebo reference="${frame}">
-        <turnGravityOff>true</turnGravityOff>
-        <sensor type="depth" name="${prefix}_realsense_depth">
-          <update_rate>${update_rate}</update_rate>
-          <camera>
-            <!-- 75x65 degree FOV for the depth sensor -->
-            <horizontal_fov>${h_fov}</horizontal_fov>
-            <vertical_fov>${v_fov}</vertical_fov>
+    <!-- The following values are approximate, and the camera node
+     publishing TF values with actual calibrated camera extrinsic values -->
+    <xacro:property name="d415_cam_depth_to_infra1_offset" value="0.0"/>
+    <xacro:property name="d415_cam_depth_to_infra2_offset" value="-0.055"/>
+    <xacro:property name="d415_cam_depth_to_color_offset" value="0.015"/>
 
-            <image>
-              <width>${width}</width>
-              <height>${height}</height>
-              <!-- TODO: check what format the Realsense hardware delivers and set this to match! -->
-              <format>RGB_INT8</format>
-            </image>
-            <clip>
-              <!-- give the color sensor a maximum range of 50m so that the simulation renders nicely -->
-              <near>0.01</near>
-              <far>50.0</far>
-            </clip>
-          </camera>
-          <plugin name="kinect_controller" filename="libgazebo_ros_openni_kinect.so">
-            <baseline>0.2</baseline>
-            <alwaysOn>true</alwaysOn>
-            <updateRate>${update_rate}</updateRate>
-            <cameraName>${topic}</cameraName>
-            <imageTopicName>color/image_raw</imageTopicName>
-            <cameraInfoTopicName>color/camera_info</cameraInfoTopicName>
-            <depthImageTopicName>depth/image_rect_raw</depthImageTopicName>
-            <depthImageInfoTopicName>depth/camera_info</depthImageInfoTopicName>
-            <pointCloudTopicName>depth/color/points</pointCloudTopicName>
-            <frameName>${frame}_gazebo</frameName>
-            <pointCloudCutoff>${min_range}</pointCloudCutoff>
-            <pointCloudCutoffMax>${max_range}</pointCloudCutoffMax>
-            <distortionK1>0.00000001</distortionK1>
-            <distortionK2>0.00000001</distortionK2>
-            <distortionK3>0.00000001</distortionK3>
-            <distortionT1>0.00000001</distortionT1>
-            <distortionT2>0.00000001</distortionT2>
-            <CxPrime>0</CxPrime>
-            <Cx>0</Cx>
-            <Cy>0</Cy>
-            <focalLength>0</focalLength>
-            <hackBaseline>0</hackBaseline>
-          </plugin>
-        </sensor>
-      </gazebo>
-    </xacro:macro>
+    <!-- The following values model the aluminum peripherial case for the
+  	d415 camera, with the camera joint represented by the actual
+  	peripherial camera tripod mount -->
+    <xacro:property name="d415_cam_width" value="0.099"/>
+    <xacro:property name="d415_cam_height" value="0.023"/>
+    <xacro:property name="d415_cam_depth" value="0.02005"/>
+    <xacro:property name="d415_cam_mount_from_center_offset" value="0.00987"/>
 
-    <link name="${prefix}_realsense_lens">
+    <!-- The following offset is relative the the physical d415 camera peripherial
+  	camera tripod mount -->
+    <xacro:property name="d415_cam_depth_px" value="${d415_cam_mount_from_center_offset}"/>
+    <xacro:property name="d415_cam_depth_py" value="0.020"/>
+    <xacro:property name="d415_cam_depth_pz" value="${d415_cam_height/2}"/>
+
+    <!-- camera body, with origin at bottom screw mount -->
+    <joint name="${name}_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${name}_bottom_screw_frame" />
+    </joint>
+
+    <link name="${name}_bottom_screw_frame"/>
+
+    <joint name="${name}_link_joint" type="fixed">
+      <origin xyz="0 ${d415_cam_depth_py} ${d415_cam_depth_pz}" rpy="0 0 0"/>
+      <parent link="${name}_bottom_screw_frame"/>
+      <child link="${name}_link" />
+    </joint>
+
+    <link name="${name}_link">
       <visual>
-        <!--
-          the model's origin is in the middle & it's rotated to lie in
-          the optical standard with X left, Y up, and Z forward
-        -->
-        <origin xyz="0.0115 0 0.0100" rpy="1.570796 0 1.570796" />
-        <geometry>
-          <!-- Origin of this mesh is the base of the bracket. -->
-          <mesh filename="package://realsense2_description/meshes/d415.stl" />
-        </geometry>
-        <material name="realsense_color" />
+        <xacro:if value="${use_mesh}">
+          <origin xyz="${d415_cam_mount_from_center_offset} ${-d415_cam_depth_py} 0" rpy="${M_PI/2} 0 ${M_PI/2}"/>
+          <geometry>
+            <mesh filename="package://realsense2_description/meshes/d415.stl" />
+          </geometry>
+          <material name="aluminum"/>
+        </xacro:if>
+        <xacro:unless value="${use_mesh}">
+          <origin xyz="0 ${-d415_cam_depth_py} 0" rpy="0 0 0"/>
+          <geometry>
+            <box size="${d415_cam_depth} ${d415_cam_width} ${d415_cam_height}"/>
+          </geometry>
+        </xacro:unless>     
       </visual>
+      <collision>
+        <origin xyz="0 ${-d415_cam_depth_py} 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="${d415_cam_depth} ${d415_cam_width} ${d415_cam_height}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.072" />
+        <!-- The following are not reliable values, and should not be used for modeling -->
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.000498940" iyz="0.0" izz="0.003879257" />
+      </inertial>
     </link>
 
-    <joint type="fixed" name="${prefix}_realsense_lens_joint">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <parent link="${parent_link}" />
-      <child link="${prefix}_realsense_lens" />
-    </joint>
-    <joint type="fixed" name="${prefix}_realsense_joint">
-      <origin xyz="0.025 0 0" rpy="0 0 0" />
-      <parent link="${prefix}_realsense_lens" />
-      <child link="${prefix}_realsense" />
-    </joint>
+    <!-- Use the nominal extrinsics between camera frames if the calibrated extrinsics aren't being published. e.g. running the device in simulation  -->
+    <xacro:if value="${use_nominal_extrinsics}">
+      <!-- camera depth joints and links -->
+      <joint name="${name}_depth_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="${name}_link"/>
+        <child link="${name}_depth_frame" />
+      </joint>
+      <link name="${name}_depth_frame"/>
 
-    <xacro:intel_realsense frame="${prefix}_realsense" topic="${topic}"/>
+      <joint name="${name}_depth_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
+        <parent link="${name}_depth_frame" />
+        <child link="${name}_depth_optical_frame" />
+      </joint>
+      <link name="${name}_depth_optical_frame"/>
+
+      <!-- camera left IR joints and links -->
+      <joint name="${name}_infra1_joint" type="fixed">
+        <origin xyz="0 ${d415_cam_depth_to_infra1_offset} 0" rpy="0 0 0" />
+        <parent link="${name}_link" />
+        <child link="${name}_infra1_frame" />
+      </joint>
+      <link name="${name}_infra1_frame"/>
+
+      <joint name="${name}_infra1_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
+        <parent link="${name}_infra1_frame" />
+        <child link="${name}_infra1_optical_frame" />
+      </joint>
+      <link name="${name}_infra1_optical_frame"/>
+
+      <!-- camera right IR joints and links -->
+      <joint name="${name}_infra2_joint" type="fixed">
+        <origin xyz="0 ${d415_cam_depth_to_infra2_offset} 0" rpy="0 0 0" />
+        <parent link="${name}_link" />
+        <child link="${name}_infra2_frame" />
+      </joint>
+      <link name="${name}_infra2_frame"/>
+
+      <joint name="${name}_infra2_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
+        <parent link="${name}_infra2_frame" />
+        <child link="${name}_infra2_optical_frame" />
+      </joint>
+      <link name="${name}_infra2_optical_frame"/>
+
+      <!-- camera color joints and links -->
+      <joint name="${name}_color_joint" type="fixed">
+        <origin xyz="0 ${d415_cam_depth_to_color_offset} 0" rpy="0 0 0" />
+        <parent link="${name}_link" />
+        <child link="${name}_color_frame" />
+      </joint>
+      <link name="${name}_color_frame"/>
+
+      <joint name="${name}_color_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
+        <parent link="${name}_color_frame" />
+        <child link="${name}_color_optical_frame" />
+      </joint>
+      <link name="${name}_color_optical_frame"/>
+    </xacro:if>
+
+    <xacro:if value="${add_plug}">
+      <xacro:usb_plug parent="${name}_link" name="${name}_usb_plug">
+        <origin xyz="${d415_cam_mount_from_center_offset - 0.01587} ${-d415_cam_depth_py - 0.0358} 0" rpy="0 0 0"/>
+      </xacro:usb_plug>
+    </xacro:if>
   </xacro:macro>
 </robot>
