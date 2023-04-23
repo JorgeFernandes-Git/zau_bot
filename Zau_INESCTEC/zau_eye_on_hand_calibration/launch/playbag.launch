@@ -46,10 +46,6 @@
     <!-- Throttle topics -->
     
     
-    <node pkg="topic_tools" type="throttle" name="throttler_camera"
-          args="messages /camera/color/image_raw/compressed_to_throttle 10 /camera/color/image_raw/compressed"/>
-    
-    
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
     
     
@@ -70,11 +66,11 @@
 
     <group if="$(arg use_tfs)"> <!--Play bag file using tfs, ignore joint states -->
         <node pkg="rosbag" type="play" name="rosbag_play" output="screen"
-              args=" $(arg bag_file) --clock -r $(arg bag_rate) -l -s $(arg bag_start) -d 2 /joint_states:=/joint_states_null /camera/color/image_raw/compressed:=/camera/color/image_raw/compressed_to_throttle"/>
+              args=" $(arg bag_file) --clock -r $(arg bag_rate) -l -s $(arg bag_start) -d 2 /joint_states:=/joint_states_null "/>
     </group>
     <group unless="$(arg use_tfs)"> <!--Play bag file ignoring tfs-->
         <node pkg="rosbag" type="play" name="rosbag_play" output="screen"
-              args=" $(arg bag_file) --clock -r $(arg bag_rate) -l -s $(arg bag_start) -d 2 /tf:=/tf_dev_null /tf_static:=/tf_static_dev_null /camera/color/image_raw/compressed:=/camera/color/image_raw/compressed_to_throttle"/>
+              args=" $(arg bag_file) --clock -r $(arg bag_rate) -l -s $(arg bag_start) -d 2 /tf:=/tf_dev_null /tf_static:=/tf_static_dev_null "/>
     </group>
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 

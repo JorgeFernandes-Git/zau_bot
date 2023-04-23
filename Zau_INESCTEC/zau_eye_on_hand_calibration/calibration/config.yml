@@ -79,7 +79,6 @@ sensors:
     parent_link: "camera_link"
     child_link: "camera_color_frame"
     topic_name: "/camera/color/image_raw"
-    throttle: 10
     modality: "rgb"
 
 # ATOM will calibrate the extrinsic parameters of your links.
