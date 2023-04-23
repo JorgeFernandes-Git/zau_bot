@@ -1,0 +1,1348 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 0
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+      Splitter Ratio: 0.763005793094635
+    Tree Height: 282
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.5886790156364441
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Name: Time
+    SyncMode: 0
+    SyncSource: camera-Labels-Image
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.019999999552965164
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: base_link
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_link:
+          Value: true
+        c000_base_link:
+          Value: true
+        c000_camera_bottom_screw_frame:
+          Value: true
+        c000_camera_color_frame:
+          Value: true
+        c000_camera_color_optical_frame:
+          Value: true
+        c000_camera_depth_frame:
+          Value: true
+        c000_camera_depth_optical_frame:
+          Value: true
+        c000_camera_infra1_frame:
+          Value: true
+        c000_camera_infra1_optical_frame:
+          Value: true
+        c000_camera_infra2_frame:
+          Value: true
+        c000_camera_infra2_optical_frame:
+          Value: true
+        c000_camera_link:
+          Value: true
+        c000_ee_camera_support_link:
+          Value: true
+        c000_ee_camera_support_small_link:
+          Value: true
+        c000_ee_link:
+          Value: true
+        c000_forearm_link:
+          Value: true
+        c000_shoulder_link:
+          Value: true
+        c000_upper_arm_link:
+          Value: true
+        c000_wrist_1_link:
+          Value: true
+        c000_wrist_2_link:
+          Value: true
+        c000_wrist_3_link:
+          Value: true
+        c001_base_link:
+          Value: true
+        c001_camera_bottom_screw_frame:
+          Value: true
+        c001_camera_color_frame:
+          Value: true
+        c001_camera_color_optical_frame:
+          Value: true
+        c001_camera_depth_frame:
+          Value: true
+        c001_camera_depth_optical_frame:
+          Value: true
+        c001_camera_infra1_frame:
+          Value: true
+        c001_camera_infra1_optical_frame:
+          Value: true
+        c001_camera_infra2_frame:
+          Value: true
+        c001_camera_infra2_optical_frame:
+          Value: true
+        c001_camera_link:
+          Value: true
+        c001_ee_camera_support_link:
+          Value: true
+        c001_ee_camera_support_small_link:
+          Value: true
+        c001_ee_link:
+          Value: true
+        c001_forearm_link:
+          Value: true
+        c001_shoulder_link:
+          Value: true
+        c001_upper_arm_link:
+          Value: true
+        c001_wrist_1_link:
+          Value: true
+        c001_wrist_2_link:
+          Value: true
+        c001_wrist_3_link:
+          Value: true
+        c002_base_link:
+          Value: true
+        c002_camera_bottom_screw_frame:
+          Value: true
+        c002_camera_color_frame:
+          Value: true
+        c002_camera_color_optical_frame:
+          Value: true
+        c002_camera_depth_frame:
+          Value: true
+        c002_camera_depth_optical_frame:
+          Value: true
+        c002_camera_infra1_frame:
+          Value: true
+        c002_camera_infra1_optical_frame:
+          Value: true
+        c002_camera_infra2_frame:
+          Value: true
+        c002_camera_infra2_optical_frame:
+          Value: true
+        c002_camera_link:
+          Value: true
+        c002_ee_camera_support_link:
+          Value: true
+        c002_ee_camera_support_small_link:
+          Value: true
+        c002_ee_link:
+          Value: true
+        c002_forearm_link:
+          Value: true
+        c002_shoulder_link:
+          Value: true
+        c002_upper_arm_link:
+          Value: true
+        c002_wrist_1_link:
+          Value: true
+        c002_wrist_2_link:
+          Value: true
+        c002_wrist_3_link:
+          Value: true
+        c003_base_link:
+          Value: true
+        c003_camera_bottom_screw_frame:
+          Value: true
+        c003_camera_color_frame:
+          Value: true
+        c003_camera_color_optical_frame:
+          Value: true
+        c003_camera_depth_frame:
+          Value: true
+        c003_camera_depth_optical_frame:
+          Value: true
+        c003_camera_infra1_frame:
+          Value: true
+        c003_camera_infra1_optical_frame:
+          Value: true
+        c003_camera_infra2_frame:
+          Value: true
+        c003_camera_infra2_optical_frame:
+          Value: true
+        c003_camera_link:
+          Value: true
+        c003_ee_camera_support_link:
+          Value: true
+        c003_ee_camera_support_small_link:
+          Value: true
+        c003_ee_link:
+          Value: true
+        c003_forearm_link:
+          Value: true
+        c003_shoulder_link:
+          Value: true
+        c003_upper_arm_link:
+          Value: true
+        c003_wrist_1_link:
+          Value: true
+        c003_wrist_2_link:
+          Value: true
+        c003_wrist_3_link:
+          Value: true
+        c004_base_link:
+          Value: true
+        c004_camera_bottom_screw_frame:
+          Value: true
+        c004_camera_color_frame:
+          Value: true
+        c004_camera_color_optical_frame:
+          Value: true
+        c004_camera_depth_frame:
+          Value: true
+        c004_camera_depth_optical_frame:
+          Value: true
+        c004_camera_infra1_frame:
+          Value: true
+        c004_camera_infra1_optical_frame:
+          Value: true
+        c004_camera_infra2_frame:
+          Value: true
+        c004_camera_infra2_optical_frame:
+          Value: true
+        c004_camera_link:
+          Value: true
+        c004_ee_camera_support_link:
+          Value: true
+        c004_ee_camera_support_small_link:
+          Value: true
+        c004_ee_link:
+          Value: true
+        c004_forearm_link:
+          Value: true
+        c004_shoulder_link:
+          Value: true
+        c004_upper_arm_link:
+          Value: true
+        c004_wrist_1_link:
+          Value: true
+        c004_wrist_2_link:
+          Value: true
+        c004_wrist_3_link:
+          Value: true
+        c005_base_link:
+          Value: true
+        c005_camera_bottom_screw_frame:
+          Value: true
+        c005_camera_color_frame:
+          Value: true
+        c005_camera_color_optical_frame:
+          Value: true
+        c005_camera_depth_frame:
+          Value: true
+        c005_camera_depth_optical_frame:
+          Value: true
+        c005_camera_infra1_frame:
+          Value: true
+        c005_camera_infra1_optical_frame:
+          Value: true
+        c005_camera_infra2_frame:
+          Value: true
+        c005_camera_infra2_optical_frame:
+          Value: true
+        c005_camera_link:
+          Value: true
+        c005_ee_camera_support_link:
+          Value: true
+        c005_ee_camera_support_small_link:
+          Value: true
+        c005_ee_link:
+          Value: true
+        c005_forearm_link:
+          Value: true
+        c005_shoulder_link:
+          Value: true
+        c005_upper_arm_link:
+          Value: true
+        c005_wrist_1_link:
+          Value: true
+        c005_wrist_2_link:
+          Value: true
+        c005_wrist_3_link:
+          Value: true
+        c006_base_link:
+          Value: true
+        c006_camera_bottom_screw_frame:
+          Value: true
+        c006_camera_color_frame:
+          Value: true
+        c006_camera_color_optical_frame:
+          Value: true
+        c006_camera_depth_frame:
+          Value: true
+        c006_camera_depth_optical_frame:
+          Value: true
+        c006_camera_infra1_frame:
+          Value: true
+        c006_camera_infra1_optical_frame:
+          Value: true
+        c006_camera_infra2_frame:
+          Value: true
+        c006_camera_infra2_optical_frame:
+          Value: true
+        c006_camera_link:
+          Value: true
+        c006_ee_camera_support_link:
+          Value: true
+        c006_ee_camera_support_small_link:
+          Value: true
+        c006_ee_link:
+          Value: true
+        c006_forearm_link:
+          Value: true
+        c006_shoulder_link:
+          Value: true
+        c006_upper_arm_link:
+          Value: true
+        c006_wrist_1_link:
+          Value: true
+        c006_wrist_2_link:
+          Value: true
+        c006_wrist_3_link:
+          Value: true
+        c007_base_link:
+          Value: true
+        c007_camera_bottom_screw_frame:
+          Value: true
+        c007_camera_color_frame:
+          Value: true
+        c007_camera_color_optical_frame:
+          Value: true
+        c007_camera_depth_frame:
+          Value: true
+        c007_camera_depth_optical_frame:
+          Value: true
+        c007_camera_infra1_frame:
+          Value: true
+        c007_camera_infra1_optical_frame:
+          Value: true
+        c007_camera_infra2_frame:
+          Value: true
+        c007_camera_infra2_optical_frame:
+          Value: true
+        c007_camera_link:
+          Value: true
+        c007_ee_camera_support_link:
+          Value: true
+        c007_ee_camera_support_small_link:
+          Value: true
+        c007_ee_link:
+          Value: true
+        c007_forearm_link:
+          Value: true
+        c007_shoulder_link:
+          Value: true
+        c007_upper_arm_link:
+          Value: true
+        c007_wrist_1_link:
+          Value: true
+        c007_wrist_2_link:
+          Value: true
+        c007_wrist_3_link:
+          Value: true
+        c008_base_link:
+          Value: true
+        c008_camera_bottom_screw_frame:
+          Value: true
+        c008_camera_color_frame:
+          Value: true
+        c008_camera_color_optical_frame:
+          Value: true
+        c008_camera_depth_frame:
+          Value: true
+        c008_camera_depth_optical_frame:
+          Value: true
+        c008_camera_infra1_frame:
+          Value: true
+        c008_camera_infra1_optical_frame:
+          Value: true
+        c008_camera_infra2_frame:
+          Value: true
+        c008_camera_infra2_optical_frame:
+          Value: true
+        c008_camera_link:
+          Value: true
+        c008_ee_camera_support_link:
+          Value: true
+        c008_ee_camera_support_small_link:
+          Value: true
+        c008_ee_link:
+          Value: true
+        c008_forearm_link:
+          Value: true
+        c008_shoulder_link:
+          Value: true
+        c008_upper_arm_link:
+          Value: true
+        c008_wrist_1_link:
+          Value: true
+        c008_wrist_2_link:
+          Value: true
+        c008_wrist_3_link:
+          Value: true
+        c009_base_link:
+          Value: true
+        c009_camera_bottom_screw_frame:
+          Value: true
+        c009_camera_color_frame:
+          Value: true
+        c009_camera_color_optical_frame:
+          Value: true
+        c009_camera_depth_frame:
+          Value: true
+        c009_camera_depth_optical_frame:
+          Value: true
+        c009_camera_infra1_frame:
+          Value: true
+        c009_camera_infra1_optical_frame:
+          Value: true
+        c009_camera_infra2_frame:
+          Value: true
+        c009_camera_infra2_optical_frame:
+          Value: true
+        c009_camera_link:
+          Value: true
+        c009_ee_camera_support_link:
+          Value: true
+        c009_ee_camera_support_small_link:
+          Value: true
+        c009_ee_link:
+          Value: true
+        c009_forearm_link:
+          Value: true
+        c009_shoulder_link:
+          Value: true
+        c009_upper_arm_link:
+          Value: true
+        c009_wrist_1_link:
+          Value: true
+        c009_wrist_2_link:
+          Value: true
+        c009_wrist_3_link:
+          Value: true
+        c010_base_link:
+          Value: true
+        c010_camera_bottom_screw_frame:
+          Value: true
+        c010_camera_color_frame:
+          Value: true
+        c010_camera_color_optical_frame:
+          Value: true
+        c010_camera_depth_frame:
+          Value: true
+        c010_camera_depth_optical_frame:
+          Value: true
+        c010_camera_infra1_frame:
+          Value: true
+        c010_camera_infra1_optical_frame:
+          Value: true
+        c010_camera_infra2_frame:
+          Value: true
+        c010_camera_infra2_optical_frame:
+          Value: true
+        c010_camera_link:
+          Value: true
+        c010_ee_camera_support_link:
+          Value: true
+        c010_ee_camera_support_small_link:
+          Value: true
+        c010_ee_link:
+          Value: true
+        c010_forearm_link:
+          Value: true
+        c010_shoulder_link:
+          Value: true
+        c010_upper_arm_link:
+          Value: true
+        c010_wrist_1_link:
+          Value: true
+        c010_wrist_2_link:
+          Value: true
+        c010_wrist_3_link:
+          Value: true
+        c011_base_link:
+          Value: true
+        c011_camera_bottom_screw_frame:
+          Value: true
+        c011_camera_color_frame:
+          Value: true
+        c011_camera_color_optical_frame:
+          Value: true
+        c011_camera_depth_frame:
+          Value: true
+        c011_camera_depth_optical_frame:
+          Value: true
+        c011_camera_infra1_frame:
+          Value: true
+        c011_camera_infra1_optical_frame:
+          Value: true
+        c011_camera_infra2_frame:
+          Value: true
+        c011_camera_infra2_optical_frame:
+          Value: true
+        c011_camera_link:
+          Value: true
+        c011_ee_camera_support_link:
+          Value: true
+        c011_ee_camera_support_small_link:
+          Value: true
+        c011_ee_link:
+          Value: true
+        c011_forearm_link:
+          Value: true
+        c011_shoulder_link:
+          Value: true
+        c011_upper_arm_link:
+          Value: true
+        c011_wrist_1_link:
+          Value: true
+        c011_wrist_2_link:
+          Value: true
+        c011_wrist_3_link:
+          Value: true
+        c012_base_link:
+          Value: true
+        c012_camera_bottom_screw_frame:
+          Value: true
+        c012_camera_color_frame:
+          Value: true
+        c012_camera_color_optical_frame:
+          Value: true
+        c012_camera_depth_frame:
+          Value: true
+        c012_camera_depth_optical_frame:
+          Value: true
+        c012_camera_infra1_frame:
+          Value: true
+        c012_camera_infra1_optical_frame:
+          Value: true
+        c012_camera_infra2_frame:
+          Value: true
+        c012_camera_infra2_optical_frame:
+          Value: true
+        c012_camera_link:
+          Value: true
+        c012_ee_camera_support_link:
+          Value: true
+        c012_ee_camera_support_small_link:
+          Value: true
+        c012_ee_link:
+          Value: true
+        c012_forearm_link:
+          Value: true
+        c012_shoulder_link:
+          Value: true
+        c012_upper_arm_link:
+          Value: true
+        c012_wrist_1_link:
+          Value: true
+        c012_wrist_2_link:
+          Value: true
+        c012_wrist_3_link:
+          Value: true
+        c013_base_link:
+          Value: true
+        c013_camera_bottom_screw_frame:
+          Value: true
+        c013_camera_color_frame:
+          Value: true
+        c013_camera_color_optical_frame:
+          Value: true
+        c013_camera_depth_frame:
+          Value: true
+        c013_camera_depth_optical_frame:
+          Value: true
+        c013_camera_infra1_frame:
+          Value: true
+        c013_camera_infra1_optical_frame:
+          Value: true
+        c013_camera_infra2_frame:
+          Value: true
+        c013_camera_infra2_optical_frame:
+          Value: true
+        c013_camera_link:
+          Value: true
+        c013_ee_camera_support_link:
+          Value: true
+        c013_ee_camera_support_small_link:
+          Value: true
+        c013_ee_link:
+          Value: true
+        c013_forearm_link:
+          Value: true
+        c013_shoulder_link:
+          Value: true
+        c013_upper_arm_link:
+          Value: true
+        c013_wrist_1_link:
+          Value: true
+        c013_wrist_2_link:
+          Value: true
+        c013_wrist_3_link:
+          Value: true
+        c014_base_link:
+          Value: true
+        c014_camera_bottom_screw_frame:
+          Value: true
+        c014_camera_color_frame:
+          Value: true
+        c014_camera_color_optical_frame:
+          Value: true
+        c014_camera_depth_frame:
+          Value: true
+        c014_camera_depth_optical_frame:
+          Value: true
+        c014_camera_infra1_frame:
+          Value: true
+        c014_camera_infra1_optical_frame:
+          Value: true
+        c014_camera_infra2_frame:
+          Value: true
+        c014_camera_infra2_optical_frame:
+          Value: true
+        c014_camera_link:
+          Value: true
+        c014_ee_camera_support_link:
+          Value: true
+        c014_ee_camera_support_small_link:
+          Value: true
+        c014_ee_link:
+          Value: true
+        c014_forearm_link:
+          Value: true
+        c014_shoulder_link:
+          Value: true
+        c014_upper_arm_link:
+          Value: true
+        c014_wrist_1_link:
+          Value: true
+        c014_wrist_2_link:
+          Value: true
+        c014_wrist_3_link:
+          Value: true
+        c015_base_link:
+          Value: true
+        c015_camera_bottom_screw_frame:
+          Value: true
+        c015_camera_color_frame:
+          Value: true
+        c015_camera_color_optical_frame:
+          Value: true
+        c015_camera_depth_frame:
+          Value: true
+        c015_camera_depth_optical_frame:
+          Value: true
+        c015_camera_infra1_frame:
+          Value: true
+        c015_camera_infra1_optical_frame:
+          Value: true
+        c015_camera_infra2_frame:
+          Value: true
+        c015_camera_infra2_optical_frame:
+          Value: true
+        c015_camera_link:
+          Value: true
+        c015_ee_camera_support_link:
+          Value: true
+        c015_ee_camera_support_small_link:
+          Value: true
+        c015_ee_link:
+          Value: true
+        c015_forearm_link:
+          Value: true
+        c015_shoulder_link:
+          Value: true
+        c015_upper_arm_link:
+          Value: true
+        c015_wrist_1_link:
+          Value: true
+        c015_wrist_2_link:
+          Value: true
+        c015_wrist_3_link:
+          Value: true
+        c016_base_link:
+          Value: true
+        c016_camera_bottom_screw_frame:
+          Value: true
+        c016_camera_color_frame:
+          Value: true
+        c016_camera_color_optical_frame:
+          Value: true
+        c016_camera_depth_frame:
+          Value: true
+        c016_camera_depth_optical_frame:
+          Value: true
+        c016_camera_infra1_frame:
+          Value: true
+        c016_camera_infra1_optical_frame:
+          Value: true
+        c016_camera_infra2_frame:
+          Value: true
+        c016_camera_infra2_optical_frame:
+          Value: true
+        c016_camera_link:
+          Value: true
+        c016_ee_camera_support_link:
+          Value: true
+        c016_ee_camera_support_small_link:
+          Value: true
+        c016_ee_link:
+          Value: true
+        c016_forearm_link:
+          Value: true
+        c016_shoulder_link:
+          Value: true
+        c016_upper_arm_link:
+          Value: true
+        c016_wrist_1_link:
+          Value: true
+        c016_wrist_2_link:
+          Value: true
+        c016_wrist_3_link:
+          Value: true
+        c017_base_link:
+          Value: true
+        c017_camera_bottom_screw_frame:
+          Value: true
+        c017_camera_color_frame:
+          Value: true
+        c017_camera_color_optical_frame:
+          Value: true
+        c017_camera_depth_frame:
+          Value: true
+        c017_camera_depth_optical_frame:
+          Value: true
+        c017_camera_infra1_frame:
+          Value: true
+        c017_camera_infra1_optical_frame:
+          Value: true
+        c017_camera_infra2_frame:
+          Value: true
+        c017_camera_infra2_optical_frame:
+          Value: true
+        c017_camera_link:
+          Value: true
+        c017_ee_camera_support_link:
+          Value: true
+        c017_ee_camera_support_small_link:
+          Value: true
+        c017_ee_link:
+          Value: true
+        c017_forearm_link:
+          Value: true
+        c017_shoulder_link:
+          Value: true
+        c017_upper_arm_link:
+          Value: true
+        c017_wrist_1_link:
+          Value: true
+        c017_wrist_2_link:
+          Value: true
+        c017_wrist_3_link:
+          Value: true
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: false
+      Tree:
+        base_link:
+          c000_base_link:
+            c000_shoulder_link:
+              c000_upper_arm_link:
+                c000_forearm_link:
+                  c000_wrist_1_link:
+                    c000_wrist_2_link:
+                      c000_wrist_3_link:
+                        c000_ee_link:
+                          c000_camera_bottom_screw_frame:
+                            c000_camera_link:
+                              c000_camera_color_frame:
+                                c000_camera_color_optical_frame:
+                                  {}
+                              c000_camera_depth_frame:
+                                c000_camera_depth_optical_frame:
+                                  {}
+                              c000_camera_infra1_frame:
+                                c000_camera_infra1_optical_frame:
+                                  {}
+                              c000_camera_infra2_frame:
+                                c000_camera_infra2_optical_frame:
+                                  {}
+                          c000_ee_camera_support_link:
+                            c000_ee_camera_support_small_link:
+                              {}
+          c001_base_link:
+            c001_shoulder_link:
+              c001_upper_arm_link:
+                c001_forearm_link:
+                  c001_wrist_1_link:
+                    c001_wrist_2_link:
+                      c001_wrist_3_link:
+                        c001_ee_link:
+                          c001_camera_bottom_screw_frame:
+                            c001_camera_link:
+                              c001_camera_color_frame:
+                                c001_camera_color_optical_frame:
+                                  {}
+                              c001_camera_depth_frame:
+                                c001_camera_depth_optical_frame:
+                                  {}
+                              c001_camera_infra1_frame:
+                                c001_camera_infra1_optical_frame:
+                                  {}
+                              c001_camera_infra2_frame:
+                                c001_camera_infra2_optical_frame:
+                                  {}
+                          c001_ee_camera_support_link:
+                            c001_ee_camera_support_small_link:
+                              {}
+          c002_base_link:
+            c002_shoulder_link:
+              c002_upper_arm_link:
+                c002_forearm_link:
+                  c002_wrist_1_link:
+                    c002_wrist_2_link:
+                      c002_wrist_3_link:
+                        c002_ee_link:
+                          c002_camera_bottom_screw_frame:
+                            c002_camera_link:
+                              c002_camera_color_frame:
+                                c002_camera_color_optical_frame:
+                                  {}
+                              c002_camera_depth_frame:
+                                c002_camera_depth_optical_frame:
+                                  {}
+                              c002_camera_infra1_frame:
+                                c002_camera_infra1_optical_frame:
+                                  {}
+                              c002_camera_infra2_frame:
+                                c002_camera_infra2_optical_frame:
+                                  {}
+                          c002_ee_camera_support_link:
+                            c002_ee_camera_support_small_link:
+                              {}
+          c003_base_link:
+            c003_shoulder_link:
+              c003_upper_arm_link:
+                c003_forearm_link:
+                  c003_wrist_1_link:
+                    c003_wrist_2_link:
+                      c003_wrist_3_link:
+                        c003_ee_link:
+                          c003_camera_bottom_screw_frame:
+                            c003_camera_link:
+                              c003_camera_color_frame:
+                                c003_camera_color_optical_frame:
+                                  {}
+                              c003_camera_depth_frame:
+                                c003_camera_depth_optical_frame:
+                                  {}
+                              c003_camera_infra1_frame:
+                                c003_camera_infra1_optical_frame:
+                                  {}
+                              c003_camera_infra2_frame:
+                                c003_camera_infra2_optical_frame:
+                                  {}
+                          c003_ee_camera_support_link:
+                            c003_ee_camera_support_small_link:
+                              {}
+          c004_base_link:
+            c004_shoulder_link:
+              c004_upper_arm_link:
+                c004_forearm_link:
+                  c004_wrist_1_link:
+                    c004_wrist_2_link:
+                      c004_wrist_3_link:
+                        c004_ee_link:
+                          c004_camera_bottom_screw_frame:
+                            c004_camera_link:
+                              c004_camera_color_frame:
+                                c004_camera_color_optical_frame:
+                                  {}
+                              c004_camera_depth_frame:
+                                c004_camera_depth_optical_frame:
+                                  {}
+                              c004_camera_infra1_frame:
+                                c004_camera_infra1_optical_frame:
+                                  {}
+                              c004_camera_infra2_frame:
+                                c004_camera_infra2_optical_frame:
+                                  {}
+                          c004_ee_camera_support_link:
+                            c004_ee_camera_support_small_link:
+                              {}
+          c005_base_link:
+            c005_shoulder_link:
+              c005_upper_arm_link:
+                c005_forearm_link:
+                  c005_wrist_1_link:
+                    c005_wrist_2_link:
+                      c005_wrist_3_link:
+                        c005_ee_link:
+                          c005_camera_bottom_screw_frame:
+                            c005_camera_link:
+                              c005_camera_color_frame:
+                                c005_camera_color_optical_frame:
+                                  {}
+                              c005_camera_depth_frame:
+                                c005_camera_depth_optical_frame:
+                                  {}
+                              c005_camera_infra1_frame:
+                                c005_camera_infra1_optical_frame:
+                                  {}
+                              c005_camera_infra2_frame:
+                                c005_camera_infra2_optical_frame:
+                                  {}
+                          c005_ee_camera_support_link:
+                            c005_ee_camera_support_small_link:
+                              {}
+          c006_base_link:
+            c006_shoulder_link:
+              c006_upper_arm_link:
+                c006_forearm_link:
+                  c006_wrist_1_link:
+                    c006_wrist_2_link:
+                      c006_wrist_3_link:
+                        c006_ee_link:
+                          c006_camera_bottom_screw_frame:
+                            c006_camera_link:
+                              c006_camera_color_frame:
+                                c006_camera_color_optical_frame:
+                                  {}
+                              c006_camera_depth_frame:
+                                c006_camera_depth_optical_frame:
+                                  {}
+                              c006_camera_infra1_frame:
+                                c006_camera_infra1_optical_frame:
+                                  {}
+                              c006_camera_infra2_frame:
+                                c006_camera_infra2_optical_frame:
+                                  {}
+                          c006_ee_camera_support_link:
+                            c006_ee_camera_support_small_link:
+                              {}
+          c007_base_link:
+            c007_shoulder_link:
+              c007_upper_arm_link:
+                c007_forearm_link:
+                  c007_wrist_1_link:
+                    c007_wrist_2_link:
+                      c007_wrist_3_link:
+                        c007_ee_link:
+                          c007_camera_bottom_screw_frame:
+                            c007_camera_link:
+                              c007_camera_color_frame:
+                                c007_camera_color_optical_frame:
+                                  {}
+                              c007_camera_depth_frame:
+                                c007_camera_depth_optical_frame:
+                                  {}
+                              c007_camera_infra1_frame:
+                                c007_camera_infra1_optical_frame:
+                                  {}
+                              c007_camera_infra2_frame:
+                                c007_camera_infra2_optical_frame:
+                                  {}
+                          c007_ee_camera_support_link:
+                            c007_ee_camera_support_small_link:
+                              {}
+          c008_base_link:
+            c008_shoulder_link:
+              c008_upper_arm_link:
+                c008_forearm_link:
+                  c008_wrist_1_link:
+                    c008_wrist_2_link:
+                      c008_wrist_3_link:
+                        c008_ee_link:
+                          c008_camera_bottom_screw_frame:
+                            c008_camera_link:
+                              c008_camera_color_frame:
+                                c008_camera_color_optical_frame:
+                                  {}
+                              c008_camera_depth_frame:
+                                c008_camera_depth_optical_frame:
+                                  {}
+                              c008_camera_infra1_frame:
+                                c008_camera_infra1_optical_frame:
+                                  {}
+                              c008_camera_infra2_frame:
+                                c008_camera_infra2_optical_frame:
+                                  {}
+                          c008_ee_camera_support_link:
+                            c008_ee_camera_support_small_link:
+                              {}
+          c009_base_link:
+            c009_shoulder_link:
+              c009_upper_arm_link:
+                c009_forearm_link:
+                  c009_wrist_1_link:
+                    c009_wrist_2_link:
+                      c009_wrist_3_link:
+                        c009_ee_link:
+                          c009_camera_bottom_screw_frame:
+                            c009_camera_link:
+                              c009_camera_color_frame:
+                                c009_camera_color_optical_frame:
+                                  {}
+                              c009_camera_depth_frame:
+                                c009_camera_depth_optical_frame:
+                                  {}
+                              c009_camera_infra1_frame:
+                                c009_camera_infra1_optical_frame:
+                                  {}
+                              c009_camera_infra2_frame:
+                                c009_camera_infra2_optical_frame:
+                                  {}
+                          c009_ee_camera_support_link:
+                            c009_ee_camera_support_small_link:
+                              {}
+          c010_base_link:
+            c010_shoulder_link:
+              c010_upper_arm_link:
+                c010_forearm_link:
+                  c010_wrist_1_link:
+                    c010_wrist_2_link:
+                      c010_wrist_3_link:
+                        c010_ee_link:
+                          c010_camera_bottom_screw_frame:
+                            c010_camera_link:
+                              c010_camera_color_frame:
+                                c010_camera_color_optical_frame:
+                                  {}
+                              c010_camera_depth_frame:
+                                c010_camera_depth_optical_frame:
+                                  {}
+                              c010_camera_infra1_frame:
+                                c010_camera_infra1_optical_frame:
+                                  {}
+                              c010_camera_infra2_frame:
+                                c010_camera_infra2_optical_frame:
+                                  {}
+                          c010_ee_camera_support_link:
+                            c010_ee_camera_support_small_link:
+                              {}
+          c011_base_link:
+            c011_shoulder_link:
+              c011_upper_arm_link:
+                c011_forearm_link:
+                  c011_wrist_1_link:
+                    c011_wrist_2_link:
+                      c011_wrist_3_link:
+                        c011_ee_link:
+                          c011_camera_bottom_screw_frame:
+                            c011_camera_link:
+                              c011_camera_color_frame:
+                                c011_camera_color_optical_frame:
+                                  {}
+                              c011_camera_depth_frame:
+                                c011_camera_depth_optical_frame:
+                                  {}
+                              c011_camera_infra1_frame:
+                                c011_camera_infra1_optical_frame:
+                                  {}
+                              c011_camera_infra2_frame:
+                                c011_camera_infra2_optical_frame:
+                                  {}
+                          c011_ee_camera_support_link:
+                            c011_ee_camera_support_small_link:
+                              {}
+          c012_base_link:
+            c012_shoulder_link:
+              c012_upper_arm_link:
+                c012_forearm_link:
+                  c012_wrist_1_link:
+                    c012_wrist_2_link:
+                      c012_wrist_3_link:
+                        c012_ee_link:
+                          c012_camera_bottom_screw_frame:
+                            c012_camera_link:
+                              c012_camera_color_frame:
+                                c012_camera_color_optical_frame:
+                                  {}
+                              c012_camera_depth_frame:
+                                c012_camera_depth_optical_frame:
+                                  {}
+                              c012_camera_infra1_frame:
+                                c012_camera_infra1_optical_frame:
+                                  {}
+                              c012_camera_infra2_frame:
+                                c012_camera_infra2_optical_frame:
+                                  {}
+                          c012_ee_camera_support_link:
+                            c012_ee_camera_support_small_link:
+                              {}
+          c013_base_link:
+            c013_shoulder_link:
+              c013_upper_arm_link:
+                c013_forearm_link:
+                  c013_wrist_1_link:
+                    c013_wrist_2_link:
+                      c013_wrist_3_link:
+                        c013_ee_link:
+                          c013_camera_bottom_screw_frame:
+                            c013_camera_link:
+                              c013_camera_color_frame:
+                                c013_camera_color_optical_frame:
+                                  {}
+                              c013_camera_depth_frame:
+                                c013_camera_depth_optical_frame:
+                                  {}
+                              c013_camera_infra1_frame:
+                                c013_camera_infra1_optical_frame:
+                                  {}
+                              c013_camera_infra2_frame:
+                                c013_camera_infra2_optical_frame:
+                                  {}
+                          c013_ee_camera_support_link:
+                            c013_ee_camera_support_small_link:
+                              {}
+          c014_base_link:
+            c014_shoulder_link:
+              c014_upper_arm_link:
+                c014_forearm_link:
+                  c014_wrist_1_link:
+                    c014_wrist_2_link:
+                      c014_wrist_3_link:
+                        c014_ee_link:
+                          c014_camera_bottom_screw_frame:
+                            c014_camera_link:
+                              c014_camera_color_frame:
+                                c014_camera_color_optical_frame:
+                                  {}
+                              c014_camera_depth_frame:
+                                c014_camera_depth_optical_frame:
+                                  {}
+                              c014_camera_infra1_frame:
+                                c014_camera_infra1_optical_frame:
+                                  {}
+                              c014_camera_infra2_frame:
+                                c014_camera_infra2_optical_frame:
+                                  {}
+                          c014_ee_camera_support_link:
+                            c014_ee_camera_support_small_link:
+                              {}
+          c015_base_link:
+            c015_shoulder_link:
+              c015_upper_arm_link:
+                c015_forearm_link:
+                  c015_wrist_1_link:
+                    c015_wrist_2_link:
+                      c015_wrist_3_link:
+                        c015_ee_link:
+                          c015_camera_bottom_screw_frame:
+                            c015_camera_link:
+                              c015_camera_color_frame:
+                                c015_camera_color_optical_frame:
+                                  {}
+                              c015_camera_depth_frame:
+                                c015_camera_depth_optical_frame:
+                                  {}
+                              c015_camera_infra1_frame:
+                                c015_camera_infra1_optical_frame:
+                                  {}
+                              c015_camera_infra2_frame:
+                                c015_camera_infra2_optical_frame:
+                                  {}
+                          c015_ee_camera_support_link:
+                            c015_ee_camera_support_small_link:
+                              {}
+          c016_base_link:
+            c016_shoulder_link:
+              c016_upper_arm_link:
+                c016_forearm_link:
+                  c016_wrist_1_link:
+                    c016_wrist_2_link:
+                      c016_wrist_3_link:
+                        c016_ee_link:
+                          c016_camera_bottom_screw_frame:
+                            c016_camera_link:
+                              c016_camera_color_frame:
+                                c016_camera_color_optical_frame:
+                                  {}
+                              c016_camera_depth_frame:
+                                c016_camera_depth_optical_frame:
+                                  {}
+                              c016_camera_infra1_frame:
+                                c016_camera_infra1_optical_frame:
+                                  {}
+                              c016_camera_infra2_frame:
+                                c016_camera_infra2_optical_frame:
+                                  {}
+                          c016_ee_camera_support_link:
+                            c016_ee_camera_support_small_link:
+                              {}
+          c017_base_link:
+            c017_shoulder_link:
+              c017_upper_arm_link:
+                c017_forearm_link:
+                  c017_wrist_1_link:
+                    c017_wrist_2_link:
+                      c017_wrist_3_link:
+                        c017_ee_link:
+                          c017_camera_bottom_screw_frame:
+                            c017_camera_link:
+                              c017_camera_color_frame:
+                                c017_camera_color_optical_frame:
+                                  {}
+                              c017_camera_depth_frame:
+                                c017_camera_depth_optical_frame:
+                                  {}
+                              c017_camera_infra1_frame:
+                                c017_camera_infra1_optical_frame:
+                                  {}
+                              c017_camera_infra2_frame:
+                                c017_camera_infra2_optical_frame:
+                                  {}
+                          c017_ee_camera_support_link:
+                            c017_ee_camera_support_small_link:
+                              {}
+      Update Interval: 0
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /dataset_playback/robot_meshes
+      Name: Robot Meshes
+      Namespaces:
+        robot_mesh: true
+      Queue Size: 10
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /camera/color/image_raw/labeled2d
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: camera-Labels-Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 255; 255; 255
+    Default Light: true
+    Fixed Frame: base_link
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
+      Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+    - Class: rviz_visual_tools/KeyTool
+  Value: true
+  Views:
+    Current:
+      Class: rviz/XYOrbit
+      Distance: 8.35604476928711
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Field of View: 0.7853981852531433
+      Focal Point:
+        X: 0.3314114809036255
+        Y: 0.6464090347290039
+        Z: 9.527429938316345e-07
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.46479693055152893
+      Target Frame: <Fixed Frame>
+      Yaw: 2.752181053161621
+    Saved:
+      - Class: rviz/Orbit
+        Distance: 4.057810306549072
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: -0.424695760011673
+          Y: 0.802316427230835
+          Z: 0.9974352121353149
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 0.5447967052459717
+        Target Frame: <Fixed Frame>
+        Yaw: 3.929020881652832
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 980
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd00000004000000000000037a0000037afc020000000cfb0000001200530065006c0065006300740069006f006e000000003d0000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d00000157000000c900fffffffb0000000a00560069006500770073000000018b00000102000000a400fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000001a00460072006f006e00740061006c00430061006d006500720061000000012e000001170000000000000000fb000000300062006100730065005f00630061006d006500720061002d004c006100620065006c0073002d0049006d00610067006500000001da000000b30000000000000000fb0000002600630061006d006500720061002d004c006100620065006c0073002d0049006d006100670065010000019a0000021d0000001600ffffff000000010000011c0000024cfc0200000015fb000000220062006100730065005f00630061006d006500720061002d0049006d00610067006500000000410000024c0000000000000000fb0000001c00460072006f006e00740061006c002d00430061006d006500720061000000003d000001260000000000000000fb0000001e0054006f007000520069006700680074002d00430061006d00650072006100000000410000003a0000000000000000fb0000001c0054006f0070004c006500660074002d00430061006d0065007200610000000041000003840000000000000000fb0000000c00430061006d00650072006100000000410000024c0000000000000000fb0000000c00430061006d006500720061010000003d000003420000000000000000fb0000002a0054006f0070005200690067006800740049006d006100670065002d004c006100620065006c0065006400000000410000024c0000000000000000fb0000000c00430061006d00650072006101000000410000024c0000000000000000fb000000280054006f0070004c0065006600740049006d006100670065002d004c006100620065006c006500640000000177000001160000000000000000fb000000340054006f00700043005200470042004400430061006d002d0049006d006100670065002d004c006100620065006c006c006500640000000120000002a50000000000000000fb0000003a0054006f00700043005200470042004400430061006d006500720061002d0049006d006100670065002d004c006100620065006c006c0065006401000001630000012a0000000000000000fb000000280054006f00700043005200470042004400430061006d006500720061002d0049006d00610067006500000001da000000b30000000000000000fb0000001a0054006f0070004c006500660074002d0049006d00610067006501000000410000024c0000000000000000fb0000001c0054006f007000520069006700680074002d0049006d0061006700650100000169000001240000000000000000fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001e004c00650066007400530074006500720065006f0049006d006100670065000000003d000001340000000000000000fb000000200052006900670068007400530074006500720065006f0049006d0061006700650000000122000000dd0000000000000000fb0000001600460072006f006e007400430061006d006500720061000000003d0000008b0000000000000000fb0000002a0052006900670068007400530074006500720065006f005700690064006500430061006d00650072006100000000ce0000008a0000000000000000fb00000026004c00650066007400530074006500720065006f00570069006400650049006d006100670065000000003d0000019d0000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007800000003efc0100000002fb0000000800540069006d00650000000000000007800000041800fffffffb0000000800540069006d00650100000000000004500000000000000000000004000000037a00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1920
+  X: 1920
+  Y: 27
+  camera-Labels-Image:
+    collapsed: false
