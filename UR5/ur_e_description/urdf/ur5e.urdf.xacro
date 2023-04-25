@@ -457,12 +457,11 @@
     </joint>
 
     <xacro:include filename="$(find ur_e_description)/urdf/realsense/intel_realsense.urdf.xacro" />
-    <xacro:sensor_d415 parent="ee_link" use_nominal_extrinsics="true" gazebo_plugin="true">
+    <xacro:sensor_d415 parent="ee_link" use_nominal_extrinsics="true" >
       <origin xyz="0.095 0.000 -0.075"
         rpy="-3.14 0.0 1.57" />
     </xacro:sensor_d415>
     <!-- SENSOR CAMERA ON END EFFECTOR -->
-
 
     <xacro:ur_arm_transmission prefix="${prefix}" />
     <xacro:ur_arm_gazebo prefix="${prefix}" />
