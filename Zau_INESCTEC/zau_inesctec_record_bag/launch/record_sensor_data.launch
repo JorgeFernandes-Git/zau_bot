@@ -27,13 +27,8 @@
             /tf_static
             /joint_states
 
-            /camera/rgb/image_raw/compressed
-            /camera/rgb/camera_info
-
-            /camera_mb/rgb/image_raw/compressed
-            /camera_mb/rgb/camera_info      
-            zau/odom
-            zau/cmd_vel
+            /camera/color/image_raw/compressed
+            /camera/color/camera_info
 
             -o $(arg bag)">
         </node>

@@ -77,7 +77,7 @@ sensors:
   camera:
     link: "camera_color_optical_frame"
     parent_link: "camera_link"
-    child_link: "camera_color_frame"
+    child_link: "camera_aligned_depth_to_color_frame"
     topic_name: "/camera/color/image_raw"
     modality: "rgb"
 
