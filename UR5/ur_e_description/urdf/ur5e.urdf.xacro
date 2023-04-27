@@ -557,7 +557,14 @@
 
 
     <!-- add intel realsense camera d415 sensor -->
-    <xacro:arg name="realsense_EE_enabled" default="$(optenv REALSENSE_EE_ENABLED 1)" />
+    <xacro:include
+      filename="$(find ur_e_description)/urdf/realsense/intel_realsense_inesctec.urdf.xacro" />
+    <xacro:sensor_d415 parent="ee_link" use_nominal_extrinsics="true">
+      <origin xyz="0.095 0.000 -0.075"
+        rpy="-3.14 0.0 1.57" />
+    </xacro:sensor_d415>
+
+    <!-- <xacro:arg name="realsense_EE_enabled" default="$(optenv REALSENSE_EE_ENABLED 1)" />
     <xacro:arg name="realsense_EE_topic" default="$(optenv REALSENSE_EE_TOPIC EE_realsense)" />
     <xacro:arg name="realsense_EE_prefix"
       default="$(optenv REALSENSE_EE_PREFIX EE_camera_realsense)" />
@@ -576,7 +583,7 @@
       <xacro:intel_realsense_mount prefix="$(arg realsense_EE_prefix)"
         topic="$(arg realsense_EE_topic)"
         parent_link="$(arg realsense_EE_prefix)_realsense_mountpoint" />
-    </xacro:if>
+    </xacro:if> -->
     <!-- add intel realsense d415 sensor -->
     <!-- SENSOR CAMERA ON END EFFECTOR -->
 
