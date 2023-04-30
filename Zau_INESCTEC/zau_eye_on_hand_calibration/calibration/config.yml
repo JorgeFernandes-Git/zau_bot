@@ -34,7 +34,8 @@
 description_file: "package://ur_e_description/urdf/ur5e_joint_limited_robot.urdf.xacro"
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
-bag_file: "$ROS_BAGS/Zau/zau_inesctec/zau_eye_on_hand.bag"
+# bag_file: "$ROS_BAGS/Zau/zau_inesctec/zau_eye_on_hand.bag"
+bag_file: "$ROS_BAGS/zaubot/2023-04-28-16-53-28.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
@@ -74,12 +75,29 @@ sensors:
   #   /world_camera/rgb/image_raw
   #
 
-  camera:
-    link: "camera_color_optical_frame"
-    parent_link: "camera_link"
-    child_link: "camera_aligned_depth_to_color_frame"
-    topic_name: "/camera/color/image_raw"
+#   camera:
+#     link: "camera_color_optical_frame"
+#     parent_link: "camera_link"
+#     child_link: "camera_aligned_depth_to_color_frame"
+#     topic_name: "/camera/color/image_raw"
+#     modality: "rgb"
+# 
+
+  cam_1:
+    link: "cam_1_color_optical_frame"
+    parent_link: "cam_1_link"
+    child_link: "cam_1_color_frame"
+    topic_name: "/cam_1/color/image_raw/compressed"
     modality: "rgb"
+
+  cam_2:
+    link: "cam_2_color_optical_frame"
+    parent_link: "cam_2_link"
+    child_link: "cam_2_color_frame"
+    topic_name: "/cam_2/color/image_raw/compressed"
+    modality: "rgb"
+
+
 
 # ATOM will calibrate the extrinsic parameters of your links.
 # In this section you should discriminate the additional transformations that will be part of the calibrations.
