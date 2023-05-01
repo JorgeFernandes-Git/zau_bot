@@ -22,6 +22,12 @@ summary: https://github.com/JorgeFernandes-Git/zau_bot/blob/Zau_INESCTEC_eye_on_
 
 ________________________
 
+## Calibration results
+
+evaluations: https://github.com/JorgeFernandes-Git/zau_bot/blob/Zau_INESCTEC_eye_on_hand_calibration/Zau_INESCTEC/results.md
+
+________________________
+
 ## Record dataset
 
     roslaunch zau_eye_on_hand_calibration collect_data.launch output_folder:=$ATOM_DATASETS/zau_eye_on_hand_v2 overwrite:=true
