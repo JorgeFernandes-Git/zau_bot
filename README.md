@@ -1,10 +1,8 @@
-# Zau Mobile Manipulator - INESC TEC Branch
+# Zau Eye on Hand Calibration - INESC TEC Branch
 
 ___________________________
 Summary:
-* Zau is a mobile manipulator that comprises a UR5 manipulator arm installed on an AGV mobile platform. The system is equipped with multiple sensors (eye-on-hand camera and an AGV camera a.t.m.). The URDF file is a digital twin of the physical robotic system, which can be employed for both research and development purposes.
-* This repository conduct several experiments (e0 to e5 a.t.m.) to develop methodologies to calibrate the sensors and the base of the UR5 w.r.t. the AGV. The objective is to enhance the precision and accuracy of tasks like grasping and navigation.
-* This calibration process uses ATOM framework (https://github.com/lardemua/atom), a multi-sensor, multi-model calibration tool. As the framework is open-source, a fork of the repository was generated to accommodate alterations in the source code. (https://github.com/lardemua/atom/tree/JorgeFernandes-Git/issue543).
+* This is a branch created to perform eye on hand calibration on the manipulator of Zau.
 
 ___________________________ 
 ## Zau digital twin (eye-on-hand camera and AGV camera):
