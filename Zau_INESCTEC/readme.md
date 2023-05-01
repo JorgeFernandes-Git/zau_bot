@@ -2,14 +2,14 @@
 
 ## Record dataset
 
-    roslaunch zau_eye_on_hand_calibration collect_data.launch output_folder:=$ATOM_DATASETS/zau_eye_on_hand overwrite:=true bag_rate:=0.5
+    roslaunch zau_eye_on_hand_calibration collect_data.launch output_folder:=$ATOM_DATASETS/zau_eye_on_hand_big_bag overwrite:=true
 
 ## Dataset playback
 
 
     roslaunch zau_eye_on_hand_calibration dataset_playback.launch
 
-    rosrun atom_calibration dataset_playback -json /home/jorge/datasets/zau_eye_on_hand_v2/dataset.json -ow
+    rosrun atom_calibration dataset_playback -json /home/jorge/datasets/zau_eye_on_hand_big_bag/dataset.json -ow
 
 ## Run calibration
 
@@ -33,6 +33,7 @@
 |    018     |    1.0141   |
 |    019     |    1.2622   |
 |  Averages  |    1.2555   |
+
 
 ## Evaluations
 
