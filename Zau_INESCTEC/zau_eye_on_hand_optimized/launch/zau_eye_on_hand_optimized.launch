@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="limited" default="true" doc="If true, limits joint range [-PI, PI] on all joints." />
+    <arg name="sim" default="true" />
+    <arg name="config" default="true" />
+    <arg name="gui" default="false" doc="Starts gazebo gui" />
+    <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
+
+    <!-- startup simulated world ########################################### -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" default="worlds/empty.world" />
+        <arg name="paused" value="$(arg paused)" />
+        <arg name="gui" value="$(arg gui)" />
+    </include>
+
+    <arg name="robot_name" default="robot_UR5_MB" />
+    <arg name="x_pos" default="0.0" />
+    <arg name="y_pos" default="0.0" />
+    <arg name="z_pos" default="0.0" />
+    <arg name="roll" default="0" />
+    <arg name="pitch" default="0" />
+    <arg name="yaw" default="0.0" />
+
+    <!-- push robot_description to factory and spawn robot in gazebo -->
+    <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model"
+        args="-urdf -param robot_description -model $(arg robot_name) 
+            -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)
+            -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"
+        respawn="false" output="screen" />
+
+    <include file="$(find ur_e_gazebo)/launch/controller_utils.launch" />
+
+    <!-- start this controller -->
+    <rosparam file="$(find ur_e_gazebo)/controller/arm_controller_ur5e.yaml" command="load" />
+    <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager"
+        args="spawn arm_controller" respawn="false" output="screen" />
+
+    <!-- load other controllers -->
+    <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager"
+        respawn="false" output="screen" args="load joint_group_position_controller" />
+
+    <!-- start a fake weiss gripper -->
+    <node name="fake_gripper" pkg="ur_e_gazebo" type="fake_wr-cr200-85.py" respawn="true"
+        output="log" />
+
+    <param if="$(arg limited)"
+        name="robot_description"
+        command="$(find xacro)/xacro --inorder '$(find zau_eye_on_hand_optimized)/optimized/optimized_zau_eye_on_hand.urdf.xacro'" />
+
+    <include file="$(find ur5_e_moveit_config)/launch/ur5_e_moveit_planning_execution.launch">
+        <arg name="sim" value="$(arg sim)" />
+        <arg name="limited" value="$(arg limited)" />
+    </include>
+
+    <include file="$(find zau_eye_on_hand_optimized)/launch/moveit_rviz.launch">
+        <arg name="config" value="$(arg config)" />
+    </include>
+
+</launch>
