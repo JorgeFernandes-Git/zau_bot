@@ -217,7 +217,7 @@
     </visual>
   </link>
   <joint name="ee_camera_support_joint" type="fixed">
-    <origin xyz="0.095 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.095 0.0 0.0" rpy="-0.7853981633974483 0.0 0.0"/>
     <parent link="ee_link"/>
     <child link="ee_camera_support_link"/>
   </joint>
@@ -244,7 +244,7 @@
     <color rgba="0.1 0.1 0.1 1.0"/>
   </material>
   <joint name="camera_joint" type="fixed">
-    <origin xyz="0.095 0.0 -0.075" rpy="-3.14 0.0 1.57"/>
+    <origin xyz="0.095 -0.053 -0.053" rpy="3.139 0.785 1.57"/>
     <parent link="ee_link"/>
     <child link="camera_bottom_screw_frame"/>
   </joint>

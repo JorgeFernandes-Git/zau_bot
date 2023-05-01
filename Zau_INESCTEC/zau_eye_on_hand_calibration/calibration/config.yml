@@ -34,7 +34,7 @@
 description_file: "package://ur_e_description/urdf/ur5e_joint_limited_robot.urdf.xacro"
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
-bag_file: "$ROS_BAGS/Zau/zau_inesctec/zau_eye_on_hand_v2.bag"
+bag_file: "$ROS_BAGS/Zau/zau_inesctec/eye_on_hand_calibration/zau_eye_on_hand_train_bag.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
