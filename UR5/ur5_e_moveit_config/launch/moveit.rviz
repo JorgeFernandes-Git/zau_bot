@@ -4,7 +4,10 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
         - /TF1/Frames1
+        - /RobotModel1
+        - /RobotModel1/Status1
         - /Eye-on-Hand Cam1
       Splitter Ratio: 0.6981891393661499
     Tree Height: 829
@@ -25,7 +28,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: Eye-on-Hand Cam
+    SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -77,137 +80,11 @@ Visualization Manager:
         Color Enabled: false
         Interrupt Display: false
         Links:
-          AGV_camera_realsense_realsense:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          AGV_camera_realsense_realsense_gazebo:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          AGV_camera_realsense_realsense_lens:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          AGV_camera_realsense_realsense_mountpoint:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           All Links Enabled: true
-          EE_camera_realsense_realsense:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          EE_camera_realsense_realsense_gazebo:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          EE_camera_realsense_realsense_lens:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          EE_camera_realsense_realsense_mountpoint:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           Expand Joint Details: false
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          base_footprint:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          base_link_mb:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          caster_back_left_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          caster_back_right_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          caster_front_left_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          caster_front_right_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          ee_camera_support_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          ee_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          forearm_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          imu_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          inertial_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          shoulder_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          upper_arm_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wheel_left_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wheel_right_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wrist_1_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wrist_2_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wrist_3_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
         Loop Animation: false
         Robot Alpha: 0.5
         Robot Color: 150; 50; 150
@@ -249,137 +126,11 @@ Visualization Manager:
       Scene Robot:
         Attached Body Color: 150; 50; 150
         Links:
-          AGV_camera_realsense_realsense:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          AGV_camera_realsense_realsense_gazebo:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          AGV_camera_realsense_realsense_lens:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          AGV_camera_realsense_realsense_mountpoint:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           All Links Enabled: true
-          EE_camera_realsense_realsense:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          EE_camera_realsense_realsense_gazebo:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          EE_camera_realsense_realsense_lens:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          EE_camera_realsense_realsense_mountpoint:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           Expand Joint Details: false
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          base_footprint:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          base_link_mb:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          caster_back_left_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          caster_back_right_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          caster_front_left_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          caster_front_right_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          ee_camera_support_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          ee_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          forearm_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          imu_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          inertial_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          shoulder_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          upper_arm_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wheel_left_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wheel_right_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wrist_1_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wrist_2_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          wrist_3_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
         Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
@@ -387,6 +138,8 @@ Visualization Manager:
       Velocity_Scaling_Factor: 0.1
     - Class: rviz/TF
       Enabled: false
+      Filter (blacklist): ""
+      Filter (whitelist): ""
       Frame Timeout: 15
       Frames:
         All Enabled: false
@@ -405,55 +158,58 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        AGV_camera_realsense_realsense:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        AGV_camera_realsense_realsense_gazebo:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        AGV_camera_realsense_realsense_lens:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        AGV_camera_realsense_realsense_mountpoint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         All Links Enabled: true
-        EE_camera_realsense_realsense:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        EE_camera_realsense_realsense_gazebo:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        EE_camera_realsense_realsense_lens:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        EE_camera_realsense_realsense_mountpoint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base_link_mb:
+        cam_2_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        cam_2_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        cam_2_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        cam_2_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        cam_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_aligned_depth_to_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -479,6 +235,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         ee_camera_support_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ee_camera_support_small_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -532,6 +293,15 @@ Visualization Manager:
           Show Trail: false
           Value: true
         wrist_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        zau/base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zau/base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -643,7 +413,7 @@ Visualization Manager:
   Global Options:
     Background Color: 255; 255; 255
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: zau/base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -711,5 +481,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1920
-  X: 1920
+  X: 0
   Y: 27

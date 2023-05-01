@@ -35,20 +35,21 @@ aluminum peripherial evaluation case.
     <xacro:property name="d415_cam_depth_px" value="${d415_cam_mount_from_center_offset}" />
     <xacro:property name="d415_cam_depth_py" value="0.020" />
     <xacro:property name="d415_cam_depth_pz" value="${d415_cam_height/2}" />
+
     <!-- camera body, with origin at bottom screw mount -->
     <joint name="${name}_joint" type="fixed">
       <xacro:insert_block name="origin" />
       <parent link="${parent}"/>
-      <child link="${name}_bottom_screw_frame" />
+      <child link="${name}_link" />
     </joint>
 
-    <link name="${name}_bottom_screw_frame"/>
+    <!-- <link name="${name}_bottom_screw_frame"/>
 
     <joint name="${name}_link_joint" type="fixed">
       <origin xyz="0 ${d415_cam_depth_py} ${d415_cam_depth_pz}" rpy="0 0 0"/>
       <parent link="${name}_bottom_screw_frame"/>
       <child link="${name}_link" />
-    </joint>
+    </joint> -->
 
     <link name="${name}_link">
       <visual>
@@ -130,12 +131,12 @@ aluminum peripherial evaluation case.
       <link name="${name}_infra2_optical_frame" /> -->
 
       <!-- camera color joints and links -->
-      <joint name="${name}_color_joint" type="fixed">
+      <!-- <joint name="${name}_color_joint" type="fixed">
         <origin xyz="0 ${d415_cam_depth_to_color_offset} 0" rpy="0 0 0" />
         <parent link="${name}_link" />
         <child link="${name}_color_frame" />
       </joint>
-      <link name="${name}_color_frame" />
+      <link name="${name}_color_frame" /> -->
 
       <!-- <joint name="${name}_color_optical_joint" type="fixed">
         <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
@@ -147,13 +148,13 @@ aluminum peripherial evaluation case.
       <joint name="${name}_aligned_depth_to_color_frame_joint" type="fixed">
         <origin xyz="0 0 0" rpy="0 0 0" />
         <parent link="${name}_link" />
-        <child link="${name}_aligned_depth_to_color_frame" />
+        <child link="${name}_color_frame" />
       </joint>
-      <link name="${name}_aligned_depth_to_color_frame" />
+      <link name="${name}_color_frame" />
 
       <joint name="${name}_color_optical_joint" type="fixed">
         <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
-        <parent link="${name}_aligned_depth_to_color_frame" />
+        <parent link="${name}_color_frame" />
         <child link="${name}_color_optical_frame" />
       </joint>
       <link name="${name}_color_optical_frame" />
