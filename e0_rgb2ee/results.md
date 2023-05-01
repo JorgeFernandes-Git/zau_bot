@@ -139,3 +139,13 @@
 |   014-016    |   0.8028  |    0.2257   |    0.2678   |   0.5689   |   0.2282  |
 |   015-016    |   0.9509  |    0.2323   |    0.3086   |   0.5450   |   0.0890  |
 |   **Averages**   |   **0.6246**  |    **0.2537**   |    **0.2725**   |   **1.0829**   |   **0.1354**  |
+
+
+## Ground truth frame evaluation
+
+    rosrun atom_evaluation ground_truth_frame_evaluation -train_json /home/jorge/datasets/e0_rgb2ee_v2/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e0_rgb2ee_v2/dataset.json 
+
+
+|   Transformation #  | X (mm) |  Y (mm) | Z (mm) | Roll (deg) | Pitch (deg) | Yaw (deg) | Trans (mm) | Rot (deg) |
+|---------------------|--------|---------|--------|------------|-------------|-----------|------------|-----------|
+| ee_link-camera_link | 0.2267 | 24.8472 | 0.3131 |   0.0149   |    0.0687   |   0.0425  |  24.8502   |   0.0821  |
