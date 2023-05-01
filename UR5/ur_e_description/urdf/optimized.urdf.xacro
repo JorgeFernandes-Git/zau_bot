@@ -293,7 +293,7 @@
   </joint>
   <link name="camera_color_frame"/>
   <joint name="camera_aligned_depth_to_color_frame_joint" type="fixed">
-    <origin xyz="-0.05298173400346154 -0.0174023821816474 -0.04993786146093298" rpy="0.089805555457002 -1.0650113792975349 -0.058841870204059385"/>
+    <origin xyz="-0.007084414652850824 -0.01451531594060645 -0.024115140013064067" rpy="0.050169235346926855 -0.28320603927167837 -0.03327284138624655"/>
     <parent link="camera_link"/>
     <child link="camera_aligned_depth_to_color_frame"/>
   </joint>
