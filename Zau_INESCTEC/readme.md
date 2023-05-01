@@ -1,15 +1,40 @@
 # Zau eye on hand camera calibration
 
+Summary:
+
+Using ATOM framework to perform eye-on-hand calibration.
+Eye-on-hand is a calibration problem that aims to determine the transformation between a camera and a end-effector.
+The camera used was a intel realsense d415.
+The calibration used a total of 18 collections.
+The output is a URDF file with the optimized pose of the camera related to the end-effector.
+
+________________________
+
+## Launch optimized robot urdf
+
+    roslaunch zau_eye_on_hand_optimized zau_eye_on_hand_optimized.launch
+
+________________________
+
+## Calibration tree
+
+summary: https://github.com/JorgeFernandes-Git/zau_bot/blob/Zau_INESCTEC_eye_on_hand_calibration/Zau_INESCTEC/zau_eye_on_hand_calibration/calibration/summary.pdf
+
+________________________
+
 ## Record dataset
 
     roslaunch zau_eye_on_hand_calibration collect_data.launch output_folder:=$ATOM_DATASETS/zau_eye_on_hand_v2 overwrite:=true
 
-## Dataset playback
+________________________
 
+## Dataset playback
 
     roslaunch zau_eye_on_hand_calibration dataset_playback.launch
 
     rosrun atom_calibration dataset_playback -json /home/jorge/datasets/zau_eye_on_hand/dataset.json -ow
+
+________________________
 
 ## Run calibration
 
