@@ -37,6 +37,8 @@ description_file: "package://ur_e_description/urdf/ur5e_joint_limited_robot.urdf
 # bag_file: "$ROS_BAGS/Zau/zau_inesctec/zau_eye_on_hand.bag"
 bag_file: "$ROS_BAGS/zaubot/2023-04-28-16-53-28.bag"
 
+# bag_file: "$ROS_BAGS/Zau/zau_inesctec/eye_on_hand_calibration/zau_eye_on_hand_train_bag.bag"
+
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
 # world_link: "world"

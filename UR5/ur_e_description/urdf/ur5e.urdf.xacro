@@ -5,7 +5,7 @@
   <xacro:include filename="$(find ur_e_description)/urdf/ur.gazebo.xacro" />
 
   <!-- place robot on moving base -->
-  
+
   <!-- fixed AGV -->
   <!-- <xacro:include filename="$(find ur_e_description)/urdf/moving_base.urdf.xacro" /> -->
 
@@ -13,7 +13,7 @@
   <!-- <xacro:include filename="$(find ur_e_description)/urdf/moving_base_odom.urdf.xacro" />  -->
 
   <!-- *************THIS IS THE TRANSFORMATION TO BE CALIBRATED************* -->
-<!-- <link name="world"/> -->
+  <!-- <link name="world"/> -->
 
   <!-- <joint name="moving_base_to_ur5e" type="fixed">
     <parent link="world" />
@@ -435,7 +435,7 @@
       </visual>
     </link>
     <joint name="${prefix}ee_camera_support_joint" type="fixed">
-      <origin xyz="0.095 0 0" rpy="0 0 0" />
+      <origin xyz="0.095 0 0" rpy="${-pi/2+pi/4} 0 0" />
       <parent link="${prefix}ee_link" />
       <child link="${prefix}ee_camera_support_link" />
     </joint>
@@ -457,9 +457,9 @@
     </joint>
 
     <xacro:include filename="$(find ur_e_description)/urdf/realsense/intel_realsense.urdf.xacro" />
-    <xacro:sensor_d415 parent="ee_link" use_nominal_extrinsics="true" >
-      <origin xyz="0.095 0.000 -0.075"
-        rpy="-3.14 0.0 1.57" />
+    <xacro:sensor_d415 parent="${prefix}ee_link" use_nominal_extrinsics="true">
+      <origin xyz="0.095 -0.053 -0.053"
+        rpy="3.139 0.785 1.570" />
     </xacro:sensor_d415>
     <!-- SENSOR CAMERA ON END EFFECTOR -->
 
@@ -469,11 +469,11 @@
     <!-- ROS base_link to UR 'Base' Coordinates transform -->
     <!-- <link name="${prefix}base" />
     <joint name="${prefix}base_link-base_fixed_joint" type="fixed"> -->
-      <!-- NOTE: this rotation is only needed as long as base_link itself is
+    <!-- NOTE: this rotation is only needed as long as base_link itself is
                  not corrected wrt the real robot (ie: rotated over 180
                  degrees)
       -->
-      <!-- <origin xyz="0 0 0" rpy="0 0 ${-pi}" />
+    <!-- <origin xyz="0 0 0" rpy="0 0 ${-pi}" />
       <parent link="${prefix}base_link" />
       <child link="${prefix}base" />
     </joint> -->
