@@ -6,6 +6,12 @@
 
     roslaunch zau_full_calibration collect_data.launch output_folder:=~/datasets/zau_full_calibration overwrite:=true
 
+## Dataset playback
+
+    roslaunch zau_full_calibration dataset_playback.launch
+
+    rosrun atom_calibration dataset_playback $ATOM_DATASETS/zau_full_calibration/dataset.json -ow
+
 ## Run the calibration
 
     roslaunch zau_full_calibration calibrate.launch
