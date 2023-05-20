@@ -85,7 +85,8 @@ if __name__ == "__main__":
                 # tf_static_msg = transform
         
         if topic == '/tf':
-            msg.transforms.extend(static_tfs) # extend static tfs to tf topic
+            for transform_idx, transform in enumerate(msg.transforms): # iterate all transforms
+                msg.transforms.extend(static_tfs) # extend static tfs to tf topic
 
         # write msg to bag_out
         bag_out.write(topic, msg, stamp)
