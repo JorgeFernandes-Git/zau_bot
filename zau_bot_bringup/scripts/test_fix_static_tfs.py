@@ -41,7 +41,7 @@ if __name__ == "__main__":
     # --------------------------------------------------------------------------
     # Read msgs in topic tf_static
     # --------------------------------------------------------------------------
-    print(f'Reading topic /tf_static msgs...')
+    print('Reading topic /tf_static msgs...')
     static_tfs = []
     for topic, msg, stamp in bag.read_messages():
         mission_time = (stamp - initial_stamp)
@@ -53,10 +53,12 @@ if __name__ == "__main__":
             for transform_idx, transform in enumerate(msg.transforms): # iterate all transforms
                 static_tfs.append(transform)
     
+    print('found ' + str(len(static_tfs)) + ' static_tfs.')
+
     # --------------------------------------------------------------------------
     # Writing msgs of tf_static to topic /tf
     # --------------------------------------------------------------------------
-    print(f'Writing msgs to topic /tf...')
+    print('Writing msgs to topic /tf...')
     for topic, msg, stamp in bag.read_messages():
         mission_time = (stamp - initial_stamp)
 
@@ -64,6 +66,10 @@ if __name__ == "__main__":
             break
         
         if topic == '/tf':
+
+            for static_tf in static_tfs: # update time stamps of all static tfs
+                static_tf.header.stamp = stamp
+
             msg.transforms.extend(static_tfs) # extend static tfs to tf topic
 
         # Write msg to bag_out
