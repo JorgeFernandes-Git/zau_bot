@@ -1,6 +1,19 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
+  <!-- TRANSFORMATIONS MISSING ON REAL ZAU BOT
+
+  AGV TO ARM
+  <origin xyz="-0.295 0.0 0.780" rpy="0.0 0.0 0.0" />
+
+  CAMERA D414
+  <origin xyz="0.095 -0.053 -0.053" rpy="3.139 0.785 1.570" />
+
+  CAMERA L515
+  <origin xyz="0.340 -0.35 0.70" rpy="0 0 -1.57" /> -->
+
+
+
   <xacro:include filename="$(find ur_e_description)/urdf/ur.transmission.xacro" />
   <xacro:include filename="$(find ur_e_description)/urdf/ur.gazebo.xacro" />
 
