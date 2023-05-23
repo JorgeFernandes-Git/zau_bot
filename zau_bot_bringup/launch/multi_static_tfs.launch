@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- ######################### -->
+    <node pkg="tf2_ros"
+        type="static_transform_publisher"
+        name="footprint_to_agv"
+        args="-0.0 0.0 0.010 0.0 0.0 0.0 1.0 zau/base_footprint zau/base_link" />
+
+    <node pkg="tf2_ros"
+        type="static_transform_publisher"
+        name="agv_to_arm"
+        args="-0.295 0.0 0.780 0.0 0.0 0.0 1.0 zau/base_link base_link" />
+    <!-- ######################### -->
+    <node pkg="tf2_ros"
+        type="static_transform_publisher"
+        name="wrist_3_ee_link"
+        args="0.0 0.100 0.0 0.0 0.0 0.7068252 0.7073883 wrist_3_link ee_link" />
+    <!-- ######################### -->
+    <node pkg="tf2_ros"
+        type="static_transform_publisher"
+        name="ee_link_to_cam_1"
+        args="0.095 -0.053 -0.053 0.6539453 -0.6527239 0.271422 -0.2695128 ee_link cam_1_link" />
+
+    <node pkg="tf2_ros"
+        type="static_transform_publisher"
+        name="cam_1_to_color_frame"
+        args="0.0 0.0 0.0 0.6458633 -0.222936 0.2382457 0.6902167 cam_1_link cam_1_color_frame" />
+
+    <node pkg="tf2_ros"
+        type="static_transform_publisher"
+        name="cam_1_color_frame_to_color_optical_frame"
+        args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 cam_1_color_frame cam_1_color_optical_frame" />
+    <!-- ######################### -->
+    <node pkg="tf2_ros"
+        type="static_transform_publisher"
+        name="agv_to_cam_2"
+        args="0.340 -0.35 0.70 0.0 0.7068252 0.0 0.7073883 zau/base_link cam_2_link" />
+
+    <node pkg="tf2_ros"
+        type="static_transform_publisher"
+        name="cam_2_to_color_frame"
+        args="0.0 0.0 0.024 0.0 0.0 0.0 1.0 cam_2_link cam_2_color_frame" />
+
+    <node pkg="tf2_ros"
+        type="static_transform_publisher"
+        name="cam_2_color_frame_to_color_optical_frame"
+        args="0.0 0.0 0.0 0.0 1.0 0.0 0.0 cam_2_color_frame cam_2_color_optical_frame" />
+    <!-- ######################### -->
+
+</launch>
