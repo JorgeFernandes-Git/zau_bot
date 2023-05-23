@@ -22,8 +22,8 @@ if __name__ == '__main__':
     d2.header.frame_id = "parent"
     d2.child_frame_id = "dynamic_child_2"
     
-    s.header.frame_id = "parent"
-    s.child_frame_id = "static_child"
+    s.header.frame_id = "zau/base_link"
+    s.child_frame_id = "base_link"
 
     s.header.stamp = rospy.Time.now()
     s.transform.translation.x = 0.0
@@ -35,31 +35,31 @@ if __name__ == '__main__':
     s.transform.rotation.w = 1.0
     br_in_static_tf.sendTransform(s)
     
-    rate = rospy.Rate(10.0)
+    # rate = rospy.Rate(10.0)
     
-    while not rospy.is_shutdown():
-        d.header.stamp = rospy.Time.now()
-        d.transform.translation.x = 2.0
-        d.transform.translation.y = 0.0
-        d.transform.translation.z = 0.0
-        d.transform.rotation.x = 0.0
-        d.transform.rotation.y = 0.0
-        d.transform.rotation.z = 0.0
-        d.transform.rotation.w = 1.0
-        br_in_tf.sendTransform(d)
+    # while not rospy.is_shutdown():
+    #     d.header.stamp = rospy.Time.now()
+    #     d.transform.translation.x = 2.0
+    #     d.transform.translation.y = 0.0
+    #     d.transform.translation.z = 0.0
+    #     d.transform.rotation.x = 0.0
+    #     d.transform.rotation.y = 0.0
+    #     d.transform.rotation.z = 0.0
+    #     d.transform.rotation.w = 1.0
+    #     br_in_tf.sendTransform(d)
         
-        d2.header.stamp = rospy.Time.now()
-        d2.transform.translation.x = 2.0
-        d2.transform.translation.y = 2.0
-        d2.transform.translation.z = 0.0
-        d2.transform.rotation.x = 0.0
-        d2.transform.rotation.y = 0.0
-        d2.transform.rotation.z = 0.0
-        d2.transform.rotation.w = 1.0
-        br_in_tf.sendTransform(d2)
+    #     d2.header.stamp = rospy.Time.now()
+    #     d2.transform.translation.x = 2.0
+    #     d2.transform.translation.y = 2.0
+    #     d2.transform.translation.z = 0.0
+    #     d2.transform.rotation.x = 0.0
+    #     d2.transform.rotation.y = 0.0
+    #     d2.transform.rotation.z = 0.0
+    #     d2.transform.rotation.w = 1.0
+    #     br_in_tf.sendTransform(d2)
         
-        rate.sleep()
-        print('Publish...')
+    #     rate.sleep()
+    #     print('Publish...')
 
     
     

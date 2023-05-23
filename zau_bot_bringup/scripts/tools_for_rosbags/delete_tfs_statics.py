@@ -13,11 +13,9 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("-bfi", "--bagfile_in", help='Full path to the bagfile', type=str, required=True)
     ap.add_argument("-bfo", "--bagfile_out", help='Full path to the bagfile', type=str, required=True)
-    ap.add_argument("-ttk", "--transformations_to_keep", help='Transformations to keep in the bag file', type=str, required=True,  nargs='+')
     args = vars(ap.parse_args())
     
     bag_out = rosbag.Bag(args['bagfile_out'], 'w')
-    transformations_to_keep = args['transformations_to_keep']
     
     # --------------------------------------------------------------------------
     # Read the bag input file
@@ -46,19 +44,12 @@ if __name__ == "__main__":
         # if mission_time.to_sec() > 10: # just for testing fast, analyze messages only until 10 secs mission time.
         #     break
         
-        if topic == "/tf" and msg.transforms:
-            transforms_to_keep = []
-            for i in range(len(msg.transforms)):                
-                if msg.transforms[i].header.frame_id in transformations_to_keep and msg.transforms[i].child_frame_id in transformations_to_keep:
-                    transforms_to_keep.append(msg.transforms[i])
-            
-            # print(f'Transformations to keep: {transforms_to_keep}')        
-            msg.transforms = transforms_to_keep                        
+        if topic == '/tf_static':
+            print('Found a static tf to delete...')
+            msg.transforms = []
             bag_out.write(topic, msg, stamp)
-            
-        else:
-            bag_out.write(topic, msg, stamp)
-    
+                    
+
     bag.close() # close the bag file.
     bag_out.close() # close the bag file.
     
