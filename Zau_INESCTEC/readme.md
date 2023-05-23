@@ -4,7 +4,7 @@
 
 ## Collect data
 
-    roslaunch zau_full_calibration collect_data.launch output_folder:=~/datasets/zau_full_calibration overwrite:=true
+    roslaunch zau_full_calibration collect_data.launch output_folder:=~/datasets/zau_full_calibration_vf overwrite:=true
 
 ## Dataset playback
 
