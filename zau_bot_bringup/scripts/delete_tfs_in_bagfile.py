@@ -36,12 +36,12 @@ if __name__ == "__main__":
     tictoc.tic()
     
     # Get initial stamp to compute mission time
-    for topic, msg, stamp in bag.read_messages():
-        initial_stamp = stamp
-        break
+    # for topic, msg, stamp in bag.read_messages():
+    #     initial_stamp = stamp
+    #     break
     
     for topic, msg, stamp in bag.read_messages():
-        mission_time = (stamp - initial_stamp)
+        # mission_time = (stamp - initial_stamp)
 
         # if mission_time.to_sec() > 10: # just for testing fast, analyze messages only until 10 secs mission time.
         #     break
@@ -56,23 +56,6 @@ if __name__ == "__main__":
             msg.transforms = transforms_to_keep                        
             bag_out.write(topic, msg, stamp)
             
-        elif topic == '/tf_static':
-                                    
-            # new_tf = geometry_msgs.msg.TransformStamped()
-            # new_tf.header.frame_id = 'zau/base_footprint'
-            # new_tf.child_frame_id = 'zau/base_link'
-            # new_tf.header.stamp = stamp
-            # new_tf.transform.translation.x = 1.0
-            # new_tf.transform.translation.y = 1.0
-            # new_tf.transform.translation.z = 1.0
-            # new_tf.transform.rotation.x = 0.0
-            # new_tf.transform.rotation.y = 0.0
-            # new_tf.transform.rotation.z = 0.0
-            # new_tf.transform.rotation.w = 0.0
-            
-            # msg.transforms.append(new_tf)
-                      
-            bag_out.write(topic, msg, stamp)
         else:
             bag_out.write(topic, msg, stamp)
     
