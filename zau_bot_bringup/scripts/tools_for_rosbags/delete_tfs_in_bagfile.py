@@ -8,6 +8,13 @@ from pytictoc import TicToc
 import geometry_msgs.msg
 from tqdm import tqdm
 
+"""
+Usage:
+
+./delete_tfs_in_bagfile -bfi original.bag -ttk base_link shoulder_link upper_arm_link forearm_link wrist_1_link wrist_2_link wrist_3_link ee_link cam_1_link cam_1_color_frame cam_1_color_optical_frame cam_1_depth_frame cam_1_depth_optical_frame
+
+"""
+
 
 if __name__ == "__main__":
     # Parse command line arguments
@@ -55,10 +62,10 @@ if __name__ == "__main__":
     # --------------------------------------------------------------------------
     print('Converting bagfile. Please wait...')
     for topic, msg, stamp, connection_header in tqdm(bag.read_messages(return_connection_header=True), total=bag.get_message_count(), desc='Processing bag messages'):
-        # mission_time = (stamp - initial_stamp)
+        mission_time = (stamp - initial_stamp)
 
-        # if mission_time.to_sec() > 10: # just for testing fast, analyze messages only until 10 secs mission time.
-        #     break
+        if mission_time.to_sec() > 10: # just for testing fast, analyze messages only until 10 secs mission time.
+            break
         
         if topic == "/tf" and msg.transforms:
             transforms_to_keep = []

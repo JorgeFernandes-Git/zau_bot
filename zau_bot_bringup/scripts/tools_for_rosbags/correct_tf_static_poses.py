@@ -56,8 +56,8 @@ if __name__ == "__main__":
     for topic, msg, stamp, connection_header in tqdm(bag.read_messages(return_connection_header=True), total=bag.get_message_count(), desc='Processing bag messages'):
         mission_time = (stamp - initial_stamp)
 
-        # if mission_time.to_sec() > 10: # just for testing fast, analyze messages only until 10 secs mission time.
-        #     break
+        if mission_time.to_sec() > 10: # just for testing fast, analyze messages only until 10 secs mission time.
+            break
 
         if topic == '/tf_static': # tackle tf messages especially
             for transform_idx, transform in enumerate(msg.transforms): # iterate all transforms
@@ -65,23 +65,24 @@ if __name__ == "__main__":
          
                     # Set a new transform value for rotation
                     print('Changing transform in msg on topic /tf_static with parent ' + transform.header.frame_id + ' and child ' + transform.child_frame_id  + ' at time ' + str((stamp-initial_stamp).to_sec()))
-                    print('Before: ' + str(transform.transform.rotation))
+                    print('Before\n: ' + str(transform.transform.rotation))
                     transform.transform.rotation.x = -0.0085252
                     transform.transform.rotation.y = 0.0146204
                     transform.transform.rotation.z = -0.7473817
                     transform.transform.rotation.w = 0.6641793
-                    print('After: ' + str(transform.transform.rotation))
+                    print('After:\n' + str(transform.transform.rotation))
                     
                 if transform.header.frame_id == 'ee_link' and transform.child_frame_id =='cam_1_link': # the specific transform we want to change
                     
                     # Set a new transform value for rotation
                     print('Changing transform in msg on topic /tf_static with parent ' + transform.header.frame_id + ' and child ' + transform.child_frame_id  + ' at time ' + str((stamp-initial_stamp).to_sec()))
-                    print('Before: ' + str(transform.transform.rotation))
-                    transform.transform.rotation.x = 0.5209314
-                    transform.transform.rotation.y = -0.4772105
-                    transform.transform.rotation.z = 0.5363013
-                    transform.transform.rotation.w = -0.4618242  
-                    print('After: ' + str(transform.transform.rotation))
+                    print('Before:\n' + str(transform.transform.rotation))
+                    # -0.2758865, 0.6493113, -0.2783442, 0.6517715
+                    transform.transform.rotation.x = -0.2758865
+                    transform.transform.rotation.y = 0.6493113
+                    transform.transform.rotation.z = -0.2783442
+                    transform.transform.rotation.w = 0.6517715
+                    print('After\n: ' + str(transform.transform.rotation))
 
         # write msg to bag_out
         bag_out.write(topic, msg, stamp, connection_header=connection_header)
@@ -91,28 +92,6 @@ if __name__ == "__main__":
 
     # Print final report
     print('Finished in ' + str(round(tictoc.tocvalue(),2)) + ' seconds.')
-
-    # Check if throttled topics exist
-#     throttle_topics = {}
-#     use_throttle_topics = {}
-#     for sensor_key in config['sensors']:
-#         topic = config['sensors'][sensor_key]['topic_name']
-#         topic_compressed = topic + '/compressed'
-#         if topic_compressed in bag_topics:  # Check if the topic is a compressed image topic
-#             topic = topic_compressed
-#         if 'throttle' in config['sensors'][sensor_key]:
-#             throttle = config['sensors'][sensor_key]['throttle']
-#             print('Sensor ' + sensor_key + ' has throttle')
-# 
-#             use_throttle = True
-#         else:
-#             print('Sensor ' + sensor_key + ' does not have throttle')
-#             throttle = None
-#             use_throttle = False
-#         # else:
-# 
-#         throttle_topics[topic] = {'throttled_topic': topic, 'sensor_key': sensor_key, 'use_throttle': use_throttle,
-#                                   'throttle_hz': throttle}
 
 
    

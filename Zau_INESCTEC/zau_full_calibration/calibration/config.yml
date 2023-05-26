@@ -34,7 +34,7 @@ description_file: "package://ur_e_description/urdf/ur5e_joint_limited_robot.urdf
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
 # bag_file: "$ROS_BAGS/Zau/zau_inesctec/full_calibration/zau_full_calibration_train_bag.bag"
-bag_file: "$ROS_BAGS/Zau/zau_inesctec/full_calibration/fixed_bag.bag"
+bag_file: "$ROS_BAGS/Zau/zau_inesctec/full_calibration/cropped.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
@@ -74,18 +74,34 @@ sensors:
   #   /world_camera/rgb/image_raw
   #
 
+  # cam_1:
+  #   link: "cam_1_color_optical_frame"
+  #   parent_link: "cam_1_link"
+  #   child_link: "cam_1_color_frame"
+  #   topic_name: "/cam_1/color/image_raw"
+  #   throttle: 10
+  #   modality: "rgb"
+
+  # cam_2:
+  #   link: "cam_2_color_optical_frame"
+  #   parent_link: "cam_2_link"
+  #   child_link: "cam_2_color_frame"
+  #   topic_name: "/cam_2/color/image_raw"
+  #   throttle: 10
+  #   modality: rgb
+
   cam_1:
     link: "cam_1_color_optical_frame"
-    parent_link: "cam_1_link"
-    child_link: "cam_1_color_frame"
+    parent_link: "ee_link"
+    child_link: "cam_1_link"
     topic_name: "/cam_1/color/image_raw"
     throttle: 10
     modality: "rgb"
 
   cam_2:
     link: "cam_2_color_optical_frame"
-    parent_link: "cam_2_link"
-    child_link: "cam_2_color_frame"
+    parent_link: "zau/base_link"
+    child_link: "cam_2_link"
     topic_name: "/cam_2/color/image_raw"
     throttle: 10
     modality: rgb

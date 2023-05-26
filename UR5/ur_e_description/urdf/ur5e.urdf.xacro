@@ -574,7 +574,7 @@
       filename="$(find ur_e_description)/urdf/realsense/intel_realsense_inesctec.urdf.xacro" />
     <xacro:sensor_d415 name="cam_1" parent="${prefix}ee_link" use_nominal_extrinsics="true">
       <origin xyz="0.095 -0.053 -0.053"
-        rpy="3.139 0.785 1.570" />
+              rpy="3.139 0.785 1.570" />
     </xacro:sensor_d415>
       <!-- <origin xyz="0.095 0.000 -0.075" -->
 

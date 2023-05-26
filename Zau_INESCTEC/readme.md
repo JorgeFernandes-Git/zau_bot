@@ -16,5 +16,6 @@
 
     roslaunch zau_full_calibration calibrate.launch
 
-    rosrun atom_calibration calibrate -json $ATOM_DATASETS/zau_full_calibration/dataset.json -v -rv -si -vo
+    rosrun atom_calibration calibrate -json $ATOM_DATASETS/zau_full_calibration_vf/dataset.json -v -rv -si -csf "lambda name: int(name) not in [7, 22, 23, 24]"
+
 
