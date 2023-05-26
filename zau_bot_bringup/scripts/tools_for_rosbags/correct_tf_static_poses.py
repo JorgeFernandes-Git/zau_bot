@@ -2,43 +2,28 @@
 
 # stdlib
 import os
-import sys
 import argparse
-import subprocess
-from os.path import exists
-from copy import deepcopy
-from datetime import date, datetime
-
-import matplotlib
-import atom_core.config_io
-import atom_core.drawing
+from tqdm import tqdm
 
 # 3rd-party
-import yaml
-import numpy
-import rospy
-import rospkg
 import rosbag
-import jinja2
-import matplotlib.pyplot as plt
-import networkx as nx
 from pytictoc import TicToc
 
 # local packages
-from atom_core.utilities import checkDirectoryExistence
-from atom_core.naming import generateLabeledTopic
-from colorama import Style, Fore
-from graphviz import Digraph
-from urdf_parser_py.urdf import URDF
-from matplotlib import cm
-from jinja2 import Environment, FileSystemLoader
 
 if __name__ == "__main__":
     # Parse command line arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-bfi", "--bagfile_in", help='Full path to the bagfile', type=str, required=True)
-    ap.add_argument("-bfo", "--bagfile_out", help='Full path to the bagfile', type=str, required=True)
+    ap.add_argument("-bfo", "--bagfile_out", help='Full path to output the bagfile. If not given will be named processed.bag and placed on the same folder as the input bag.', type=str, required=False)
     args = vars(ap.parse_args())
+    
+    if args['bagfile_out'] is None:
+        path = os.path.dirname(args['bagfile_in'])
+        print(path)
+        args['bagfile_out'] = path + '/corrected.bag'
+        
+    print('Creating a new bag ' + args['bagfile_out'])
 
     # --------------------------------------------------------------------------
     # Initial setup
@@ -56,39 +41,50 @@ if __name__ == "__main__":
     bag_info = bag.get_type_and_topic_info()
     bag_types = bag_info[0]
     bag_topics = bag_info[1]
-    # print('\n' + str(bag_topics))
 
-    # get initial stamp to compute mission time
+    # --------------------------------------------------------------------------
+    # Get initial stamp to compute mission time
+    # --------------------------------------------------------------------------
     for topic, msg, stamp in bag.read_messages():
         initial_stamp = stamp
         break
 
-    for topic, msg, stamp in bag.read_messages():
+    # --------------------------------------------------------------------------
+    # Writing new bagfile
+    # --------------------------------------------------------------------------
+    print('Converting bagfile. Please wait...')
+    for topic, msg, stamp, connection_header in tqdm(bag.read_messages(return_connection_header=True), total=bag.get_message_count(), desc='Processing bag messages'):
         mission_time = (stamp - initial_stamp)
 
-        if mission_time.to_sec() > 10: # just for testing fast, analyze messages only until 10 secs mission time.
-            break
+        # if mission_time.to_sec() > 10: # just for testing fast, analyze messages only until 10 secs mission time.
+        #     break
 
-        if topic == '/tf': # tackle tf messages especially
+        if topic == '/tf_static': # tackle tf messages especially
             for transform_idx, transform in enumerate(msg.transforms): # iterate all transforms
-                # ros transform msg: http://docs.ros.org/en/noetic/api/tf/html/msg/tfMessage.html
                 if transform.header.frame_id == 'zau/base_link' and transform.child_frame_id =='cam_2_link': # the specific transform we want to change
-                    # print('Msg on topic ' + topic + ' stamp=' + str(stamp))
-                    # print('This is a tf message')
-                    # print('Transform idx ' + str(transform_idx) + ' should be changed')
-
+         
                     # Set a new transform value for rotation
-                    print('Changing transform in msg on topic /tf with parent ' + transform.header.frame_id + ' and child ' + transform.child_frame_id  + ' at time ' + str((stamp-initial_stamp).to_sec()))
+                    print('Changing transform in msg on topic /tf_static with parent ' + transform.header.frame_id + ' and child ' + transform.child_frame_id  + ' at time ' + str((stamp-initial_stamp).to_sec()))
                     print('Before: ' + str(transform.transform.rotation))
-                    transform.transform.rotation.z = 33.7 # TODO set the correct values
+                    transform.transform.rotation.x = -0.0085252
+                    transform.transform.rotation.y = 0.0146204
+                    transform.transform.rotation.z = -0.7473817
+                    transform.transform.rotation.w = 0.6641793
+                    print('After: ' + str(transform.transform.rotation))
+                    
+                if transform.header.frame_id == 'ee_link' and transform.child_frame_id =='cam_1_link': # the specific transform we want to change
+                    
+                    # Set a new transform value for rotation
+                    print('Changing transform in msg on topic /tf_static with parent ' + transform.header.frame_id + ' and child ' + transform.child_frame_id  + ' at time ' + str((stamp-initial_stamp).to_sec()))
+                    print('Before: ' + str(transform.transform.rotation))
+                    transform.transform.rotation.x = 0.5209314
+                    transform.transform.rotation.y = -0.4772105
+                    transform.transform.rotation.z = 0.5363013
+                    transform.transform.rotation.w = -0.4618242  
                     print('After: ' + str(transform.transform.rotation))
 
-
-
         # write msg to bag_out
-        bag_out.write(topic, msg, stamp)
-
-
+        bag_out.write(topic, msg, stamp, connection_header=connection_header)
 
     bag.close() # close the bag file.
     bag_out.close() # close the bag file.
