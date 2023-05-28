@@ -143,13 +143,13 @@
     </plugin>
   </gazebo>
   <joint name="cam_2_joint" type="fixed">
-    <origin xyz="0.34 -0.35 0.7" rpy="-0.03318539261743347 0.006678026885604881 -1.688657977914159"/>
+    <origin xyz="0.3400000035762787 -0.3499999940395355 0.699999988079071" rpy="-0.03318529946565255 0.006678025233621867 -1.5684003106755113"/>
     <parent link="zau/base_link"/>
     <child link="cam_2_link"/>
   </joint>
   <link name="cam_2_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <mass value="0.095"/>
       <inertia ixx="4.4e-05" ixy="0.0" ixz="0.0" iyy="2.7e-05" iyz="0.0" izz="2.7e-05"/>
     </inertial>
@@ -424,13 +424,13 @@
     <color rgba="0.1 0.1 0.1 1.0"/>
   </material>
   <joint name="cam_1_joint" type="fixed">
-    <origin xyz="0.0949999988079071 -0.05299999937415123 -0.05299999937415123" rpy="1.4705796373386142 1.5526547081704947 3.040323153814818"/>
+    <origin xyz="0.09714032709598541 -0.05299999937415123 -0.05299999937415123" rpy="1.3989744622477813 1.5601351087536692 -0.17730036047588388"/>
     <parent link="ee_link"/>
     <child link="cam_1_link"/>
   </joint>
   <link name="cam_1_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <mass value="0.072"/>
       <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257"/>
     </inertial>
