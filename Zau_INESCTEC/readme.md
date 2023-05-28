@@ -47,7 +47,8 @@
 
     rosrun atom_calibration calibrate -json $ATOM_DATASETS/zau_full_calibration_vf_2/dataset.json -v -rv -si
 
-
+| Collection | cam_1 (px) | cam_2 (px) |      
+|------------|------------|------------|  
 |    000     |  19.2869   |  14.3183   |
 |    001     |   9.3779   |  14.7705   |
 |    002     |  19.1480   |  14.2406   |
@@ -72,8 +73,8 @@
     rosrun atom_calibration calibrate -json $ATOM_DATASETS/zau_full_calibration_vf_3/dataset.json -v -rv -si -csf "lambda name: int(name) not in [20]"
 
 
-| Collection | cam_1 (px) | cam_2 (px) |
-+------------+------------+------------+
+| Collection | cam_1 (px) | cam_2 (px) |      
+|------------|------------|------------|  
 |    000     |  10.5121   |  14.5196   |
 |    001     |   9.6791   |  15.0053   |
 |    002     |  11.6751   |  14.7433   |
