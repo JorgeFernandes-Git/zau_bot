@@ -209,3 +209,32 @@ https://github.com/JorgeFernandes-Git/zau_bot/blob/main/e5_DualRGB_arm2agv/resul
     rosrun atom_evaluation ground_truth_frame_evaluation -train_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/atom_calibration_nig_0.1_0.1.json -test_json /home/jorge/datasets/e5_dualrgb_arm2agv_v3/dataset.json
 
 
+_______________________________
+
+
+FINAL VERSION RESULTS WITH 20 COLLECTIONS:
+
+| Collection | camera (px) | camera_mb (px) |
+|------------|-------------|----------------|
+|    000     |    0.1831   |     0.1463     |
+|    001     |    0.1317   |     0.1470     |
+|    002     |    0.1032   |     0.1016     |
+|    003     |    0.1056   |     0.1071     |
+|    004     |    0.1161   |     0.1081     |
+|    005     |    0.1431   |     0.1406     |
+|    006     |    0.1396   |     0.1154     |
+|    007     |    0.1236   |     0.1099     |
+|    008     |    0.1213   |     0.1389     |
+|    009     |    0.3493   |     0.3346     |
+|    010     |    0.1471   |     0.1621     |
+|    011     |    0.1120   |     0.1166     |
+|    012     |    0.1288   |     0.1251     |
+|    013     |    0.1029   |     0.1093     |
+|    014     |    0.1082   |     0.0987     |
+|    015     |    0.2129   |     0.1137     |
+|    016     |    0.3414   |     0.2340     |
+|    017     |    0.1794   |     0.1028     |
+|    018     |    0.2036   |     0.0982     |
+|    019     |    0.1022   |     0.1083     |
+|    020     |    0.1086   |     0.1079     |
+|  Averages  |    0.1554   |     0.1346     |
