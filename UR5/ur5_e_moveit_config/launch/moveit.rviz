@@ -7,8 +7,7 @@ Panels:
         - /Global Options1
         - /TF1/Frames1
         - /RobotModel1
-        - /RobotModel1/Status1
-        - /Eye-on-Hand Cam1
+        - /RobotModel1/Links1
       Splitter Ratio: 0.6981891393661499
     Tree Height: 829
   - Class: rviz/Selection
@@ -40,7 +39,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -53,7 +52,7 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Acceleration_Scaling_Factor: 0.1
       Class: moveit_rviz_plugin/MotionPlanning
       Enabled: false
@@ -85,6 +84,97 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
+          base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          cam_1_color_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_1_color_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_1_depth_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_1_depth_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          cam_2_color_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_2_color_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_2_depth_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_2_depth_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ee_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          forearm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          shoulder_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          upper_arm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          zau/base_footprint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          zau/base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
         Loop Animation: false
         Robot Alpha: 0.5
         Robot Color: 150; 50; 150
@@ -131,6 +221,97 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
+          base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          cam_1_color_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_1_color_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_1_depth_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_1_depth_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          cam_2_color_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_2_color_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_2_depth_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_2_depth_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ee_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          forearm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          shoulder_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          upper_arm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          zau/base_footprint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          zau/base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
         Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
@@ -144,11 +325,11 @@ Visualization Manager:
       Frames:
         All Enabled: false
       Marker Alpha: 1
-      Marker Scale: 1
+      Marker Scale: 0.800000011920929
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: true
+      Show Names: false
       Tree:
         {}
       Update Interval: 0
@@ -164,6 +345,27 @@ Visualization Manager:
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
         base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        cam_1_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        cam_1_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        cam_1_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        cam_1_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        cam_1_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -189,61 +391,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        camera_aligned_depth_to_color_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_color_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_color_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        caster_back_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        caster_back_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        caster_front_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        caster_front_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ee_camera_support_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ee_camera_support_small_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         ee_link:
           Alpha: 1
           Show Axes: false
@@ -254,30 +401,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        inertial_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         shoulder_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         upper_arm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wheel_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wheel_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -369,7 +498,7 @@ Visualization Manager:
       Use rainbow: true
       Value: false
     - Class: rviz/Image
-      Enabled: true
+      Enabled: false
       Image Topic: /AGV_realsense/color/image_raw
       Max Value: 1
       Median window: 5
@@ -379,9 +508,9 @@ Visualization Manager:
       Queue Size: 2
       Transport Hint: raw
       Unreliable: false
-      Value: true
+      Value: false
     - Class: rviz/Image
-      Enabled: true
+      Enabled: false
       Image Topic: /EE_realsense/color/image_raw
       Max Value: 1
       Median window: 5
@@ -391,7 +520,7 @@ Visualization Manager:
       Queue Size: 2
       Transport Hint: raw
       Unreliable: false
-      Value: true
+      Value: false
     - Class: rviz/MarkerArray
       Enabled: true
       Marker Topic: /interactive_pattern/pattern
@@ -437,7 +566,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.9359116554260254
+      Distance: 2.3250033855438232
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -445,33 +574,33 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.0527600534260273
-        Y: 0.34582221508026123
-        Z: 1.1882580518722534
+        X: -0.060994960367679596
+        Y: 0.20096911489963531
+        Z: 0.6061640381813049
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.08039797097444534
+      Pitch: 0.33039799332618713
       Target Frame: <Fixed Frame>
-      Yaw: 2.1017467975616455
+      Yaw: 5.179910182952881
     Saved: ~
 Window Geometry:
   AGV Cam:
-    collapsed: false
+    collapsed: true
   Displays:
     collapsed: false
   Eye-on-Hand Cam:
-    collapsed: false
+    collapsed: true
   Height: 980
   Hide Left Dock: false
-  Hide Right Dock: false
+  Hide Right Dock: true
   MotionPlanning:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000001f30000037afc020000000dfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000037a000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000001fc000001cb0000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670000000174000002430000017d00fffffffb0000000c00430061006d0065007200610000000307000000160000000000000000fb0000000c00430061006d006500720061000000031e00000099000000000000000000000001000002050000037afc0200000004fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fc0000003d000001a6000000c10100001cfa000000000100000002fb0000001e004500790065002d006f006e002d00480061006e0064002000430061006d0100000000ffffffff000000ac00fffffffb0000000a0056006900650077007301000006710000010f0000010000fffffffb0000000e004100470056002000430061006d01000001e9000001ce0000001600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004b00000003efc0100000002fb0000000800540069006d00650000000000000004b00000041800fffffffb0000000800540069006d006501000000000000045000000000000000000000037c0000037a00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001f30000037afc020000000dfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000037a000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000001fc000001cb0000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670000000174000002430000017d00fffffffb0000000c00430061006d0065007200610000000307000000160000000000000000fb0000000c00430061006d006500720061000000031e00000099000000000000000000000001000002050000037afc0200000004fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fc0000003d000001a60000000000fffffffaffffffff0100000002fb0000001e004500790065002d006f006e002d00480061006e0064002000430061006d0000000000ffffffff000000ac00fffffffb0000000a0056006900650077007300000006710000010f0000010000fffffffb0000000e004100470056002000430061006d00000001e9000001ce0000001600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004b00000003efc0100000002fb0000000800540069006d00650000000000000004b00000041800fffffffb0000000800540069006d00650100000000000004500000000000000000000005870000037a00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -479,7 +608,7 @@ Window Geometry:
   Tool Properties:
     collapsed: false
   Views:
-    collapsed: false
+    collapsed: true
   Width: 1920
-  X: 0
+  X: 1920
   Y: 27
