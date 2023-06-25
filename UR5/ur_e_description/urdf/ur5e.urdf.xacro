@@ -535,10 +535,10 @@
 
 
     <!-- add camera support -->
-    <!-- <link name="${prefix}ee_camera_support_link">
+    <link name="${prefix}ee_camera_support_link">
       <visual>
         <geometry>
-          <box size="0.185 0.03 0.03" />
+          <box size="0.15 0.03 0.03" />
         </geometry>
         <material name="LightGrey">
           <color rgba="0.7 0.7 0.7 1.0" />
@@ -547,7 +547,7 @@
       </visual>
     </link>
     <joint name="${prefix}ee_camera_support_joint" type="fixed">
-      <origin xyz="0.095 0 0" rpy="0 0 0" />
+      <origin xyz="0.075 0 0" rpy="-0.785 0 0" />
       <parent link="${prefix}ee_link" />
       <child link="${prefix}ee_camera_support_link" />
     </joint>
@@ -566,7 +566,7 @@
       <origin xyz="0 0 -0.04" rpy="0 0 0" />
       <parent link="${prefix}ee_camera_support_link" />
       <child link="${prefix}ee_camera_support_small_link" />
-    </joint> -->
+    </joint>
 
 
     <!-- add intel realsense camera d415 sensor -->

@@ -127,7 +127,7 @@
         </plugin>
     </gazebo>
 
-    <gazebo>
+    <!-- <gazebo>
         <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
             <alwaysOn>true</alwaysOn>
             <bodyName>imu_link</bodyName>
@@ -154,7 +154,7 @@
                 </noise>
             </imu>
         </plugin>
-    </gazebo>
+    </gazebo> -->
 
     <!-- add sensor camera part -->
     <!-- <xacro:macro name="sim_3dsensor" params="prefix">
